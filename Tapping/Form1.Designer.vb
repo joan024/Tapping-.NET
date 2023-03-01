@@ -130,7 +130,7 @@ Partial Class Form1
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(718, 201)
+        Me.Label1.Location = New System.Drawing.Point(713, 201)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(343, 273)
         Me.Label1.TabIndex = 8
