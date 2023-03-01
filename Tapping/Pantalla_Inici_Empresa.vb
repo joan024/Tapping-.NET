@@ -1,5 +1,5 @@
-﻿Public Class Form1
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Public Class Pantalla_Inici_Empresa
+    Private Sub Pantalla_Inici_Empresa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
