@@ -22,89 +22,94 @@ Partial Class Escriptori_Administradors
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.GestionarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.XatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NotíciesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PreguntesFrequentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TapesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
-        Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuStrip1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarToolStripMenuItem, Me.XatToolStripMenuItem, Me.NotíciesToolStripMenuItem, Me.PreguntesFrequentsToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(192, 684)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'GestionarToolStripMenuItem
-        '
-        Me.GestionarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientsToolStripMenuItem, Me.TapesToolStripMenuItem})
-        Me.GestionarToolStripMenuItem.Name = "GestionarToolStripMenuItem"
-        Me.GestionarToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.GestionarToolStripMenuItem.Text = "Gestionar"
-        '
-        'XatToolStripMenuItem
-        '
-        Me.XatToolStripMenuItem.Name = "XatToolStripMenuItem"
-        Me.XatToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.XatToolStripMenuItem.Text = "Xat"
-        '
-        'NotíciesToolStripMenuItem
-        '
-        Me.NotíciesToolStripMenuItem.Name = "NotíciesToolStripMenuItem"
-        Me.NotíciesToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.NotíciesToolStripMenuItem.Text = "Notícies"
-        '
-        'PreguntesFrequentsToolStripMenuItem
-        '
-        Me.PreguntesFrequentsToolStripMenuItem.Name = "PreguntesFrequentsToolStripMenuItem"
-        Me.PreguntesFrequentsToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(273, 61)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(584, 230)
-        Me.ListView1.TabIndex = 1
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        '
-        'ClientsToolStripMenuItem
-        '
-        Me.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ClientsToolStripMenuItem.Text = "Clients"
-        '
-        'TapesToolStripMenuItem
-        '
-        Me.TapesToolStripMenuItem.Name = "TapesToolStripMenuItem"
-        Me.TapesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TapesToolStripMenuItem.Text = "Tapes"
-        '
-        'Escriptori_Administradors
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1324, 684)
-        Me.Controls.Add(Me.ListView1)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Escriptori_Administradors"
-        Me.Text = "Escriptori_Administradors"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        MenuStrip1 = New MenuStrip()
+        GestionarToolStripMenuItem = New ToolStripMenuItem()
+        ClientsToolStripMenuItem = New ToolStripMenuItem()
+        TapesToolStripMenuItem = New ToolStripMenuItem()
+        XatToolStripMenuItem = New ToolStripMenuItem()
+        NotíciesToolStripMenuItem = New ToolStripMenuItem()
+        PreguntesFrequentsToolStripMenuItem = New ToolStripMenuItem()
+        Label1 = New Label()
+        Panel1 = New Panel()
+        MenuStrip1.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        MenuStrip1.Dock = DockStyle.Left
+        MenuStrip1.Font = New Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        MenuStrip1.ImageScalingSize = New Size(24, 24)
+        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Padding = New Padding(9, 3, 0, 3)
+        MenuStrip1.Size = New Size(292, 1205)
+        MenuStrip1.TabIndex = 0
+        MenuStrip1.Text = "MenuStrip1"' 
+        ' GestionarToolStripMenuItem
+        ' 
+        GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem})
+        GestionarToolStripMenuItem.Name = "GestionarToolStripMenuItem"
+        GestionarToolStripMenuItem.Size = New Size(273, 33)
+        GestionarToolStripMenuItem.Text = "Gestionar"' 
+        ' ClientsToolStripMenuItem
+        ' 
+        ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
+        ClientsToolStripMenuItem.Size = New Size(202, 38)
+        ClientsToolStripMenuItem.Text = "Clients"' 
+        ' TapesToolStripMenuItem
+        ' 
+        TapesToolStripMenuItem.Name = "TapesToolStripMenuItem"
+        TapesToolStripMenuItem.Size = New Size(202, 38)
+        TapesToolStripMenuItem.Text = "Tapes"' 
+        ' XatToolStripMenuItem
+        ' 
+        XatToolStripMenuItem.Name = "XatToolStripMenuItem"
+        XatToolStripMenuItem.Size = New Size(273, 33)
+        XatToolStripMenuItem.Text = "Xat"' 
+        ' NotíciesToolStripMenuItem
+        ' 
+        NotíciesToolStripMenuItem.Name = "NotíciesToolStripMenuItem"
+        NotíciesToolStripMenuItem.Size = New Size(273, 33)
+        NotíciesToolStripMenuItem.Text = "Notícies"' 
+        ' PreguntesFrequentsToolStripMenuItem
+        ' 
+        PreguntesFrequentsToolStripMenuItem.Name = "PreguntesFrequentsToolStripMenuItem"
+        PreguntesFrequentsToolStripMenuItem.Size = New Size(273, 33)
+        PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(455, 56)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(135, 38)
+        Label1.TabIndex = 2
+        Label1.Text = "Label1"' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(455, 144)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1343, 637)
+        Panel1.TabIndex = 3
+        ' 
+        ' Escriptori_Administradors
+        ' 
+        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(2001, 1205)
+        Controls.Add(Panel1)
+        Controls.Add(Label1)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
+        Margin = New Padding(4, 5, 4, 5)
+        Name = "Escriptori_Administradors"
+        Text = "Escriptori_Administradors"
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
@@ -112,7 +117,8 @@ Partial Class Escriptori_Administradors
     Friend WithEvents XatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NotíciesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PreguntesFrequentsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents ClientsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TapesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

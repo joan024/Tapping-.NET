@@ -1,27 +1,27 @@
 ﻿Public Class Escriptori_Administradors
+    Dim mostrarClients As New GridViewClients
+    Dim mostrarTapes As New GridViewTapes
+
     Private Sub Escriptori_Administradors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Label1.Visible = False
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-        If ListView1.SelectedItems.Count > 0 Then
-            MsgBox(ListView1.SelectedItems(0).Text)
-        End If
+    Private Sub ClientsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientsToolStripMenuItem.Click
+        Label1.Text = "CLIENTS"
+        mostrarTapes.Hide()
+        Label1.Visible = True
+        mostrarClients.TopLevel = False
+        mostrarClients.Show()
+        Panel1.Controls.Add(mostrarClients)
     End Sub
 
-    Private Sub ClientsToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClientsToolStripMenuItem.Click
-        ' Agregar dos columnas al control ListView
-        ListView1.Columns.Add("Nombre")
-        ListView1.Columns.Add("Edad")
-
-        ' Crear un objeto ListViewItem con el texto "Juan" y "25"
-        Dim item As New ListViewItem
-        item.Text = "Juan"
-        item.SubItems.Add("25")
-
-        ' Agregar el objeto ListViewItem a la lista
-        ListView1.Items.Add(item)
-
-
+    Private Sub TapesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TapesToolStripMenuItem.Click
+        Label1.Text = "TAPES"
+        mostrarClients.Hide()
+        Label1.Visible = True
+        mostrarTapes.TopLevel = False
+        mostrarTapes.Show()
+        Panel1.Controls.Add(mostrarTapes)
     End Sub
+
 End Class

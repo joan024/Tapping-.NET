@@ -22,142 +22,149 @@ Partial Class IniciSessio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IniciSessio))
-        Me.usuari = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ButtonSortir = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.ButtonSortir, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'usuari
-        '
-        Me.usuari.AutoSize = True
-        Me.usuari.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.usuari.Location = New System.Drawing.Point(250, 249)
-        Me.usuari.Name = "usuari"
-        Me.usuari.Size = New System.Drawing.Size(208, 21)
-        Me.usuari.TabIndex = 3
-        Me.usuari.Text = "Introdueix el nom d'usuari"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox1.Location = New System.Drawing.Point(250, 283)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(279, 27)
-        Me.TextBox1.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(250, 353)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(209, 21)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Introdueix la contrasenya"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox2.Location = New System.Drawing.Point(250, 391)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(279, 27)
-        Me.TextBox2.TabIndex = 6
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(324, 484)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(117, 45)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "LOGIN"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Tapping.My.Resources.Resources.LogoTappingSenseFondo
-        Me.PictureBox1.Location = New System.Drawing.Point(311, 34)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(147, 117)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(45, 51)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(205, 23)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Benvingut a Tapping!"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.ButtonSortir)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.usuari)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(295, 69)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(743, 589)
-        Me.Panel1.TabIndex = 10
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(250, 180)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(260, 20)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Inicia sessió per accedir a Tapping"
-        '
-        'ButtonSortir
-        '
-        Me.ButtonSortir.Image = CType(resources.GetObject("ButtonSortir.Image"), System.Drawing.Image)
-        Me.ButtonSortir.Location = New System.Drawing.Point(701, 20)
-        Me.ButtonSortir.Name = "ButtonSortir"
-        Me.ButtonSortir.Size = New System.Drawing.Size(28, 25)
-        Me.ButtonSortir.TabIndex = 10
-        Me.ButtonSortir.TabStop = False
-        '
-        'IniciSessio
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1344, 745)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "IniciSessio"
-        Me.Text = "IniciSessio"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.ButtonSortir, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(IniciSessio))
+        usuari = New Label()
+        TextBox1 = New TextBox()
+        Label2 = New Label()
+        TextBox2 = New TextBox()
+        Button1 = New Button()
+        PictureBox1 = New PictureBox()
+        Label1 = New Label()
+        Panel1 = New Panel()
+        Label3 = New Label()
+        ButtonSortir = New PictureBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(ButtonSortir, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' usuari
+        ' 
+        usuari.AutoSize = True
+        usuari.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        usuari.Location = New Point(357, 415)
+        usuari.Margin = New Padding(4, 0, 4, 0)
+        usuari.Name = "usuari"
+        usuari.Size = New Size(318, 30)
+        usuari.TabIndex = 3
+        usuari.Text = "Introdueix el nom d'usuari"' 
+        ' TextBox1
+        ' 
+        TextBox1.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBox1.Location = New Point(357, 472)
+        TextBox1.Margin = New Padding(4, 5, 4, 5)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(397, 37)
+        TextBox1.TabIndex = 4
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(357, 588)
+        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(314, 30)
+        Label2.TabIndex = 5
+        Label2.Text = "Introdueix la contrasenya"' 
+        ' TextBox2
+        ' 
+        TextBox2.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBox2.Location = New Point(357, 652)
+        TextBox2.Margin = New Padding(4, 5, 4, 5)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(397, 37)
+        TextBox2.TabIndex = 6
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Location = New Point(463, 807)
+        Button1.Margin = New Padding(4, 5, 4, 5)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(167, 75)
+        Button1.TabIndex = 7
+        Button1.Text = "LOGIN"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.LogoTappingSenseFondo
+        PictureBox1.Location = New Point(444, 57)
+        PictureBox1.Margin = New Padding(4, 5, 4, 5)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(210, 195)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 1
+        PictureBox1.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(64, 85)
+        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(308, 36)
+        Label1.TabIndex = 9
+        Label1.Text = "Benvingut a Tapping!"' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.None
+        Panel1.BackColor = Color.White
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(ButtonSortir)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(TextBox2)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(usuari)
+        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(Label2)
+        Panel1.Location = New Point(421, 115)
+        Panel1.Margin = New Padding(4, 5, 4, 5)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1061, 982)
+        Panel1.TabIndex = 10
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(357, 300)
+        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(406, 27)
+        Label3.TabIndex = 11
+        Label3.Text = "Inicia sessió per accedir a Tapping"' 
+        ' ButtonSortir
+        ' 
+        ButtonSortir.Image = CType(resources.GetObject("ButtonSortir.Image"), Image)
+        ButtonSortir.Location = New Point(1001, 33)
+        ButtonSortir.Margin = New Padding(4, 5, 4, 5)
+        ButtonSortir.Name = "ButtonSortir"
+        ButtonSortir.Size = New Size(40, 42)
+        ButtonSortir.TabIndex = 10
+        ButtonSortir.TabStop = False
+        ' 
+        ' IniciSessio
+        ' 
+        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ClientSize = New Size(1920, 1242)
+        Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 5, 4, 5)
+        Name = "IniciSessio"
+        Text = "IniciSessio"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(ButtonSortir, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
     End Sub
     Friend WithEvents usuari As Label
     Friend WithEvents TextBox1 As TextBox
