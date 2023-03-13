@@ -22,135 +22,154 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
-        MenuStrip1 = New MenuStrip()
-        ToolStripMenuItem4 = New ToolStripMenuItem()
-        NoticiesToolStripMenuItem = New ToolStripMenuItem()
-        PreguntesFreqüentsToolStripMenuItem = New ToolStripMenuItem()
-        XatToolStripMenuItem = New ToolStripMenuItem()
-        TancaSessióToolStripMenuItem = New ToolStripMenuItem()
-        ToolStripMenuItem3 = New ToolStripMenuItem()
-        ToolStripMenuItem2 = New ToolStripMenuItem()
-        ToolStripMenuItem1 = New ToolStripMenuItem()
-        PictureBox1 = New PictureBox()
-        Button1 = New Button()
-        Label1 = New Label()
-        Label2 = New Label()
-        MenuStrip1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        SuspendLayout()
-        ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.AutoSize = False
-        MenuStrip1.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        MenuStrip1.Items.AddRange(New ToolStripItem() {ToolStripMenuItem4, ToolStripMenuItem3, ToolStripMenuItem2, ToolStripMenuItem1})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1327, 50)
-        MenuStrip1.TabIndex = 5
-        MenuStrip1.Text = "MenuStrip1"' 
-        ' ToolStripMenuItem4
-        ' 
-        ToolStripMenuItem4.Alignment = ToolStripItemAlignment.Right
-        ToolStripMenuItem4.DropDownItems.AddRange(New ToolStripItem() {NoticiesToolStripMenuItem, PreguntesFreqüentsToolStripMenuItem, XatToolStripMenuItem, TancaSessióToolStripMenuItem})
-        ToolStripMenuItem4.Font = New Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        ToolStripMenuItem4.Size = New Size(71, 46)
-        ToolStripMenuItem4.Text = "ALTRES"' 
-        ' NoticiesToolStripMenuItem
-        ' 
-        NoticiesToolStripMenuItem.AutoSize = False
-        NoticiesToolStripMenuItem.Name = "NoticiesToolStripMenuItem"
-        NoticiesToolStripMenuItem.Size = New Size(211, 24)
-        NoticiesToolStripMenuItem.Text = "Noticies"' 
-        ' PreguntesFreqüentsToolStripMenuItem
-        ' 
-        PreguntesFreqüentsToolStripMenuItem.Name = "PreguntesFreqüentsToolStripMenuItem"
-        PreguntesFreqüentsToolStripMenuItem.Size = New Size(211, 24)
-        PreguntesFreqüentsToolStripMenuItem.Text = "Preguntes Freqüents"' 
-        ' XatToolStripMenuItem
-        ' 
-        XatToolStripMenuItem.Name = "XatToolStripMenuItem"
-        XatToolStripMenuItem.Size = New Size(211, 24)
-        XatToolStripMenuItem.Text = "Xat"' 
-        ' TancaSessióToolStripMenuItem
-        ' 
-        TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
-        TancaSessióToolStripMenuItem.Size = New Size(211, 24)
-        TancaSessióToolStripMenuItem.Text = "Tanca sessió"' 
-        ' ToolStripMenuItem3
-        ' 
-        ToolStripMenuItem3.Alignment = ToolStripItemAlignment.Right
-        ToolStripMenuItem3.Font = New Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        ToolStripMenuItem3.Size = New Size(112, 46)
-        ToolStripMenuItem3.Text = "COMENTARIS"' 
-        ' ToolStripMenuItem2
-        ' 
-        ToolStripMenuItem2.Alignment = ToolStripItemAlignment.Right
-        ToolStripMenuItem2.Font = New Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(90, 46)
-        ToolStripMenuItem2.Text = "LES TAPES"' 
-        ' ToolStripMenuItem1
-        ' 
-        ToolStripMenuItem1.AccessibleRole = AccessibleRole.PushButton
-        ToolStripMenuItem1.Alignment = ToolStripItemAlignment.Right
-        ToolStripMenuItem1.Font = New Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(143, 46)
-        ToolStripMenuItem1.Text = "ELS MEUS LOCALS"' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(238, 201)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(343, 273)
-        PictureBox1.TabIndex = 6
-        PictureBox1.TabStop = False
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(1009, 632)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(136, 51)
-        Button1.TabIndex = 7
-        Button1.Text = "EDITAR"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' Label1
-        ' 
-        Label1.Location = New Point(713, 201)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(343, 273)
-        Label1.TabIndex = 8
-        Label1.Text = "Label1"' 
-        ' Label2
-        ' 
-        Label2.Location = New Point(441, 519)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(465, 81)
-        Label2.TabIndex = 9
-        Label2.Text = "Label2"' 
-        ' Form1
-        ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1327, 749)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
-        Controls.Add(Button1)
-        Controls.Add(PictureBox1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
-        Margin = New Padding(3, 2, 3, 2)
-        Name = "Form1"
-        Text = "Form1"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        ResumeLayout(False)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoticiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PreguntesFreqüentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.XatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TancaSessióToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.ToolStripMenuItem3, Me.ToolStripMenuItem2, Me.ToolStripMenuItem1})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(7, 3, 0, 3)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1517, 67)
+        Me.MenuStrip1.TabIndex = 5
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoticiesToolStripMenuItem, Me.PreguntesFreqüentsToolStripMenuItem, Me.XatToolStripMenuItem, Me.TancaSessióToolStripMenuItem})
+        Me.ToolStripMenuItem4.Font = New System.Drawing.Font("Segoe UI Emoji", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(88, 61)
+        Me.ToolStripMenuItem4.Text = "ALTRES"
+        '
+        'NoticiesToolStripMenuItem
+        '
+        Me.NoticiesToolStripMenuItem.AutoSize = False
+        Me.NoticiesToolStripMenuItem.Name = "NoticiesToolStripMenuItem"
+        Me.NoticiesToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.NoticiesToolStripMenuItem.Text = "Noticies"
+        '
+        'PreguntesFreqüentsToolStripMenuItem
+        '
+        Me.PreguntesFreqüentsToolStripMenuItem.Name = "PreguntesFreqüentsToolStripMenuItem"
+        Me.PreguntesFreqüentsToolStripMenuItem.Size = New System.Drawing.Size(271, 30)
+        Me.PreguntesFreqüentsToolStripMenuItem.Text = "Preguntes Freqüents"
+        '
+        'XatToolStripMenuItem
+        '
+        Me.XatToolStripMenuItem.Name = "XatToolStripMenuItem"
+        Me.XatToolStripMenuItem.Size = New System.Drawing.Size(271, 30)
+        Me.XatToolStripMenuItem.Text = "Xat"
+        '
+        'TancaSessióToolStripMenuItem
+        '
+        Me.TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
+        Me.TancaSessióToolStripMenuItem.Size = New System.Drawing.Size(271, 30)
+        Me.TancaSessióToolStripMenuItem.Text = "Tanca sessió"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem3.Font = New System.Drawing.Font("Segoe UI Emoji", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(141, 61)
+        Me.ToolStripMenuItem3.Text = "COMENTARIS"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI Emoji", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(113, 61)
+        Me.ToolStripMenuItem2.Text = "LES TAPES"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI Emoji", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(181, 61)
+        Me.ToolStripMenuItem1.Text = "ELS MEUS LOCALS"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(272, 268)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(392, 364)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Location = New System.Drawing.Point(1350, 918)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(155, 68)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "EDITAR"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(815, 268)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(392, 364)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Label1"
+        '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(504, 692)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(531, 108)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Label2"
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1517, 999)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Name = "Form1"
+        Me.Text = "Form1"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem

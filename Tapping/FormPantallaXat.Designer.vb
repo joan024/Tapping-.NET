@@ -33,39 +33,45 @@ Partial Class FormPantallaXat
         ' 
         ' ButtonEnviar
         ' 
+        ButtonEnviar.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         ButtonEnviar.BackgroundImage = My.Resources.Resources.enviar
         ButtonEnviar.BackgroundImageLayout = ImageLayout.Stretch
-        ButtonEnviar.Location = New Point(747, 413)
+        ButtonEnviar.Location = New Point(854, 551)
+        ButtonEnviar.Margin = New Padding(3, 4, 3, 4)
         ButtonEnviar.Name = "ButtonEnviar"
-        ButtonEnviar.Size = New Size(41, 25)
+        ButtonEnviar.Size = New Size(47, 33)
         ButtonEnviar.TabIndex = 0
         ButtonEnviar.UseVisualStyleBackColor = True
         ' 
         ' TextBoxXat
         ' 
-        TextBoxXat.Location = New Point(12, 397)
+        TextBoxXat.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        TextBoxXat.Location = New Point(14, 529)
+        TextBoxXat.Margin = New Padding(3, 4, 3, 4)
         TextBoxXat.Multiline = True
         TextBoxXat.Name = "TextBoxXat"
         TextBoxXat.ScrollBars = ScrollBars.Vertical
-        TextBoxXat.Size = New Size(729, 41)
+        TextBoxXat.Size = New Size(833, 53)
         TextBoxXat.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(85, 20)
+        Label1.Location = New Point(97, 27)
         Label1.Name = "Label1"
-        Label1.Size = New Size(84, 25)
+        Label1.Size = New Size(106, 32)
         Label1.TabIndex = 2
         Label1.Text = "Tapping"' 
         ' PanelXat
         ' 
+        PanelXat.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         PanelXat.BackColor = Color.White
         PanelXat.Controls.Add(Label1)
-        PanelXat.Location = New Point(12, 12)
+        PanelXat.Location = New Point(14, 16)
+        PanelXat.Margin = New Padding(3, 4, 3, 4)
         PanelXat.Name = "PanelXat"
-        PanelXat.Size = New Size(776, 66)
+        PanelXat.Size = New Size(887, 88)
         PanelXat.TabIndex = 3
         ' 
         ' PictureBox1
@@ -73,24 +79,27 @@ Partial Class FormPantallaXat
         PictureBox1.BackColor = Color.White
         PictureBox1.BackgroundImage = My.Resources.Resources.LogoTappingSenseFondo
         PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox1.Location = New Point(12, 12)
+        PictureBox1.Location = New Point(14, 16)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(79, 66)
+        PictureBox1.Size = New Size(90, 88)
         PictureBox1.TabIndex = 4
         PictureBox1.TabStop = False
         ' 
         ' FormPantallaXat
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightGray
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(914, 600)
         Controls.Add(PictureBox1)
         Controls.Add(PanelXat)
         Controls.Add(TextBoxXat)
         Controls.Add(ButtonEnviar)
         DoubleBuffered = True
+        Margin = New Padding(3, 4, 3, 4)
+        MinimumSize = New Size(932, 647)
         Name = "FormPantallaXat"
         Text = "Xat"
         PanelXat.ResumeLayout(False)
