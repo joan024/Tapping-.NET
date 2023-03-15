@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub NotíciesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotíciesToolStripMenuItem.Click
-        FormNoticies.Show()
+        Form2NoticiesAdminvb.Show()
     End Sub
 
     Private Sub PreguntesFrequentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreguntesFrequentsToolStripMenuItem.Click
