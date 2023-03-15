@@ -24,17 +24,17 @@
     End Sub
 
     ' ELS MEUS LOCALS:
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         ElsMeusLocals.Show()
     End Sub
 
     ' LES TAPES
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs)
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         LesMevesTapes.Show()
     End Sub
 
     ' format del boto
-    Private Sub Button1_Paint(sender As Object, e As PaintEventArgs)
+    Private Sub Button1_Paint(sender As Object, e As PaintEventArgs) Handles Button1.Click
         Dim buttonPath As Drawing2D.GraphicsPath = New Drawing2D.GraphicsPath()
         Dim rectangle As Rectangle = Button1.ClientRectangle
         rectangle.Inflate(-1, -1)
@@ -61,5 +61,9 @@
     Private Sub TancaSessióToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TancaSessióToolStripMenuItem.Click
         IniciSessio.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+
     End Sub
 End Class
