@@ -25,4 +25,15 @@
         Panel1.Controls.Add(mostrarTapes)
     End Sub
 
+    Private Sub XatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles XatToolStripMenuItem.Click
+        FormXatAdmin.Show()
+    End Sub
+
+    Private Sub NotíciesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotíciesToolStripMenuItem.Click
+        FormNoticies.Show()
+    End Sub
+
+    Private Sub PreguntesFrequentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreguntesFrequentsToolStripMenuItem.Click
+        FormPFAdmin.Show()
+    End Sub
 End Class

@@ -42,4 +42,24 @@
         Button1.Region = New Region(buttonPath)
     End Sub
 
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        FormComentaris.Show()
+    End Sub
+
+    Private Sub NoticiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoticiesToolStripMenuItem.Click
+        FormNoticies.Show()
+    End Sub
+
+    Private Sub PreguntesFreqüentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreguntesFreqüentsToolStripMenuItem.Click
+        FormPF.Show()
+    End Sub
+
+    Private Sub XatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles XatToolStripMenuItem.Click
+        FormPantallaXat.Show()
+    End Sub
+
+    Private Sub TancaSessióToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TancaSessióToolStripMenuItem.Click
+        IniciSessio.Show()
+        Me.Hide()
+    End Sub
 End Class

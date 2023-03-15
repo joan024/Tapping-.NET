@@ -43,67 +43,69 @@ Partial Class Escriptori_Administradors
         MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(9, 3, 0, 3)
-        MenuStrip1.Size = New Size(292, 1205)
+        MenuStrip1.Padding = New Padding(7, 2, 0, 2)
+        MenuStrip1.Size = New Size(239, 844)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"' 
         ' GestionarToolStripMenuItem
         ' 
         GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem})
         GestionarToolStripMenuItem.Name = "GestionarToolStripMenuItem"
-        GestionarToolStripMenuItem.Size = New Size(273, 33)
+        GestionarToolStripMenuItem.Size = New Size(224, 28)
         GestionarToolStripMenuItem.Text = "Gestionar"' 
         ' ClientsToolStripMenuItem
         ' 
         ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        ClientsToolStripMenuItem.Size = New Size(202, 38)
+        ClientsToolStripMenuItem.Size = New Size(165, 28)
         ClientsToolStripMenuItem.Text = "Clients"' 
         ' TapesToolStripMenuItem
         ' 
         TapesToolStripMenuItem.Name = "TapesToolStripMenuItem"
-        TapesToolStripMenuItem.Size = New Size(202, 38)
+        TapesToolStripMenuItem.Size = New Size(165, 28)
         TapesToolStripMenuItem.Text = "Tapes"' 
         ' XatToolStripMenuItem
         ' 
         XatToolStripMenuItem.Name = "XatToolStripMenuItem"
-        XatToolStripMenuItem.Size = New Size(273, 33)
+        XatToolStripMenuItem.Size = New Size(224, 28)
         XatToolStripMenuItem.Text = "Xat"' 
         ' NotíciesToolStripMenuItem
         ' 
         NotíciesToolStripMenuItem.Name = "NotíciesToolStripMenuItem"
-        NotíciesToolStripMenuItem.Size = New Size(273, 33)
+        NotíciesToolStripMenuItem.Size = New Size(224, 28)
         NotíciesToolStripMenuItem.Text = "Notícies"' 
         ' PreguntesFrequentsToolStripMenuItem
         ' 
         PreguntesFrequentsToolStripMenuItem.Name = "PreguntesFrequentsToolStripMenuItem"
-        PreguntesFrequentsToolStripMenuItem.Size = New Size(273, 33)
+        PreguntesFrequentsToolStripMenuItem.Size = New Size(224, 28)
         PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(455, 56)
+        Label1.Location = New Point(364, 45)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(135, 38)
+        Label1.Size = New Size(114, 32)
         Label1.TabIndex = 2
         Label1.Text = "Label1"' 
         ' Panel1
         ' 
-        Panel1.Location = New Point(455, 144)
+        Panel1.Location = New Point(364, 115)
+        Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1343, 637)
+        Panel1.Size = New Size(1074, 510)
         Panel1.TabIndex = 3
         ' 
         ' Escriptori_Administradors
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(2001, 1205)
+        ClientSize = New Size(1539, 844)
         Controls.Add(Panel1)
         Controls.Add(Label1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Escriptori_Administradors"
         Text = "Escriptori_Administradors"
         MenuStrip1.ResumeLayout(False)
