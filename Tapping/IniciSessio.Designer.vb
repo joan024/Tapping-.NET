@@ -112,7 +112,7 @@ Partial Class IniciSessio
         Label1.Text = "Benvingut a Tapping!"' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.None
+        Panel1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Panel1.BackColor = Color.White
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(ButtonSortir)

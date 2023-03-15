@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Private Sub Form1_Load(sender As Object, e As EventArgs)
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
 
         Label1.Font = New Font("Arial", 20, FontStyle.Bold)
@@ -41,4 +41,5 @@
         buttonPath.AddEllipse(rectangle)
         Button1.Region = New Region(buttonPath)
     End Sub
+
 End Class

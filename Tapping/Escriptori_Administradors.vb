@@ -3,6 +3,7 @@
     Dim mostrarTapes As New GridViewTapes
 
     Private Sub Escriptori_Administradors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
         Label1.Visible = False
     End Sub
 
