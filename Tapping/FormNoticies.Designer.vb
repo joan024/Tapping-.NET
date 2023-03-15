@@ -22,153 +22,138 @@ Partial Class FormNoticies
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ButtonEnrere = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Titol = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Foto = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Data = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.AutoSize = True
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.ButtonEnrere)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1756, 67)
-        Me.Panel1.TabIndex = 0
-        '
-        'ButtonEnrere
-        '
-        Me.ButtonEnrere.BackColor = System.Drawing.Color.White
-        Me.ButtonEnrere.BackgroundImage = Global.Tapping.My.Resources.Resources.enrere
-        Me.ButtonEnrere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEnrere.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ButtonEnrere.FlatAppearance.BorderSize = 0
-        Me.ButtonEnrere.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEnrere.Location = New System.Drawing.Point(0, 9)
-        Me.ButtonEnrere.Name = "ButtonEnrere"
-        Me.ButtonEnrere.Size = New System.Drawing.Size(64, 45)
-        Me.ButtonEnrere.TabIndex = 2
-        Me.ButtonEnrere.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(824, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 45)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "NOTÍCIES"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(195, Byte), Integer))
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.ColumnHeadersVisible = False
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Titol, Me.Descripcio, Me.Foto, Me.Data})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 82)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 50
-        Me.DataGridView1.RowTemplate.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1756, 711)
-        Me.DataGridView1.TabIndex = 1
-        '
-        'Titol
-        '
-        Me.Titol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Titol.HeaderText = "Titol"
-        Me.Titol.MinimumWidth = 6
-        Me.Titol.Name = "Titol"
-        Me.Titol.Width = 6
-        '
-        'Descripcio
-        '
-        Me.Descripcio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Descripcio.HeaderText = "Descripcio"
-        Me.Descripcio.MinimumWidth = 6
-        Me.Descripcio.Name = "Descripcio"
-        Me.Descripcio.Width = 6
-        '
-        'Foto
-        '
-        Me.Foto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Foto.FillWeight = 200.0!
-        Me.Foto.HeaderText = "Foto"
-        Me.Foto.MinimumWidth = 6
-        Me.Foto.Name = "Foto"
-        Me.Foto.Width = 6
-        '
-        'Data
-        '
-        Me.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Data.HeaderText = "Data"
-        Me.Data.MinimumWidth = 6
-        Me.Data.Name = "Data"
-        Me.Data.Width = 6
-        '
-        'FormNoticies
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(195, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1780, 805)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Panel1)
-        Me.Name = "FormNoticies"
-        Me.Text = "FormNoticies"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        DataGridViewNoticies = New DataGridView()
+        Titol = New DataGridViewTextBoxColumn()
+        Descripcio = New DataGridViewTextBoxColumn()
+        Foto = New DataGridViewImageColumn()
+        Data = New DataGridViewTextBoxColumn()
+        ButtonEnrere = New Button()
+        LabelTitolNoticies = New Label()
+        CType(DataGridViewNoticies, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' DataGridViewNoticies
+        ' 
+        DataGridViewNoticies.AllowUserToAddRows = False
+        DataGridViewNoticies.AllowUserToDeleteRows = False
+        DataGridViewNoticies.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewNoticies.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewNoticies.BackgroundColor = Color.White
+        DataGridViewNoticies.BorderStyle = BorderStyle.None
+        DataGridViewNoticies.CellBorderStyle = DataGridViewCellBorderStyle.None
+        DataGridViewNoticies.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridViewNoticies.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewNoticies.ColumnHeadersHeight = 29
+        DataGridViewNoticies.ColumnHeadersVisible = False
+        DataGridViewNoticies.Columns.AddRange(New DataGridViewColumn() {Titol, Descripcio, Foto, Data})
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = Color.White
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        DataGridViewNoticies.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewNoticies.EnableHeadersVisualStyles = False
+        DataGridViewNoticies.Location = New Point(12, 88)
+        DataGridViewNoticies.Name = "DataGridViewNoticies"
+        DataGridViewNoticies.ReadOnly = True
+        DataGridViewNoticies.RowHeadersVisible = False
+        DataGridViewNoticies.RowHeadersWidth = 51
+        DataGridViewNoticies.RowTemplate.Height = 50
+        DataGridViewNoticies.RowTemplate.ReadOnly = True
+        DataGridViewNoticies.Size = New Size(1756, 705)
+        DataGridViewNoticies.TabIndex = 1
+        ' 
+        ' Titol
+        ' 
+        Titol.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Titol.HeaderText = "Titol"
+        Titol.MinimumWidth = 6
+        Titol.Name = "Titol"
+        Titol.ReadOnly = True
+        Titol.Width = 6
+        ' 
+        ' Descripcio
+        ' 
+        Descripcio.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Descripcio.HeaderText = "Descripcio"
+        Descripcio.MinimumWidth = 6
+        Descripcio.Name = "Descripcio"
+        Descripcio.ReadOnly = True
+        Descripcio.Width = 6
+        ' 
+        ' Foto
+        ' 
+        Foto.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Foto.FillWeight = 200F
+        Foto.HeaderText = "Foto"
+        Foto.MinimumWidth = 6
+        Foto.Name = "Foto"
+        Foto.ReadOnly = True
+        Foto.Width = 6
+        ' 
+        ' Data
+        ' 
+        Data.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Data.HeaderText = "Data"
+        Data.MinimumWidth = 6
+        Data.Name = "Data"
+        Data.ReadOnly = True
+        Data.Width = 6
+        ' 
+        ' ButtonEnrere
+        ' 
+        ButtonEnrere.BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
+        ButtonEnrere.BackgroundImage = My.Resources.Resources.enrere
+        ButtonEnrere.BackgroundImageLayout = ImageLayout.Stretch
+        ButtonEnrere.FlatAppearance.BorderColor = Color.White
+        ButtonEnrere.FlatAppearance.BorderSize = 0
+        ButtonEnrere.FlatStyle = FlatStyle.Flat
+        ButtonEnrere.Location = New Point(12, 22)
+        ButtonEnrere.Name = "ButtonEnrere"
+        ButtonEnrere.Size = New Size(64, 45)
+        ButtonEnrere.TabIndex = 2
+        ButtonEnrere.UseVisualStyleBackColor = False
+        ' 
+        ' LabelTitolNoticies
+        ' 
+        LabelTitolNoticies.Anchor = AnchorStyles.Top
+        LabelTitolNoticies.AutoSize = True
+        LabelTitolNoticies.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelTitolNoticies.Location = New Point(784, 21)
+        LabelTitolNoticies.Name = "LabelTitolNoticies"
+        LabelTitolNoticies.Size = New Size(172, 46)
+        LabelTitolNoticies.TabIndex = 0
+        LabelTitolNoticies.Text = "NOTÍCIES"
+        LabelTitolNoticies.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' FormNoticies
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
+        ClientSize = New Size(1780, 805)
+        Controls.Add(DataGridViewNoticies)
+        Controls.Add(ButtonEnrere)
+        Controls.Add(LabelTitolNoticies)
+        Name = "FormNoticies"
+        Text = "FormNoticies"
+        CType(DataGridViewNoticies, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents LabelTitolNoticies As Label
+    Friend WithEvents DataGridViewNoticies As DataGridView
     Friend WithEvents ButtonEnrere As Button
     Friend WithEvents Titol As DataGridViewTextBoxColumn
     Friend WithEvents Descripcio As DataGridViewTextBoxColumn

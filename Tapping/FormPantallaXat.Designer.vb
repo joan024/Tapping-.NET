@@ -57,10 +57,10 @@ Partial Class FormPantallaXat
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.Location = New Point(97, 27)
         Label1.Name = "Label1"
-        Label1.Size = New Size(106, 32)
+        Label1.Size = New Size(100, 31)
         Label1.TabIndex = 2
         Label1.Text = "Tapping"' 
         ' PanelXat
