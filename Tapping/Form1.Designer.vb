@@ -22,7 +22,6 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         MenuStrip1 = New MenuStrip()
         ToolStripMenuItem4 = New ToolStripMenuItem()
         NoticiesToolStripMenuItem = New ToolStripMenuItem()
@@ -34,8 +33,9 @@ Partial Class Form1
         ToolStripMenuItem1 = New ToolStripMenuItem()
         PictureBox1 = New PictureBox()
         Button1 = New Button()
-        Label1 = New Label()
         Label2 = New Label()
+        Label3 = New Label()
+        Label1 = New Label()
         MenuStrip1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -105,8 +105,8 @@ Partial Class Form1
         ToolStripMenuItem1.Text = "ELS MEUS LOCALS"' 
         ' PictureBox1
         ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(187, 166)
+        PictureBox1.Image = My.Resources.Resources.LogoTappingSenseFondo
+        PictureBox1.Location = New Point(185, 166)
         PictureBox1.Margin = New Padding(4, 5, 4, 5)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(570, 474)
@@ -115,39 +115,50 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(1839, 1061)
+        Button1.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        Button1.Location = New Point(1924, 1089)
         Button1.Margin = New Padding(4, 5, 4, 5)
         Button1.Name = "Button1"
-        Button1.Size = New Size(194, 85)
+        Button1.Size = New Size(199, 78)
         Button1.TabIndex = 7
         Button1.Text = "EDITAR"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
+        ' Label2
+        ' 
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(916, 382)
+        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(731, 294)
+        Label2.TabIndex = 8
+        Label2.Text = "Label2"' 
+        ' Label3
+        ' 
+        Label3.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(916, 616)
+        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(1032, 403)
+        Label3.TabIndex = 9
+        Label3.Text = "Label3"' 
         ' Label1
         ' 
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(916, 224)
+        Label1.Location = New Point(916, 230)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(669, 416)
-        Label1.TabIndex = 8
+        Label1.Size = New Size(620, 142)
+        Label1.TabIndex = 10
         Label1.Text = "Label1"' 
-        ' Label2
-        ' 
-        Label2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(916, 650)
-        Label2.Margin = New Padding(4, 0, 4, 0)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(808, 359)
-        Label2.TabIndex = 9
-        Label2.Text = "Label2"' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(2345, 1248)
-        Controls.Add(Label2)
         Controls.Add(Label1)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
         Controls.Add(Button1)
         Controls.Add(PictureBox1)
         Controls.Add(MenuStrip1)
@@ -166,11 +177,12 @@ Partial Class Form1
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents NoticiesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PreguntesFreqüentsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents XatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TancaSessióToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
 End Class
