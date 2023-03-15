@@ -121,4 +121,10 @@
   <data name="LogoTappingSenseFondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoTappingSenseFondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="enviar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enviar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enrere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enrere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
