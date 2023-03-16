@@ -1,6 +1,6 @@
 ﻿Public Class IniciSessio
 
-    Private Sub Button1_Paint(sender As Object, e As PaintEventArgs) Handles Button1.Click
+    Private Sub Button1_Paint(sender As Object, e As PaintEventArgs) Handles Button1.Paint
         Dim buttonPath As Drawing2D.GraphicsPath = New Drawing2D.GraphicsPath()
         Dim rectangle As Rectangle = Button1.ClientRectangle
         rectangle.Inflate(-1, -1)
