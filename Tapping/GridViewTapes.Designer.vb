@@ -30,13 +30,14 @@ Partial Class GridViewTapes
         ' 
         ' DataGridViewTapes
         ' 
+        DataGridViewTapes.BackgroundColor = SystemColors.Control
         DataGridViewTapes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewTapes.Columns.AddRange(New DataGridViewColumn() {ID, NOM})
         DataGridViewTapes.Location = New Point(23, 12)
         DataGridViewTapes.Name = "DataGridViewTapes"
         DataGridViewTapes.RowHeadersWidth = 62
         DataGridViewTapes.RowTemplate.Height = 33
-        DataGridViewTapes.Size = New Size(1342, 635)
+        DataGridViewTapes.Size = New Size(828, 635)
         DataGridViewTapes.TabIndex = 4
         ' 
         ' ID
@@ -44,20 +45,20 @@ Partial Class GridViewTapes
         ID.HeaderText = "id"
         ID.MinimumWidth = 8
         ID.Name = "ID"
-        ID.Width = 150
+        ID.Width = 170
         ' 
         ' NOM
         ' 
         NOM.HeaderText = "NOM"
         NOM.MinimumWidth = 8
         NOM.Name = "NOM"
-        NOM.Width = 150
+        NOM.Width = 300
         ' 
         ' GridViewTapes
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1377, 659)
+        ClientSize = New Size(877, 659)
         Controls.Add(DataGridViewTapes)
         FormBorderStyle = FormBorderStyle.None
         Name = "GridViewTapes"

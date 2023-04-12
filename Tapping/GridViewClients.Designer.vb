@@ -39,7 +39,7 @@ Partial Class GridViewClients
         DataGridViewClients.Name = "DataGridViewClients"
         DataGridViewClients.RowHeadersWidth = 62
         DataGridViewClients.RowTemplate.Height = 33
-        DataGridViewClients.Size = New Size(1342, 635)
+        DataGridViewClients.Size = New Size(1370, 635)
         DataGridViewClients.TabIndex = 2
         ' 
         ' IDUSUARI
@@ -47,34 +47,34 @@ Partial Class GridViewClients
         IDUSUARI.HeaderText = "IDUSUARI"
         IDUSUARI.MinimumWidth = 8
         IDUSUARI.Name = "IDUSUARI"
-        IDUSUARI.Width = 150
+        IDUSUARI.Width = 140
         ' 
         ' NIF
         ' 
         NIF.HeaderText = "NIF"
         NIF.MinimumWidth = 8
         NIF.Name = "NIF"
-        NIF.Width = 150
+        NIF.Width = 220
         ' 
         ' TELEFON
         ' 
         TELEFON.HeaderText = "TELEFON"
         TELEFON.MinimumWidth = 8
         TELEFON.Name = "TELEFON"
-        TELEFON.Width = 150
+        TELEFON.Width = 260
         ' 
         ' PACK
         ' 
         PACK.HeaderText = "PACK"
         PACK.MinimumWidth = 8
         PACK.Name = "PACK"
-        PACK.Width = 150
+        PACK.Width = 230
         ' 
         ' GridViewClients
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1377, 659)
+        ClientSize = New Size(1426, 659)
         Controls.Add(DataGridViewClients)
         FormBorderStyle = FormBorderStyle.None
         Name = "GridViewClients"
