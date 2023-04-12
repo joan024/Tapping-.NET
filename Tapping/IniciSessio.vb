@@ -12,23 +12,7 @@ Public Class IniciSessio
     Dim idUsuari As String = ""
     Dim correu As String = ""
     Dim contrasenya As String = ""
-    Dim constantAdmin As String = "select usuari.correu,usuari.contrasenya, administrador.dni, administrador.cognom" _
-                                   & " from usuari" _
-                                   & " join administrador" _
-                                   & " on usuari.id = administrador.id_usuari" _
-                                   & " where administrador.id_usuari = "
 
-    Dim constantConsumidor As String = "select usuari.correu,usuari.contrasenya, consumidor.cognom" _
-                                        & " from usuari" _
-                                        & " join consumidor on" _
-                                        & " usuari.id = consumidor.id_usuari" _
-                                        & " where consumidor.id_usuari = "
-
-    Dim constantEmpresa As String = "Select usuari.correu,usuari.contrasenya, empresa.nif
-                                     from usuari 
-                                     join empresa 
-                                     on usuari.id = empresa.id_usuari 
-                                     where empresa.id_usuari = ;"
     Public Sub connectar()
         Try
             connexio = New MySqlConnection
@@ -40,33 +24,29 @@ Public Class IniciSessio
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Public Function mostrar(ByVal taula As String)
-        sentencia = "SELECT id,correu,contrasenya FROM " & Constants.TAULAUSUARI
-        connectar()
-        Dim comando As New MySqlCommand(sentencia, connexio)
-        Dim reader = comando.ExecuteReader()
-        Return reader
-    End Function
-    Public Function mostrar2(ByVal tipusTaula As String)
+
+    Public Function mostrar(ByVal tipusTaula As String)
+        ' segons el tipus d'usuari aplica una query i la guarda a la variable sentencia
         Select Case tipusTaula
             Case Constants.TAULAADMIN
-                sentencia = "SELECT id_usuari,dni,cognom FROM " & Constants.TAULAADMIN
+                sentencia = Constants.QUERYADMIN & idUsuari & ";"
             Case Constants.TAULAEMPRESA
-                sentencia = "SELECT id_usuari,nif FROM " & Constants.TAULAEMPRESA
+                sentencia = Constants.QUERYEMPRESA & idUsuari & ";"
             Case Constants.TAULAUSUARI
                 sentencia = "SELECT id,correu,contrasenya FROM " & Constants.TAULAUSUARI
         End Select
+        ' hi ho busca a la base de dades
         connectar()
         Dim comando As New MySqlCommand(sentencia, connexio)
         Dim reader = comando.ExecuteReader()
-        ' si de la base de dades no retorna res, enviaré un null
+        ' si de la base de dades no retorna res, enviaré un que sigui null
         If Not reader.HasRows Then
             reader = Nothing
         End If
         Return reader
     End Function
 
-    Private Sub ButtonLogin_Paint(sender As Object, e As PaintEventArgs) Handles ButtonLogin.Paint
+    Private Sub ButtonLogin_Paint(sender As Object, e As PaintEventArgs) Handles ButtonLogin.Paint 'Handles ButtonLogin.Paint
         ' fer que el button login l'efecte sigui d'eclipse
         Dim buttonPath As Drawing2D.GraphicsPath = New Drawing2D.GraphicsPath()
         Dim rectangle As Rectangle = ButtonLogin.ClientRectangle
@@ -75,19 +55,20 @@ Public Class IniciSessio
         ButtonLogin.Region = New Region(buttonPath)
     End Sub
 
-    Private Sub IniciSessio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub IniciSessio_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
         'la contrasenya surti amagada per defecte
         textContrasenya = TextBoxContrasenya.Text
         TextBoxContrasenya.UseSystemPasswordChar = True
         TextBoxContrasenya.Text = textContrasenya
-        MsgBox(constantAdmin)
+        'MsgBox(constantAdmin)
     End Sub
 
-    Private Sub ButtonSortir_Click(sender As Object, e As EventArgs) Handles ButtonSortir.Click
+    Private Sub ButtonSortir_Click(sender As Object, e As EventArgs) Handles ButtonSortir.Click 'Handles ButtonSortir.Click
         Me.Close()
     End Sub
-    Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
+
+    Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click 'Handles ButtonLogin.Click
         Dim text As String = TextBoxContrasenya.Text
         Dim hash As String = EncriptarSHA256(text)
         idUsuari = ""
@@ -106,47 +87,56 @@ Public Class IniciSessio
                 Exit While
             End If
         End While
-
+        ' si dintre de la taula usuaris troba alguna coindicencia segurirà
+        ' llavors en el seguent if busca el tipus d'usuari que es
         If (semafor) Then
-            ' Form1.Show()
-            ' Me.Hide()
             Dim tipusUsuari As Integer
             Dim contador As Integer = 0
-            Select Case contador
-                Case 0
-                    reader = mostrar2(Constants.TAULAEMPRESA)
-                    If (reader Is Nothing) Then
-                        contador += 1
-                    End If
-                Case 1
-                    reader = mostrar2(Constants.TAULAADMIN)
-            End Select
-            While reader.Read()
-                tipusUsuari = reader.GetString(0)
-                If (tipusUsuari = idUsuari) Then
-
+            Dim condicio As Boolean = False
+            Do While Not condicio
+                Select Case contador
+                    Case 0
+                        reader = mostrar(Constants.TAULAEMPRESA)
+                    Case 1
+                        reader = mostrar(Constants.TAULAADMIN)
+                End Select
+                ' l'if reader is nothing el faig servir perque entri a la taula empresa i a la taula admin suman un mes al contador
+                If (reader Is Nothing) Then
+                    contador += 1
                 End If
-            End While
+                ' segons el numero del contador la funcio opcions possibles fara el que toqui
+                If contador >= 2 Or Not reader Is Nothing Then
+                    condicio = True
+                    OpcionsPossibles(contador)
+                End If
+            Loop
         Else
-                MsgBox("Nom d'usuari o contrasenya incorrecta")
+            MsgBox("Nom d'usuari o contrasenya incorrecta")
         End If
-
-        'If (TextBoxUsuari.Text = "empresa" And TextBoxContrasenya.Text = "empresa") Then
-        '    Form1.Show()
-        '    Me.Hide()
-        'ElseIf (TextBoxUsuari.Text = "admin" And TextBoxContrasenya.Text = "admin") Then
-        '    Escriptori_Administradors.Show()
-        '    Me.Hide()
-        'Else
-        '    MsgBox("Contrasenya Incorrecte")
-        'End If
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Public Function OpcionsPossibles(ByVal contador As Integer)
+        Select Case contador
+            Case 0 'contador 0 significa entrar a l'interficie empresa
+                Form1.Show()
+                Me.Hide()
+            Case 1 'contador 1 significa entrar a l'interficie administradors
+                Escriptori_Administradors.Show()
+                Me.Hide()
+            Case 2 ' contador 2 significa errors
+                MsgBox("L'inici de sessió presenta un o varios errors: " & vbNewLine &
+                       "- Nom d'usuari o contrasenya incorrecte" & vbNewLine &
+                       "- Sigeu usuari consumidor")
+        End Select
+    End Function
+
+    ' panel perquè surti el formulari de sessio centrat
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint 'Handles Panel1.Paint
         Me.StartPosition = FormStartPosition.CenterScreen
     End Sub
 
-    Private Sub CheckBoxMostrarContrasenya_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxMostrarContrasenya.CheckedChanged
+    ' funció perque és mostri el text o el tapi depenent del checkbox
+    Private Sub CheckBoxMostrarContrasenya_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxMostrarContrasenya.CheckedChanged 'Handles CheckBoxMostrarContrasenya.CheckedChanged
         textContrasenya = TextBoxContrasenya.Text
         If (CheckBoxMostrarContrasenya.Checked) Then
             TextBoxContrasenya.UseSystemPasswordChar = False
@@ -158,19 +148,10 @@ Public Class IniciSessio
     End Sub
 
     ' configuració quan clicka enter al textbox de la contrasenya
-    Private Sub TextBoxContrasenya_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBoxContrasenya.KeyDown
+    Private Sub TextBoxContrasenya_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBoxContrasenya.KeyDown 'Handles TextBoxContrasenya.KeyDown
         If (e.KeyCode = Keys.Enter) Then
-            Dim text As String = TextBoxContrasenya.Text
-            Dim hash As String = EncriptarSHA256(text)
-            If (TextBoxUsuari.Text = "empresa" And TextBoxContrasenya.Text = "empresa") Then
-                Form1.Show()
-                Me.Hide()
-            ElseIf (TextBoxUsuari.Text = "admin" And TextBoxContrasenya.Text = "admin") Then
-                Escriptori_Administradors.Show()
-                Me.Hide()
-            Else
-                MsgBox("Contrasenya Incorrecte")
-            End If
+            ButtonLogin.PerformClick()
+            e.Handled = True
         End If
     End Sub
 
