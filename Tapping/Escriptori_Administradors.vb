@@ -5,6 +5,7 @@
     Private Sub Escriptori_Administradors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
         Label1.Visible = False
+        Panel2.Visible = False
     End Sub
 
     Private Sub ClientsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientsToolStripMenuItem.Click
@@ -14,6 +15,7 @@
         mostrarClients.TopLevel = False
         mostrarClients.Show()
         Panel1.Controls.Add(mostrarClients)
+        Panel2.Visible = True
     End Sub
 
     Private Sub TapesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TapesToolStripMenuItem.Click
@@ -23,18 +25,22 @@
         mostrarTapes.TopLevel = False
         mostrarTapes.Show()
         Panel1.Controls.Add(mostrarTapes)
+        Panel2.Visible = True
     End Sub
 
     Private Sub XatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles XatToolStripMenuItem.Click
         FormXatAdmin.Show()
+        Panel2.Visible = False
     End Sub
 
     Private Sub NotíciesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotíciesToolStripMenuItem.Click
         Form2NoticiesAdminvb.Show()
+        Panel2.Visible = False
     End Sub
 
     Private Sub PreguntesFrequentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreguntesFrequentsToolStripMenuItem.Click
         FormPFAdmin.Show()
+        Panel2.Visible = False
     End Sub
 
 End Class
