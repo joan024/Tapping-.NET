@@ -22,99 +22,21 @@ Partial Class FormPFAdmin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        GroupBox1 = New GroupBox()
-        Button3 = New Button()
-        Button2 = New Button()
-        Button1 = New Button()
-        TextBox3 = New TextBox()
-        LabelResposta = New Label()
-        TextBox2 = New TextBox()
-        LabelPregunta = New Label()
         DataGridViewPF = New DataGridView()
-        id = New DataGridViewTextBoxColumn()
-        pregunta = New DataGridViewTextBoxColumn()
-        resposta = New DataGridViewTextBoxColumn()
-        LabelTitolNoticies = New Label()
-        GroupBox1.SuspendLayout()
+        LabelTitolPF = New Label()
+        Panel1 = New Panel()
+        ButtonAccio = New Button()
+        RadioButtonEliminar = New RadioButton()
+        RadioButtonModificar = New RadioButton()
+        RadioButtonAfegir = New RadioButton()
+        TextBoxResposta = New TextBox()
+        TextBoxPregunta = New TextBox()
+        LabelResposta = New Label()
+        LabelPregunta = New Label()
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        GroupBox1.AutoSize = True
-        GroupBox1.Controls.Add(Button3)
-        GroupBox1.Controls.Add(Button2)
-        GroupBox1.Controls.Add(Button1)
-        GroupBox1.Controls.Add(TextBox3)
-        GroupBox1.Controls.Add(LabelResposta)
-        GroupBox1.Controls.Add(TextBox2)
-        GroupBox1.Controls.Add(LabelPregunta)
-        GroupBox1.Location = New Point(12, 646)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(1756, 148)
-        GroupBox1.TabIndex = 12
-        GroupBox1.TabStop = False
-        ' 
-        ' Button3
-        ' 
-        Button3.Location = New Point(1074, 93)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(94, 29)
-        Button3.TabIndex = 11
-        Button3.Text = "Eliminar"
-        Button3.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(1074, 58)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(94, 29)
-        Button2.TabIndex = 10
-        Button2.Text = "Modificar"
-        Button2.UseVisualStyleBackColor = True
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(1074, 23)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
-        Button1.TabIndex = 9
-        Button1.Text = "Afegir"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' TextBox3
-        ' 
-        TextBox3.Location = New Point(848, 74)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(125, 27)
-        TextBox3.TabIndex = 8
-        ' 
-        ' LabelResposta
-        ' 
-        LabelResposta.AutoSize = True
-        LabelResposta.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        LabelResposta.Location = New Point(846, 23)
-        LabelResposta.Name = "LabelResposta"
-        LabelResposta.Size = New Size(127, 38)
-        LabelResposta.TabIndex = 5
-        LabelResposta.Text = "Resposta"' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(616, 74)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(146, 27)
-        TextBox2.TabIndex = 7
-        ' 
-        ' LabelPregunta
-        ' 
-        LabelPregunta.AutoSize = True
-        LabelPregunta.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        LabelPregunta.Location = New Point(616, 23)
-        LabelPregunta.Name = "LabelPregunta"
-        LabelPregunta.Size = New Size(129, 38)
-        LabelPregunta.TabIndex = 4
-        LabelPregunta.Text = "Pregunta"' 
         ' DataGridViewPF
         ' 
         DataGridViewPF.AllowUserToAddRows = False
@@ -123,85 +45,146 @@ Partial Class FormPFAdmin
         DataGridViewPF.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewPF.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewPF.BackgroundColor = Color.White
-        DataGridViewPF.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        DataGridViewPF.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewPF.Columns.AddRange(New DataGridViewColumn() {id, pregunta, resposta})
-        DataGridViewPF.Location = New Point(12, 89)
+        DataGridViewPF.ColumnHeadersHeight = 29
+        DataGridViewPF.Location = New Point(12, 58)
         DataGridViewPF.Name = "DataGridViewPF"
         DataGridViewPF.ReadOnly = True
         DataGridViewPF.RowHeadersWidth = 51
         DataGridViewPF.RowTemplate.Height = 29
-        DataGridViewPF.Size = New Size(1756, 554)
-        DataGridViewPF.TabIndex = 11
+        DataGridViewPF.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridViewPF.Size = New Size(1756, 603)
+        DataGridViewPF.TabIndex = 23
         ' 
-        ' id
+        ' LabelTitolPF
         ' 
-        id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        id.HeaderText = "Id"
-        id.MinimumWidth = 6
-        id.Name = "id"
-        id.ReadOnly = True
-        id.Width = 51
+        LabelTitolPF.Anchor = AnchorStyles.Top
+        LabelTitolPF.AutoSize = True
+        LabelTitolPF.BackColor = Color.Transparent
+        LabelTitolPF.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelTitolPF.Location = New Point(704, 9)
+        LabelTitolPF.Name = "LabelTitolPF"
+        LabelTitolPF.Size = New Size(416, 46)
+        LabelTitolPF.TabIndex = 22
+        LabelTitolPF.Text = "PREGUNTES FREQÜENTS"
+        LabelTitolPF.TextAlign = ContentAlignment.TopCenter
         ' 
-        ' pregunta
+        ' Panel1
         ' 
-        pregunta.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        pregunta.HeaderText = "Pregunta"
-        pregunta.MinimumWidth = 6
-        pregunta.Name = "pregunta"
-        pregunta.ReadOnly = True
-        pregunta.Width = 97
+        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Panel1.Controls.Add(ButtonAccio)
+        Panel1.Controls.Add(RadioButtonEliminar)
+        Panel1.Controls.Add(RadioButtonModificar)
+        Panel1.Controls.Add(RadioButtonAfegir)
+        Panel1.Controls.Add(TextBoxResposta)
+        Panel1.Controls.Add(TextBoxPregunta)
+        Panel1.Controls.Add(LabelResposta)
+        Panel1.Controls.Add(LabelPregunta)
+        Panel1.Location = New Point(12, 667)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1756, 125)
+        Panel1.TabIndex = 24
         ' 
-        ' resposta
+        ' ButtonAccio
         ' 
-        resposta.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        resposta.HeaderText = "Resposta"
-        resposta.MinimumWidth = 6
-        resposta.Name = "resposta"
-        resposta.ReadOnly = True
-        resposta.Width = 98
+        ButtonAccio.Location = New Point(1627, 50)
+        ButtonAccio.Name = "ButtonAccio"
+        ButtonAccio.Size = New Size(94, 29)
+        ButtonAccio.TabIndex = 31
+        ButtonAccio.Text = "Fer l'acció"
+        ButtonAccio.UseVisualStyleBackColor = True
         ' 
-        ' LabelTitolNoticies
+        ' RadioButtonEliminar
         ' 
-        LabelTitolNoticies.Anchor = AnchorStyles.Top
-        LabelTitolNoticies.AutoSize = True
-        LabelTitolNoticies.BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
-        LabelTitolNoticies.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        LabelTitolNoticies.Location = New Point(700, 18)
-        LabelTitolNoticies.Name = "LabelTitolNoticies"
-        LabelTitolNoticies.Size = New Size(416, 46)
-        LabelTitolNoticies.TabIndex = 10
-        LabelTitolNoticies.Text = "PREGUNTES FREQÜENTS"
-        LabelTitolNoticies.TextAlign = ContentAlignment.TopCenter
+        RadioButtonEliminar.AutoSize = True
+        RadioButtonEliminar.Location = New Point(1527, 50)
+        RadioButtonEliminar.Name = "RadioButtonEliminar"
+        RadioButtonEliminar.Size = New Size(84, 24)
+        RadioButtonEliminar.TabIndex = 30
+        RadioButtonEliminar.Text = "Eliminar"
+        RadioButtonEliminar.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonModificar
+        ' 
+        RadioButtonModificar.AutoSize = True
+        RadioButtonModificar.Location = New Point(1417, 50)
+        RadioButtonModificar.Name = "RadioButtonModificar"
+        RadioButtonModificar.Size = New Size(94, 24)
+        RadioButtonModificar.TabIndex = 29
+        RadioButtonModificar.Text = "Modificar"
+        RadioButtonModificar.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonAfegir
+        ' 
+        RadioButtonAfegir.AutoSize = True
+        RadioButtonAfegir.Checked = True
+        RadioButtonAfegir.Location = New Point(1331, 50)
+        RadioButtonAfegir.Name = "RadioButtonAfegir"
+        RadioButtonAfegir.Size = New Size(71, 24)
+        RadioButtonAfegir.TabIndex = 28
+        RadioButtonAfegir.TabStop = True
+        RadioButtonAfegir.Text = "Afegir"
+        RadioButtonAfegir.UseVisualStyleBackColor = True
+        ' 
+        ' TextBoxResposta
+        ' 
+        TextBoxResposta.Location = New Point(107, 66)
+        TextBoxResposta.Name = "TextBoxResposta"
+        TextBoxResposta.Size = New Size(1185, 27)
+        TextBoxResposta.TabIndex = 13
+        ' 
+        ' TextBoxPregunta
+        ' 
+        TextBoxPregunta.Location = New Point(107, 29)
+        TextBoxPregunta.Name = "TextBoxPregunta"
+        TextBoxPregunta.Size = New Size(1185, 27)
+        TextBoxPregunta.TabIndex = 12
+        ' 
+        ' LabelResposta
+        ' 
+        LabelResposta.AutoSize = True
+        LabelResposta.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelResposta.Location = New Point(4, 62)
+        LabelResposta.Name = "LabelResposta"
+        LabelResposta.Size = New Size(97, 28)
+        LabelResposta.TabIndex = 11
+        LabelResposta.Text = "Resposta"
+        ' 
+        ' LabelPregunta
+        ' 
+        LabelPregunta.AutoSize = True
+        LabelPregunta.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelPregunta.Location = New Point(3, 25)
+        LabelPregunta.Name = "LabelPregunta"
+        LabelPregunta.Size = New Size(98, 28)
+        LabelPregunta.TabIndex = 10
+        LabelPregunta.Text = "Pregunta"
         ' 
         ' FormPFAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1781, 806)
-        Controls.Add(GroupBox1)
+        ClientSize = New Size(1780, 804)
+        Controls.Add(Panel1)
         Controls.Add(DataGridViewPF)
-        Controls.Add(LabelTitolNoticies)
+        Controls.Add(LabelTitolPF)
         Name = "FormPFAdmin"
         Text = "FormPFAdmin"
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
+        WindowState = FormWindowState.Maximized
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents LabelResposta As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents LabelPregunta As Label
     Friend WithEvents DataGridViewPF As DataGridView
-    Friend WithEvents LabelTitolNoticies As Label
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents pregunta As DataGridViewTextBoxColumn
-    Friend WithEvents resposta As DataGridViewTextBoxColumn
+    Friend WithEvents LabelTitolPF As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TextBoxResposta As TextBox
+    Friend WithEvents TextBoxPregunta As TextBox
+    Friend WithEvents LabelResposta As Label
+    Friend WithEvents LabelPregunta As Label
+    Friend WithEvents ButtonAccio As Button
+    Friend WithEvents RadioButtonEliminar As RadioButton
+    Friend WithEvents RadioButtonModificar As RadioButton
+    Friend WithEvents RadioButtonAfegir As RadioButton
 End Class
