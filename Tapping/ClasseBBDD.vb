@@ -13,9 +13,9 @@ Public Class ClasseBBDD
             connexio = New MySqlConnection
             With connexio
                 'Local
-                .ConnectionString = "server=192.168.1.150; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
+                '.ConnectionString = "server=192.168.1.150; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
                 'Remot
-                '.ConnectionString = "server=webapps.insjoanbrudieu.cat; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
+                .ConnectionString = "server=webapps.insjoanbrudieu.cat; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
                 'Localhost
                 '.ConnectionString = "server=localhost; user id=root; password=admin123; database=tapping; port=3306;Convert Zero Datetime=True;"
             End With
@@ -40,6 +40,25 @@ Public Class ClasseBBDD
     End Function
     Public Sub mostrarAdmin(ByVal taula As String, ByVal dgv As DataGridView)
         sentencia = "SELECT * FROM " & taula
+        Try
+            table = New DataTable
+            connectar()
+            adapter = New MySqlDataAdapter(sentencia, connexio)
+            adapter.Fill(table)
+            dgv.DataSource = table
+        Catch ex As Exception
+            MessageBox.Show("Error en 'mostrarAdmin' ClasseBBDD: " & ex.Message)
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Sub SelectEmpresa(ByVal taula As String, ByVal dgv As DataGridView)
+        Select Case taula
+            Case "noticia"
+                sentencia = "SELECT titol,descripcio,foto FROM " & taula & " WHERE data_inici <= '" & Format(Date.Today, "yyyy-MM-dd") & "' AND data_fi >= '" & Format(Date.Today, "yyyy-MM-dd") & "' OR data_fi = '0000-00-00'"
+            Case "preguntafrequent"
+                sentencia = "SELECT pregunta,resposta FROM " & taula & ""
+        End Select
         Try
             table = New DataTable
             connectar()

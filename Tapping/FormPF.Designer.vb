@@ -27,8 +27,6 @@ Partial Class FormPF
         ButtonEnrere = New Button()
         LabelTitolPF = New Label()
         DataGridViewPF = New DataGridView()
-        Pregunta = New DataGridViewTextBoxColumn()
-        Resposta = New DataGridViewTextBoxColumn()
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -40,9 +38,9 @@ Partial Class FormPF
         ButtonEnrere.FlatAppearance.BorderColor = Color.White
         ButtonEnrere.FlatAppearance.BorderSize = 0
         ButtonEnrere.FlatStyle = FlatStyle.Flat
-        ButtonEnrere.Location = New Point(12, 20)
+        ButtonEnrere.Location = New Point(12, 12)
         ButtonEnrere.Name = "ButtonEnrere"
-        ButtonEnrere.Size = New Size(64, 45)
+        ButtonEnrere.Size = New Size(64, 50)
         ButtonEnrere.TabIndex = 2
         ButtonEnrere.UseVisualStyleBackColor = False
         ' 
@@ -55,13 +53,16 @@ Partial Class FormPF
         LabelTitolPF.Name = "LabelTitolPF"
         LabelTitolPF.Size = New Size(416, 46)
         LabelTitolPF.TabIndex = 0
-        LabelTitolPF.Text = "PREGUNTES FREQÜENTS"' 
+        LabelTitolPF.Text = "PREGUNTES FREQÜENTS"
+        ' 
         ' DataGridViewPF
         ' 
         DataGridViewPF.AllowUserToAddRows = False
         DataGridViewPF.AllowUserToDeleteRows = False
         DataGridViewPF.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        DataGridViewPF.BackgroundColor = Color.White
+        DataGridViewPF.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewPF.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewPF.BackgroundColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
         DataGridViewPF.BorderStyle = BorderStyle.None
         DataGridViewPF.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewPF.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
@@ -75,7 +76,6 @@ Partial Class FormPF
         DataGridViewPF.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridViewPF.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewPF.ColumnHeadersVisible = False
-        DataGridViewPF.Columns.AddRange(New DataGridViewColumn() {Pregunta, Resposta})
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = Color.White
         DataGridViewCellStyle2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
@@ -85,33 +85,15 @@ Partial Class FormPF
         DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
         DataGridViewPF.DefaultCellStyle = DataGridViewCellStyle2
         DataGridViewPF.EnableHeadersVisualStyles = False
-        DataGridViewPF.Location = New Point(12, 87)
+        DataGridViewPF.Location = New Point(12, 68)
         DataGridViewPF.Name = "DataGridViewPF"
         DataGridViewPF.ReadOnly = True
         DataGridViewPF.RowHeadersVisible = False
         DataGridViewPF.RowHeadersWidth = 51
         DataGridViewPF.RowTemplate.Height = 50
         DataGridViewPF.RowTemplate.ReadOnly = True
-        DataGridViewPF.Size = New Size(1756, 707)
+        DataGridViewPF.Size = New Size(1756, 726)
         DataGridViewPF.TabIndex = 2
-        ' 
-        ' Pregunta
-        ' 
-        Pregunta.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Pregunta.HeaderText = "Pregunta"
-        Pregunta.MinimumWidth = 6
-        Pregunta.Name = "Pregunta"
-        Pregunta.ReadOnly = True
-        Pregunta.Width = 6
-        ' 
-        ' Resposta
-        ' 
-        Resposta.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Resposta.HeaderText = "Resposta"
-        Resposta.MinimumWidth = 6
-        Resposta.Name = "Resposta"
-        Resposta.ReadOnly = True
-        Resposta.Width = 6
         ' 
         ' FormPF
         ' 
@@ -124,6 +106,7 @@ Partial Class FormPF
         Controls.Add(LabelTitolPF)
         Name = "FormPF"
         Text = "FormPF"
+        WindowState = FormWindowState.Maximized
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -131,6 +114,4 @@ Partial Class FormPF
     Friend WithEvents ButtonEnrere As Button
     Friend WithEvents LabelTitolPF As Label
     Friend WithEvents DataGridViewPF As DataGridView
-    Friend WithEvents Pregunta As DataGridViewTextBoxColumn
-    Friend WithEvents Resposta As DataGridViewTextBoxColumn
 End Class
