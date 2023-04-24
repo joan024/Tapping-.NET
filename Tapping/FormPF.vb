@@ -1,9 +1,12 @@
 ﻿Imports System.ComponentModel
 
 Public Class FormPF
+    Dim taula As String = "preguntafrequent"
+    Dim bbdd As New ClasseBBDD
     Private Sub FormPF_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
-        DataGridViewPF.Rows.Add("Com i on puc utilitzar els meus descomptes?", "Pots utilitzar els teus descomptes, durant les dates indicades, al mateix o mateixos restaurants vàlids del descompte")
+        bbdd.SelectEmpresa(taula, 0, DataGridViewPF)
+    End Sub
+    Private Sub DataGridViewPF_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewPF.SelectionChanged
         DataGridViewPF.ClearSelection()
     End Sub
     Private Sub ButtonEnrere_Click(sender As Object, e As EventArgs) Handles ButtonEnrere.Click

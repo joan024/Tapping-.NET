@@ -27,13 +27,16 @@ Partial Class FormPantallaXat
         Label1 = New Label()
         PanelXat = New Panel()
         PictureBox1 = New PictureBox()
+        DataGridViewXat = New DataGridView()
         PanelXat.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridViewXat, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ButtonEnviar
         ' 
         ButtonEnviar.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        ButtonEnviar.BackColor = Color.LightGray
         ButtonEnviar.BackgroundImage = My.Resources.Resources.enviar
         ButtonEnviar.BackgroundImageLayout = ImageLayout.Stretch
         ButtonEnviar.Location = New Point(854, 551)
@@ -41,7 +44,7 @@ Partial Class FormPantallaXat
         ButtonEnviar.Name = "ButtonEnviar"
         ButtonEnviar.Size = New Size(47, 33)
         ButtonEnviar.TabIndex = 0
-        ButtonEnviar.UseVisualStyleBackColor = True
+        ButtonEnviar.UseVisualStyleBackColor = False
         ' 
         ' TextBoxXat
         ' 
@@ -62,7 +65,8 @@ Partial Class FormPantallaXat
         Label1.Name = "Label1"
         Label1.Size = New Size(100, 31)
         Label1.TabIndex = 2
-        Label1.Text = "Tapping"' 
+        Label1.Text = "Tapping"
+        ' 
         ' PanelXat
         ' 
         PanelXat.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
@@ -86,13 +90,34 @@ Partial Class FormPantallaXat
         PictureBox1.TabIndex = 4
         PictureBox1.TabStop = False
         ' 
+        ' DataGridViewXat
+        ' 
+        DataGridViewXat.AllowUserToAddRows = False
+        DataGridViewXat.AllowUserToDeleteRows = False
+        DataGridViewXat.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewXat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewXat.BackgroundColor = Color.White
+        DataGridViewXat.BorderStyle = BorderStyle.None
+        DataGridViewXat.CellBorderStyle = DataGridViewCellBorderStyle.None
+        DataGridViewXat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewXat.ColumnHeadersVisible = False
+        DataGridViewXat.Location = New Point(14, 111)
+        DataGridViewXat.Name = "DataGridViewXat"
+        DataGridViewXat.ReadOnly = True
+        DataGridViewXat.RowHeadersVisible = False
+        DataGridViewXat.RowHeadersWidth = 51
+        DataGridViewXat.RowTemplate.Height = 29
+        DataGridViewXat.Size = New Size(887, 411)
+        DataGridViewXat.TabIndex = 5
+        ' 
         ' FormPantallaXat
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.LightGray
+        BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(914, 600)
+        Controls.Add(DataGridViewXat)
         Controls.Add(PictureBox1)
         Controls.Add(PanelXat)
         Controls.Add(TextBoxXat)
@@ -105,6 +130,7 @@ Partial Class FormPantallaXat
         PanelXat.ResumeLayout(False)
         PanelXat.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridViewXat, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -114,4 +140,5 @@ Partial Class FormPantallaXat
     Friend WithEvents Label1 As Label
     Friend WithEvents PanelXat As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DataGridViewXat As DataGridView
 End Class

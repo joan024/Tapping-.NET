@@ -22,49 +22,58 @@ Partial Class FormComentaris
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        ListView1 = New ListView()
-        Puntuacio = New ColumnHeader()
-        Comentari = New ColumnHeader()
         Label1 = New Label()
+        DataGridViewComentaris = New DataGridView()
+        CType(DataGridViewComentaris, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' ListView1
-        ' 
-        ListView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        ListView1.Columns.AddRange(New ColumnHeader() {Puntuacio, Comentari})
-        ListView1.Location = New Point(12, 68)
-        ListView1.Name = "ListView1"
-        ListView1.Size = New Size(890, 520)
-        ListView1.TabIndex = 0
-        ListView1.UseCompatibleStateImageBehavior = False
         ' 
         ' Label1
         ' 
         Label1.Anchor = AnchorStyles.Top
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(353, 9)
+        Label1.Location = New Point(356, 9)
         Label1.Name = "Label1"
         Label1.Size = New Size(202, 46)
         Label1.TabIndex = 1
-        Label1.Text = "Comentaris"' 
+        Label1.Text = "Comentaris"
+        ' 
+        ' DataGridViewComentaris
+        ' 
+        DataGridViewComentaris.AllowUserToAddRows = False
+        DataGridViewComentaris.AllowUserToDeleteRows = False
+        DataGridViewComentaris.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewComentaris.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewComentaris.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewComentaris.BackgroundColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
+        DataGridViewComentaris.BorderStyle = BorderStyle.None
+        DataGridViewComentaris.CellBorderStyle = DataGridViewCellBorderStyle.None
+        DataGridViewComentaris.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewComentaris.ColumnHeadersVisible = False
+        DataGridViewComentaris.Location = New Point(12, 58)
+        DataGridViewComentaris.Name = "DataGridViewComentaris"
+        DataGridViewComentaris.ReadOnly = True
+        DataGridViewComentaris.RowHeadersVisible = False
+        DataGridViewComentaris.RowHeadersWidth = 51
+        DataGridViewComentaris.RowTemplate.Height = 29
+        DataGridViewComentaris.Size = New Size(890, 530)
+        DataGridViewComentaris.TabIndex = 2
+        ' 
         ' FormComentaris
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.LightGray
+        BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
         ClientSize = New Size(914, 600)
+        Controls.Add(DataGridViewComentaris)
         Controls.Add(Label1)
-        Controls.Add(ListView1)
         MinimumSize = New Size(932, 647)
         Name = "FormComentaris"
         Text = "FormComentaris"
+        CType(DataGridViewComentaris, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents Label1 As Label
-    Friend WithEvents Puntuacio As ColumnHeader
-    Friend WithEvents Comentari As ColumnHeader
+    Friend WithEvents DataGridViewComentaris As DataGridView
 End Class
