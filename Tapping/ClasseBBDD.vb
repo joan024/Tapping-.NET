@@ -15,9 +15,9 @@ Public Class ClasseBBDD
                 'Local
                 '.ConnectionString = "server=192.168.1.150; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
                 'Remot
-                .ConnectionString = "server=webapps.insjoanbrudieu.cat; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
+                '.ConnectionString = "server=webapps.insjoanbrudieu.cat; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
                 'Localhost
-                '.ConnectionString = "server=localhost; user id=root; password=admin123; database=tapping; port=3306;Convert Zero Datetime=True;"
+                .ConnectionString = "server=localhost; user id=root; password=admin123; database=tapping; port=3306;Convert Zero Datetime=True;"
             End With
             connexio.Open()
             'MessageBox.Show("Connectat al servidor")
@@ -52,12 +52,14 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-    Public Sub SelectEmpresa(ByVal taula As String, ByVal dgv As DataGridView)
+    Public Sub SelectEmpresa(ByVal taula As String, ByVal id As String, ByVal dgv As DataGridView)
         Select Case taula
             Case "noticia"
                 sentencia = "SELECT titol,descripcio,foto FROM " & taula & " WHERE data_inici <= '" & Format(Date.Today, "yyyy-MM-dd") & "' AND data_fi >= '" & Format(Date.Today, "yyyy-MM-dd") & "' OR data_fi = '0000-00-00'"
             Case "preguntafrequent"
                 sentencia = "SELECT pregunta,resposta FROM " & taula & ""
+            Case "valoracio"
+                sentencia = "SELECT puntuacio,comentari FROM " & taula & " WHERE id_local = '" & id & "'"
         End Select
         Try
             table = New DataTable
@@ -112,6 +114,20 @@ Public Class ClasseBBDD
             End If
         Catch ex As Exception
             MessageBox.Show("Error 'afegirAdmin' ClasseBBDD: " & ex.Message)
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Sub MissatgesXatEmpresa(ByVal id As String, ByVal dgv As DataGridView)
+        sentencia = "SELECT lineaxat.usuari,lineaxat.missatge FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id WHERE xat.id_empresa = '" & id & "'"
+        Try
+            table = New DataTable
+            connectar()
+            adapter = New MySqlDataAdapter(sentencia, connexio)
+            adapter.Fill(table)
+            dgv.DataSource = table
+        Catch ex As Exception
+            MessageBox.Show("Error 'MissatgeXat' ClasseBBDD: " & ex.Message)
         Finally
             desconnectar()
         End Try
