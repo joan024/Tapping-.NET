@@ -29,6 +29,7 @@ Partial Class Escriptori_Administradors
         XatToolStripMenuItem = New ToolStripMenuItem()
         NotíciesToolStripMenuItem = New ToolStripMenuItem()
         PreguntesFrequentsToolStripMenuItem = New ToolStripMenuItem()
+        GenerarArxiuDeTextToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Panel1 = New Panel()
         Panel2 = New Panel()
@@ -42,6 +43,7 @@ Partial Class Escriptori_Administradors
         LabelNif = New Label()
         LabelTelefon = New Label()
         LabelPack = New Label()
+        TancaSessióToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -52,7 +54,7 @@ Partial Class Escriptori_Administradors
         MenuStrip1.Dock = DockStyle.Left
         MenuStrip1.Font = New Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point)
         MenuStrip1.ImageScalingSize = New Size(24, 24)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem, GenerarArxiuDeTextToolStripMenuItem, TancaSessióToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(9, 2, 0, 2)
@@ -90,6 +92,11 @@ Partial Class Escriptori_Administradors
         PreguntesFrequentsToolStripMenuItem.Name = "PreguntesFrequentsToolStripMenuItem"
         PreguntesFrequentsToolStripMenuItem.Size = New Size(273, 33)
         PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"' 
+        ' GenerarArxiuDeTextToolStripMenuItem
+        ' 
+        GenerarArxiuDeTextToolStripMenuItem.Name = "GenerarArxiuDeTextToolStripMenuItem"
+        GenerarArxiuDeTextToolStripMenuItem.Size = New Size(273, 33)
+        GenerarArxiuDeTextToolStripMenuItem.Text = "Generar Arxiu"' 
         ' Label1
         ' 
         Label1.AutoSize = True
@@ -223,6 +230,11 @@ Partial Class Escriptori_Administradors
         LabelPack.Size = New Size(95, 45)
         LabelPack.TabIndex = 5
         LabelPack.Text = "PACK"' 
+        ' TancaSessióToolStripMenuItem
+        ' 
+        TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
+        TancaSessióToolStripMenuItem.Size = New Size(273, 33)
+        TancaSessióToolStripMenuItem.Text = "Tanca Sessió"' 
         ' Escriptori_Administradors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -265,4 +277,6 @@ Partial Class Escriptori_Administradors
     Friend WithEvents LabelNif As Label
     Friend WithEvents LabelTelefon As Label
     Friend WithEvents LabelPack As Label
+    Friend WithEvents GenerarArxiuDeTextToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TancaSessióToolStripMenuItem As ToolStripMenuItem
 End Class

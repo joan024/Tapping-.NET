@@ -30,6 +30,7 @@ Partial Class GridViewClients
         ' 
         DataGridViewClients.AllowUserToAddRows = False
         DataGridViewClients.AllowUserToDeleteRows = False
+        DataGridViewClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewClients.BackgroundColor = Color.White
         DataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewClients.Location = New Point(23, 12)

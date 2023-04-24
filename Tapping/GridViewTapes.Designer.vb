@@ -23,36 +23,22 @@ Partial Class GridViewTapes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         DataGridViewTapes = New DataGridView()
-        ID = New DataGridViewTextBoxColumn()
-        NOM = New DataGridViewTextBoxColumn()
         CType(DataGridViewTapes, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DataGridViewTapes
         ' 
+        DataGridViewTapes.AllowUserToAddRows = False
+        DataGridViewTapes.AllowUserToDeleteRows = False
         DataGridViewTapes.BackgroundColor = Color.White
         DataGridViewTapes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewTapes.Columns.AddRange(New DataGridViewColumn() {ID, NOM})
         DataGridViewTapes.Location = New Point(23, 12)
         DataGridViewTapes.Name = "DataGridViewTapes"
+        DataGridViewTapes.ReadOnly = True
         DataGridViewTapes.RowHeadersWidth = 62
         DataGridViewTapes.RowTemplate.Height = 33
         DataGridViewTapes.Size = New Size(767, 635)
         DataGridViewTapes.TabIndex = 4
-        ' 
-        ' ID
-        ' 
-        ID.HeaderText = "id"
-        ID.MinimumWidth = 8
-        ID.Name = "ID"
-        ID.Width = 170
-        ' 
-        ' NOM
-        ' 
-        NOM.HeaderText = "NOM"
-        NOM.MinimumWidth = 8
-        NOM.Name = "NOM"
-        NOM.Width = 300
         ' 
         ' GridViewTapes
         ' 
@@ -68,6 +54,4 @@ Partial Class GridViewTapes
     End Sub
 
     Friend WithEvents DataGridViewTapes As DataGridView
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents NOM As DataGridViewTextBoxColumn
 End Class

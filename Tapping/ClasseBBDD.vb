@@ -39,7 +39,11 @@ Public Class ClasseBBDD
         Return reader
     End Function
     Public Sub mostrarAdmin(ByVal taula As String, ByVal dgv As DataGridView)
-        sentencia = "SELECT * FROM " & taula
+        Select Case taula
+            Case "empresa"
+                sentencia = "SELECT id_usuari,nif,telefon,pack,usuari.nom, usuari.correu, usuari.actiu FROM empresa INNER JOIN usuari on empresa.id_usuari = usuari.id where usuari.actiu = 1"
+        End Select
+        'sentencia = "SELECT * FROM " & taula
         Try
             table = New DataTable
             connectar()
@@ -84,7 +88,7 @@ Public Class ClasseBBDD
             Case "categoria"
                 sentencia = "INSERT INTO categoria (nom) VALUES ('" & dades(0) & "')"
             Case "empresa"
-                sentencia = "INSERT INTO empresa (id_usuari,nif,telefon,pack) VALUES (LAST_INSERT_ID(),'" & dades(0) & "','" & dades(1) & "','" & dades(2) & "')"
+                sentencia = "INSERT INTO empresa (id_usuari,nif,telefon,pack) VALUES ('" & dades(0) & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "')"
             Case "usuari"
                 sentencia = "INSERT INTO usuari(nom,correu,contrasenya,data_registre,actiu) VALUES ('" & dades(0) & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','" & dades(4) & "')"
         End Select
@@ -92,10 +96,8 @@ Public Class ClasseBBDD
         Try
             connectar()
             comanda = New MySqlCommand(sentencia, connexio)
-            If comanda.ExecuteNonQuery() > 0 Then
+            If comanda.ExecuteNonQuery() > 0 And taula.Equals("empresa") Then
                 mostrarAdmin(taula, dgv)
-            Else
-                MsgBox("Error al fer la inserció", vbExclamation)
             End If
         Catch ex As Exception
             MessageBox.Show("Error 'afegirAdmin' ClasseBBDD: " & ex.Message)
@@ -105,8 +107,14 @@ Public Class ClasseBBDD
         Return retornar
     End Function
     Public Function buscarUsuari(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView) As String
-        sentencia = "SELECT id FROM usuari WHERE nom='" & dades(0) & "' AND correu='" & dades(1) & "' AND contrasenya='" & dades(2) & "' AND data_registre='" & dades(3) & "' AND actiu='" & dades(4) & "'"
         Dim retornar As String = ""
+        Select Case taula
+            Case "usuari"
+                sentencia = "SELECT id FROM usuari WHERE nom='" & dades(0) & "' AND correu='" & dades(1) & "' AND contrasenya='" & dades(2) & "' AND data_registre='" & dades(3) & "' AND actiu='" & dades(4) & "'"
+            Case "empresa"
+                sentencia = "SELECT id FROM empresa WHERE nif='" & dades(0) & "' AND telefon='" & dades(1) & "' AND pack='" & dades(2) & "'"
+        End Select
+
         Try
             table = New DataTable
             connectar()
@@ -123,7 +131,8 @@ Public Class ClasseBBDD
         Return retornar
     End Function
     Public Sub eliminar(ByVal taula As String, ByVal dgv As DataGridView, ByVal id As String)
-        sentencia = "DELETE FROM " & taula & " WHERE id = " & id
+        'sentencia = "DELETE FROM " & taula & " WHERE id = " & id
+        sentencia = "UPDATE usuari SET actiu = 0 where id = " & id
         Try
             connectar()
             comanda = New MySqlCommand(sentencia, connexio)

@@ -4,16 +4,26 @@ Public Class GridViewClients
     Private bbdd As New ClasseBBDD
     Dim taulaClients As String = "empresa"
     Dim taulaUsuari As String = "usuari"
-    Public Sub selectAdmin()
+
+    Public Sub selectTaula()
         bbdd.mostrarAdmin(taulaClients, DataGridViewClients)
     End Sub
-    Public Sub updateAdmin(ByVal dades() As String, ByVal id As Integer)
+    Public Sub updateClient(ByVal nif As String, ByVal telefon As String, ByVal pack As String, ByVal id As String)
+        'Dim dades As String() = {nif, telefon, pack}
+        Dim dades(3) As String
+        dades(0) = nif
+        dades(1) = telefon
+        dades(2) = pack
         bbdd.modificarAdmin(taulaClients, dades, id, DataGridViewClients)
     End Sub
-    Public Sub insertEmpresa(ByVal dades() As String)
+    Public Sub insertClient(ByVal idUsuari As String, ByVal nif As String, ByVal telefon As String, ByVal pack As String)
+        Dim dades As String() = {idUsuari, nif, telefon, pack}
         bbdd.afegirAdmin(taulaClients, dades, DataGridViewClients)
     End Sub
-    Public Function insertUser(ByVal nom As String, ByVal correu As String, ByVal contrasenya As String, ByVal data_registre As String, ByVal actiu As String)
+    Public Sub deleteClient()
+        bbdd.eliminar(taulaClients, DataGridViewClients, EnviarId)
+    End Sub
+    Public Function insertUsuari(ByVal nom As String, ByVal correu As String, ByVal contrasenya As String, ByVal data_registre As String, ByVal actiu As String)
         Dim dades(4) As String
         dades(0) = nom
         dades(1) = correu
