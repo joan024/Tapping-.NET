@@ -18,7 +18,11 @@ Public Class Form2NoticiesAdminvb
         TextBoxFoto.Text = DataGridViewNoticies.CurrentRow.Cells(3).Value
         DateTimePickerPublicacio.Text = DataGridViewNoticies.CurrentRow.Cells(4).Value
         DateTimePickerInici.Text = DataGridViewNoticies.CurrentRow.Cells(5).Value
-        DateTimePickerFi.Text = DataGridViewNoticies.CurrentRow.Cells(6).Value
+        If IsDBNull(DataGridViewNoticies.CurrentRow.Cells(6).Value) Then
+            DateTimePickerFi.Text = Date.Today
+        Else
+            DateTimePickerFi.Text = DataGridViewNoticies.CurrentRow.Cells(6).Value
+        End If
     End Sub
     Private Sub RadioButtonAfegir_Click(sender As Object, e As EventArgs) Handles RadioButtonAfegir.Click
         DataGridViewNoticies.ClearSelection()
