@@ -2,7 +2,7 @@
     Private taula As String = "preguntafrequent"
     Private bbdd As New ClasseBBDD
     Private Sub FormPFAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        bbdd.mostrarAdmin(taula, DataGridViewPF)
+        bbdd.SelectAdmin(taula, DataGridViewPF)
         DataGridViewPF.ClearSelection()
         buid()
     End Sub
@@ -16,13 +16,13 @@
     End Sub
     Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
         If RadioButtonAfegir.Checked Then
-            bbdd.afegirAdmin(taula, EnviarDades(), DataGridViewPF)
+            bbdd.InsertAdmin(taula, EnviarDades(), DataGridViewPF)
         ElseIf RadioButtonModificar.Checked Then
-            bbdd.modificarAdmin(taula, EnviarDades(), EnviarId(), DataGridViewPF)
+            bbdd.UpdateAdmin(taula, EnviarDades(), EnviarId(), DataGridViewPF)
         ElseIf RadioButtonEliminar.Checked Then
         Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
             If r = vbYes Then
-                bbdd.eliminar(taula, DataGridViewPF, EnviarId())
+                bbdd.Delete(taula, DataGridViewPF, EnviarId())
             End If
         End If
     End Sub

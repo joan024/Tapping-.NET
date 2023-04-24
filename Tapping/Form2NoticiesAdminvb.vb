@@ -5,7 +5,7 @@ Public Class Form2NoticiesAdminvb
     Private taula As String = "noticia"
     Private bbdd As New ClasseBBDD
     Private Sub Form2NoticiesAdminvb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        bbdd.mostrarAdmin(taula, DataGridViewNoticies)
+        bbdd.SelectAdmin(taula, DataGridViewNoticies)
         DataGridViewNoticies.Columns(4).DefaultCellStyle.Format = "yyyy-MM-dd"
         DataGridViewNoticies.Columns(5).DefaultCellStyle.Format = "yyyy-MM-dd"
         DataGridViewNoticies.Columns(6).DefaultCellStyle.Format = "yyyy-MM-dd"
@@ -30,13 +30,13 @@ Public Class Form2NoticiesAdminvb
     End Sub
     Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
         If RadioButtonAfegir.Checked Then
-            bbdd.afegirAdmin(taula, EnviarDades(), DataGridViewNoticies)
+            bbdd.InsertAdmin(taula, EnviarDades(), DataGridViewNoticies)
         ElseIf RadioButtonModificar.Checked Then
-            bbdd.modificarAdmin(taula, EnviarDades(), EnviarId(), DataGridViewNoticies)
+            bbdd.UpdateAdmin(taula, EnviarDades(), EnviarId(), DataGridViewNoticies)
         ElseIf RadioButtonEliminar.Checked Then
             Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
             If r = vbYes Then
-                bbdd.eliminar(taula, DataGridViewNoticies, EnviarId())
+                bbdd.Delete(taula, DataGridViewNoticies, EnviarId())
             End If
         End If
     End Sub

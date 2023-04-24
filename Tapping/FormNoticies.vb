@@ -13,8 +13,8 @@ Public Class FormNoticies
         Form1.Show()
         Me.Close()
     End Sub
-    'Private Sub FormNoticies_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
-    '    Form1.Show()
-    '    Me.Close()
-    'End Sub
+    Private Sub FormNoticies_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+        Form1.Show()
+        Me.Close()
+    End Sub
 End Class
