@@ -22,52 +22,54 @@ Partial Class FormXatAdmin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        PictureBox1 = New PictureBox()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        PictureBoxEmpresa = New PictureBox()
         PanelXat = New Panel()
-        Label1 = New Label()
+        LabelXat = New Label()
         TextBoxXat = New TextBox()
         ButtonEnviar = New Button()
         DataGridViewEmpreses = New DataGridView()
-        Empresa = New DataGridViewTextBoxColumn()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        DataGridViewXat = New DataGridView()
+        CType(PictureBoxEmpresa, ComponentModel.ISupportInitialize).BeginInit()
         PanelXat.SuspendLayout()
         CType(DataGridViewEmpreses, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridViewXat, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' PictureBox1
+        ' PictureBoxEmpresa
         ' 
-        PictureBox1.BackColor = Color.White
-        PictureBox1.BackgroundImage = My.Resources.Resources.LogoTappingSenseFondo
-        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox1.Location = New Point(0, 0)
-        PictureBox1.Margin = New Padding(3, 4, 3, 4)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(90, 88)
-        PictureBox1.TabIndex = 8
-        PictureBox1.TabStop = False
+        PictureBoxEmpresa.BackColor = Color.White
+        PictureBoxEmpresa.BackgroundImage = My.Resources.Resources.LogoTappingSenseFondo
+        PictureBoxEmpresa.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBoxEmpresa.Location = New Point(0, 0)
+        PictureBoxEmpresa.Margin = New Padding(3, 4, 3, 4)
+        PictureBoxEmpresa.Name = "PictureBoxEmpresa"
+        PictureBoxEmpresa.Size = New Size(90, 88)
+        PictureBoxEmpresa.TabIndex = 8
+        PictureBoxEmpresa.TabStop = False
         ' 
         ' PanelXat
         ' 
         PanelXat.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         PanelXat.BackColor = Color.White
-        PanelXat.Controls.Add(Label1)
-        PanelXat.Controls.Add(PictureBox1)
+        PanelXat.Controls.Add(LabelXat)
+        PanelXat.Controls.Add(PictureBoxEmpresa)
         PanelXat.Location = New Point(141, 13)
         PanelXat.Margin = New Padding(3, 4, 3, 4)
         PanelXat.Name = "PanelXat"
         PanelXat.Size = New Size(760, 88)
         PanelXat.TabIndex = 7
         ' 
-        ' Label1
+        ' LabelXat
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(97, 27)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(100, 31)
-        Label1.TabIndex = 2
-        Label1.Text = "Tapping"' 
+        LabelXat.AutoSize = True
+        LabelXat.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelXat.Location = New Point(97, 27)
+        LabelXat.Name = "LabelXat"
+        LabelXat.Size = New Size(100, 31)
+        LabelXat.TabIndex = 2
+        LabelXat.Text = "Tapping"
+        ' 
         ' TextBoxXat
         ' 
         TextBoxXat.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
@@ -82,6 +84,7 @@ Partial Class FormXatAdmin
         ' ButtonEnviar
         ' 
         ButtonEnviar.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        ButtonEnviar.BackColor = Color.White
         ButtonEnviar.BackgroundImage = My.Resources.Resources.enviar
         ButtonEnviar.BackgroundImageLayout = ImageLayout.Stretch
         ButtonEnviar.Location = New Point(854, 555)
@@ -89,7 +92,7 @@ Partial Class FormXatAdmin
         ButtonEnviar.Name = "ButtonEnviar"
         ButtonEnviar.Size = New Size(47, 33)
         ButtonEnviar.TabIndex = 5
-        ButtonEnviar.UseVisualStyleBackColor = True
+        ButtonEnviar.UseVisualStyleBackColor = False
         ' 
         ' DataGridViewEmpreses
         ' 
@@ -104,38 +107,51 @@ Partial Class FormXatAdmin
         DataGridViewEmpreses.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewEmpreses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewEmpreses.ColumnHeadersVisible = False
-        DataGridViewEmpreses.Columns.AddRange(New DataGridViewColumn() {Empresa})
-        DataGridViewEmpreses.Location = New Point(12, 12)
+        DataGridViewEmpreses.Location = New Point(12, 108)
         DataGridViewEmpreses.Name = "DataGridViewEmpreses"
         DataGridViewEmpreses.ReadOnly = True
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridViewEmpreses.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Control
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        DataGridViewEmpreses.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         DataGridViewEmpreses.RowHeadersVisible = False
         DataGridViewEmpreses.RowHeadersWidth = 51
         DataGridViewEmpreses.RowTemplate.Height = 29
-        DataGridViewEmpreses.Size = New Size(123, 576)
+        DataGridViewEmpreses.Size = New Size(123, 420)
         DataGridViewEmpreses.TabIndex = 8
         ' 
-        ' Empresa
+        ' DataGridViewXat
         ' 
-        Empresa.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Empresa.HeaderText = "empresa"
-        Empresa.MinimumWidth = 6
-        Empresa.Name = "Empresa"
-        Empresa.ReadOnly = True
-        Empresa.Width = 6
+        DataGridViewXat.AllowUserToAddRows = False
+        DataGridViewXat.AllowUserToDeleteRows = False
+        DataGridViewXat.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewXat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewXat.BackgroundColor = Color.White
+        DataGridViewXat.BorderStyle = BorderStyle.None
+        DataGridViewXat.CellBorderStyle = DataGridViewCellBorderStyle.None
+        DataGridViewXat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewXat.ColumnHeadersVisible = False
+        DataGridViewXat.Location = New Point(141, 108)
+        DataGridViewXat.MultiSelect = False
+        DataGridViewXat.Name = "DataGridViewXat"
+        DataGridViewXat.ReadOnly = True
+        DataGridViewXat.RowHeadersVisible = False
+        DataGridViewXat.RowHeadersWidth = 51
+        DataGridViewXat.RowTemplate.Height = 29
+        DataGridViewXat.Size = New Size(760, 420)
+        DataGridViewXat.TabIndex = 9
         ' 
         ' FormXatAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.LightGray
         ClientSize = New Size(914, 600)
+        Controls.Add(DataGridViewXat)
         Controls.Add(DataGridViewEmpreses)
         Controls.Add(PanelXat)
         Controls.Add(TextBoxXat)
@@ -143,19 +159,20 @@ Partial Class FormXatAdmin
         MinimumSize = New Size(932, 647)
         Name = "FormXatAdmin"
         Text = "FormXatAdmin"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBoxEmpresa, ComponentModel.ISupportInitialize).EndInit()
         PanelXat.ResumeLayout(False)
         PanelXat.PerformLayout()
         CType(DataGridViewEmpreses, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridViewXat, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBoxEmpresa As PictureBox
     Friend WithEvents PanelXat As Panel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LabelXat As Label
     Friend WithEvents TextBoxXat As TextBox
     Friend WithEvents ButtonEnviar As Button
     Friend WithEvents DataGridViewEmpreses As DataGridView
-    Friend WithEvents Empresa As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewXat As DataGridView
 End Class
