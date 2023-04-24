@@ -119,7 +119,7 @@ Public Class ClasseBBDD
         End Try
     End Sub
     Public Sub MissatgesXatEmpresa(ByVal id As String, ByVal dgv As DataGridView)
-        sentencia = "SELECT lineaxat.usuari,lineaxat.missatge FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id WHERE xat.id_empresa = '" & id & "'"
+        sentencia = "SELECT lineaxat.usuari,lineaxat.missatge,lineaxat.id_xat FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id WHERE xat.id_empresa = '" & id & "'"
         Try
             table = New DataTable
             connectar()
@@ -128,6 +128,22 @@ Public Class ClasseBBDD
             dgv.DataSource = table
         Catch ex As Exception
             MessageBox.Show("Error 'MissatgeXat' ClasseBBDD: " & ex.Message)
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Sub InsertMissatgeEmpresa(ByVal idXat As String, ByVal missatge As String, ByVal id As String, ByVal dgv As DataGridView)
+        sentencia = "INSERT INTO lineaxat (id_xat,usuari,missatge,temps) VALUES (" & idXat & ",2,'" & missatge & "','" & Format(Date.Today, "yyyy-MM-dd") & "')"
+        Try
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            If comanda.ExecuteNonQuery() > 0 Then
+                MissatgesXatEmpresa(id, dgv)
+            Else
+                MsgBox("ERROR en fer la inserció del missatge", vbExclamation)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error 'InsertXat' ClasseBBDD: " & ex.Message)
         Finally
             desconnectar()
         End Try

@@ -92,6 +92,8 @@ Partial Class FormPantallaXat
         ' 
         ' DataGridViewXat
         ' 
+        DataGridViewXat.AllowUserToAddRows = False
+        DataGridViewXat.AllowUserToDeleteRows = False
         DataGridViewXat.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridViewXat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         DataGridViewXat.BackgroundColor = Color.White
@@ -101,6 +103,7 @@ Partial Class FormPantallaXat
         DataGridViewXat.ColumnHeadersVisible = False
         DataGridViewXat.Location = New Point(14, 111)
         DataGridViewXat.Name = "DataGridViewXat"
+        DataGridViewXat.ReadOnly = True
         DataGridViewXat.RowHeadersVisible = False
         DataGridViewXat.RowHeadersWidth = 51
         DataGridViewXat.RowTemplate.Height = 29
