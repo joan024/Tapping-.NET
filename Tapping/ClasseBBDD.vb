@@ -52,27 +52,6 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-    Public Sub SelectEmpresa(ByVal taula As String, ByVal id As String, ByVal dgv As DataGridView)
-        Select Case taula
-            Case "noticia"
-                sentencia = "SELECT titol,descripcio,foto FROM " & taula & " WHERE data_inici <= '" & Format(Date.Today, "yyyy-MM-dd") & "' AND (data_fi >= '" & Format(Date.Today, "yyyy-MM-dd") & "' OR data_fi IS NULL)"
-            Case "preguntafrequent"
-                sentencia = "SELECT pregunta,resposta FROM " & taula & ""
-            Case "valoracio"
-                sentencia = "SELECT puntuacio,comentari FROM " & taula & " WHERE id_local = '" & id & "'"
-        End Select
-        Try
-            table = New DataTable
-            connectar()
-            adapter = New MySqlDataAdapter(sentencia, connexio)
-            adapter.Fill(table)
-            dgv.DataSource = table
-        Catch ex As Exception
-            MessageBox.Show("Error en 'mostrarAdmin' ClasseBBDD: " & ex.Message)
-        Finally
-            desconnectar()
-        End Try
-    End Sub
     Public Sub modificarAdmin(ByVal taula As String, ByVal dgv As DataGridView, ByVal numColMod As Integer, ByVal text As String, ByVal numColId As Integer, ByVal id As Integer)
         sentencia = "UPDATE " & taula & " SET " & dgv.Columns(numColMod).Name & "= '" & text & "' WHERE " & dgv.Columns(numColId).Name & " = " & id
         Try
@@ -114,36 +93,6 @@ Public Class ClasseBBDD
             End If
         Catch ex As Exception
             MessageBox.Show("Error 'afegirAdmin' ClasseBBDD: " & ex.Message)
-        Finally
-            desconnectar()
-        End Try
-    End Sub
-    Public Sub MissatgesXatEmpresa(ByVal id As String, ByVal dgv As DataGridView)
-        sentencia = "SELECT lineaxat.usuari,lineaxat.missatge,lineaxat.id_xat FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id WHERE xat.id_empresa = '" & id & "'"
-        Try
-            table = New DataTable
-            connectar()
-            adapter = New MySqlDataAdapter(sentencia, connexio)
-            adapter.Fill(table)
-            dgv.DataSource = table
-        Catch ex As Exception
-            MessageBox.Show("Error 'MissatgeXat' ClasseBBDD: " & ex.Message)
-        Finally
-            desconnectar()
-        End Try
-    End Sub
-    Public Sub InsertMissatgeEmpresa(ByVal idXat As String, ByVal missatge As String, ByVal id As String, ByVal dgv As DataGridView)
-        sentencia = "INSERT INTO lineaxat (id_xat,usuari,missatge,temps) VALUES (" & idXat & ",2,'" & missatge & "','" & Format(Date.Today, "yyyy-MM-dd") & "')"
-        Try
-            connectar()
-            comanda = New MySqlCommand(sentencia, connexio)
-            If comanda.ExecuteNonQuery() > 0 Then
-                MissatgesXatEmpresa(id, dgv)
-            Else
-                MsgBox("ERROR en fer la inserció del missatge", vbExclamation)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error 'InsertXat' ClasseBBDD: " & ex.Message)
         Finally
             desconnectar()
         End Try
