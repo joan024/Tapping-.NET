@@ -12,12 +12,17 @@ Public Class IniciSessio
     Dim idUsuari As String = ""
     Dim correu As String = ""
     Dim contrasenya As String = ""
+    Private comanda As New MySqlCommand
+
+    ' sentencia :
+    ' Dim novaSentencia = "UPDATE usuari SET contrasenya = '" & dades(0) & "' where id = " & idUsuari
 
     Public Sub connectar()
         Try
             connexio = New MySqlConnection
             With connexio
-                .ConnectionString = "server=localhost; user id=root; password=; database=tapping; port=3306;"
+                '.ConnectionString = "server=localhost; user id=root; password=; database=tapping; port=3306;"
+                .ConnectionString = "server=192.168.1.150; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;"
             End With
             connexio.Open()
         Catch ex As Exception
@@ -45,6 +50,17 @@ Public Class IniciSessio
         End If
         Return reader
     End Function
+
+    Private Sub insert(ByVal dades As String(), ByVal idUsuari As String)
+        Dim novaSentencia = "UPDATE usuari SET contrasenya = '" & dades(0) & "' where id = " & idUsuari
+        Try
+            connectar()
+            comanda = New MySqlCommand(novaSentencia, connexio)
+            comanda.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error 'UpdateAdmin' ClasseBBDD: " & ex.Message)
+        End Try
+    End Sub
 
     Private Sub ButtonLogin_Paint(sender As Object, e As PaintEventArgs) Handles ButtonLogin.Paint 'Handles ButtonLogin.Paint
         ' fer que el button login l'efecte sigui d'eclipse
@@ -78,11 +94,26 @@ Public Class IniciSessio
 
         ' El següent bucle llegeix les columnes correu i contrasenya i mira si hi ha coincidencies
         Dim semafor As Boolean = False
+        Dim canviContrasenya As Boolean = True
         While reader.Read()
             idUsuari = reader.GetString(0)
+            Constants.IDUSUARI = idUsuari
             correu = reader.GetString(1)
             contrasenya = reader.GetString(2)
-            If (correu.Equals(TextBoxUsuari.Text) And contrasenya.Equals(hash)) Then
+            ' el primer if es per quan un usuari ha d'inserir una nova contrasenya
+            If (correu.Equals(TextBoxUsuari.Text) And contrasenya.Equals(text)) Then
+                Dim formulariContrasenya As New GridViewNovaContrasenya
+                Dim mostrarFormulari As DialogResult = formulariContrasenya.ShowDialog(Me)
+                If (mostrarFormulari = DialogResult.OK) Then
+                    Dim contrasenya As String = formulariContrasenya.TextBoxContra1.Text
+                    Dim nouHash As String = EncriptarSHA256(contrasenya)
+                    Dim dades(1) As String
+                    dades(0) = nouHash
+                    insert(dades, idUsuari)
+                    canviContrasenya = False
+                End If
+                ' el segon if es per quan el usuari ja esta registrat
+            ElseIf (correu.Equals(TextBoxUsuari.Text) And contrasenya.Equals(hash)) Then
                 semafor = True
                 Exit While
             End If
@@ -111,7 +142,9 @@ Public Class IniciSessio
                 End If
             Loop
         Else
-            MsgBox("Nom d'usuari o contrasenya incorrecta")
+            If (canviContrasenya) Then
+                MsgBox("Nom d'usuari o contrasenya incorrecta")
+            End If
         End If
     End Sub
 
