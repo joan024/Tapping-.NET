@@ -24,13 +24,14 @@ Partial Class IniciSessio
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(IniciSessio))
         usuari = New Label()
-        TextBox1 = New TextBox()
+        TextBoxUsuari = New TextBox()
         Label2 = New Label()
-        TextBox2 = New TextBox()
-        Button1 = New Button()
+        TextBoxContrasenya = New TextBox()
+        ButtonLogin = New Button()
         PictureBox1 = New PictureBox()
         Label1 = New Label()
         Panel1 = New Panel()
+        CheckBoxMostrarContrasenya = New CheckBox()
         Label3 = New Label()
         ButtonSortir = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -48,14 +49,14 @@ Partial Class IniciSessio
         usuari.Size = New Size(318, 30)
         usuari.TabIndex = 3
         usuari.Text = "Introdueix el nom d'usuari"' 
-        ' TextBox1
+        ' TextBoxUsuari
         ' 
-        TextBox1.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBox1.Location = New Point(357, 472)
-        TextBox1.Margin = New Padding(4, 5, 4, 5)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(397, 37)
-        TextBox1.TabIndex = 4
+        TextBoxUsuari.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBoxUsuari.Location = New Point(357, 472)
+        TextBoxUsuari.Margin = New Padding(4, 5, 4, 5)
+        TextBoxUsuari.Name = "TextBoxUsuari"
+        TextBoxUsuari.Size = New Size(397, 37)
+        TextBoxUsuari.TabIndex = 4
         ' 
         ' Label2
         ' 
@@ -67,27 +68,27 @@ Partial Class IniciSessio
         Label2.Size = New Size(314, 30)
         Label2.TabIndex = 5
         Label2.Text = "Introdueix la contrasenya"' 
-        ' TextBox2
+        ' TextBoxContrasenya
         ' 
-        TextBox2.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBox2.Location = New Point(357, 652)
-        TextBox2.Margin = New Padding(4, 5, 4, 5)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(397, 37)
-        TextBox2.TabIndex = 6
+        TextBoxContrasenya.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBoxContrasenya.Location = New Point(357, 652)
+        TextBoxContrasenya.Margin = New Padding(4, 5, 4, 5)
+        TextBoxContrasenya.Name = "TextBoxContrasenya"
+        TextBoxContrasenya.Size = New Size(397, 37)
+        TextBoxContrasenya.TabIndex = 6
         ' 
-        ' Button1
+        ' ButtonLogin
         ' 
-        Button1.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(463, 807)
-        Button1.Margin = New Padding(4, 5, 4, 5)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(167, 75)
-        Button1.TabIndex = 7
-        Button1.Text = "LOGIN"
-        Button1.UseVisualStyleBackColor = False
+        ButtonLogin.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonLogin.FlatAppearance.BorderSize = 0
+        ButtonLogin.FlatStyle = FlatStyle.Flat
+        ButtonLogin.Location = New Point(463, 807)
+        ButtonLogin.Margin = New Padding(4, 5, 4, 5)
+        ButtonLogin.Name = "ButtonLogin"
+        ButtonLogin.Size = New Size(167, 75)
+        ButtonLogin.TabIndex = 7
+        ButtonLogin.Text = "LOGIN"
+        ButtonLogin.UseVisualStyleBackColor = False
         ' 
         ' PictureBox1
         ' 
@@ -112,22 +113,34 @@ Partial Class IniciSessio
         Label1.Text = "Benvingut a Tapping!"' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Anchor = AnchorStyles.Right
         Panel1.BackColor = Color.White
+        Panel1.BorderStyle = BorderStyle.Fixed3D
+        Panel1.Controls.Add(CheckBoxMostrarContrasenya)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(ButtonSortir)
         Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(Button1)
-        Panel1.Controls.Add(TextBox2)
+        Panel1.Controls.Add(ButtonLogin)
+        Panel1.Controls.Add(TextBoxContrasenya)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(usuari)
-        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(TextBoxUsuari)
         Panel1.Controls.Add(Label2)
-        Panel1.Location = New Point(421, 115)
+        Panel1.Location = New Point(13, 14)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1061, 982)
         Panel1.TabIndex = 10
+        ' 
+        ' CheckBoxMostrarContrasenya
+        ' 
+        CheckBoxMostrarContrasenya.AutoSize = True
+        CheckBoxMostrarContrasenya.Location = New Point(451, 729)
+        CheckBoxMostrarContrasenya.Name = "CheckBoxMostrarContrasenya"
+        CheckBoxMostrarContrasenya.Size = New Size(203, 29)
+        CheckBoxMostrarContrasenya.TabIndex = 12
+        CheckBoxMostrarContrasenya.Text = "Mostrar Contrasenya"
+        CheckBoxMostrarContrasenya.UseVisualStyleBackColor = True
         ' 
         ' Label3
         ' 
@@ -167,13 +180,14 @@ Partial Class IniciSessio
         ResumeLayout(False)
     End Sub
     Friend WithEvents usuari As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxUsuari As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBoxContrasenya As TextBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonLogin As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ButtonSortir As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents CheckBoxMostrarContrasenya As CheckBox
 End Class
