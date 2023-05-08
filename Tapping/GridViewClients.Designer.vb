@@ -23,58 +23,30 @@ Partial Class GridViewClients
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         DataGridViewClients = New DataGridView()
-        IDUSUARI = New DataGridViewTextBoxColumn()
-        NIF = New DataGridViewTextBoxColumn()
-        TELEFON = New DataGridViewTextBoxColumn()
-        PACK = New DataGridViewTextBoxColumn()
         CType(DataGridViewClients, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DataGridViewClients
         ' 
+        DataGridViewClients.AllowUserToAddRows = False
+        DataGridViewClients.AllowUserToDeleteRows = False
+        DataGridViewClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewClients.BackgroundColor = Color.White
         DataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewClients.Columns.AddRange(New DataGridViewColumn() {IDUSUARI, NIF, TELEFON, PACK})
         DataGridViewClients.Location = New Point(23, 12)
         DataGridViewClients.Name = "DataGridViewClients"
+        DataGridViewClients.ReadOnly = True
         DataGridViewClients.RowHeadersWidth = 62
         DataGridViewClients.RowTemplate.Height = 33
-        DataGridViewClients.Size = New Size(1370, 635)
+        DataGridViewClients.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridViewClients.Size = New Size(1229, 635)
         DataGridViewClients.TabIndex = 2
-        ' 
-        ' IDUSUARI
-        ' 
-        IDUSUARI.HeaderText = "IDUSUARI"
-        IDUSUARI.MinimumWidth = 8
-        IDUSUARI.Name = "IDUSUARI"
-        IDUSUARI.Width = 140
-        ' 
-        ' NIF
-        ' 
-        NIF.HeaderText = "NIF"
-        NIF.MinimumWidth = 8
-        NIF.Name = "NIF"
-        NIF.Width = 220
-        ' 
-        ' TELEFON
-        ' 
-        TELEFON.HeaderText = "TELEFON"
-        TELEFON.MinimumWidth = 8
-        TELEFON.Name = "TELEFON"
-        TELEFON.Width = 260
-        ' 
-        ' PACK
-        ' 
-        PACK.HeaderText = "PACK"
-        PACK.MinimumWidth = 8
-        PACK.Name = "PACK"
-        PACK.Width = 230
         ' 
         ' GridViewClients
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1426, 659)
+        ClientSize = New Size(1285, 659)
         Controls.Add(DataGridViewClients)
         FormBorderStyle = FormBorderStyle.None
         Name = "GridViewClients"
@@ -84,8 +56,4 @@ Partial Class GridViewClients
     End Sub
 
     Friend WithEvents DataGridViewClients As DataGridView
-    Friend WithEvents IDUSUARI As DataGridViewTextBoxColumn
-    Friend WithEvents NIF As DataGridViewTextBoxColumn
-    Friend WithEvents TELEFON As DataGridViewTextBoxColumn
-    Friend WithEvents PACK As DataGridViewTextBoxColumn
 End Class
