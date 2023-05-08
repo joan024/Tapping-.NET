@@ -26,24 +26,28 @@ Partial Class Escriptori_Administradors
         GestionarToolStripMenuItem = New ToolStripMenuItem()
         ClientsToolStripMenuItem = New ToolStripMenuItem()
         TapesToolStripMenuItem = New ToolStripMenuItem()
+        CategoriesToolStripMenuItem = New ToolStripMenuItem()
         XatToolStripMenuItem = New ToolStripMenuItem()
         NotíciesToolStripMenuItem = New ToolStripMenuItem()
         PreguntesFrequentsToolStripMenuItem = New ToolStripMenuItem()
         GenerarArxiuDeTextToolStripMenuItem = New ToolStripMenuItem()
+        TancaSessióToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Panel1 = New Panel()
         Panel2 = New Panel()
+        ButtonConfirmarCategories = New Button()
+        ButtonConfirmarTapes = New Button()
+        ComboBoxCategoria = New ComboBox()
         RadioButtonEliminar = New RadioButton()
         RadioButtonActualitzar = New RadioButton()
         RadioButtonAfegir = New RadioButton()
         TextBoxPack = New TextBox()
-        ButtonConfirmar = New Button()
+        ButtonConfirmarClients = New Button()
         TextBoxNif = New TextBox()
         TextBoxTelefon = New TextBox()
         LabelNif = New Label()
         LabelTelefon = New Label()
         LabelPack = New Label()
-        TancaSessióToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -63,20 +67,25 @@ Partial Class Escriptori_Administradors
         MenuStrip1.Text = "MenuStrip1"' 
         ' GestionarToolStripMenuItem
         ' 
-        GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem})
+        GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem, CategoriesToolStripMenuItem})
         GestionarToolStripMenuItem.Name = "GestionarToolStripMenuItem"
         GestionarToolStripMenuItem.Size = New Size(273, 33)
         GestionarToolStripMenuItem.Text = "Gestionar"' 
         ' ClientsToolStripMenuItem
         ' 
         ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        ClientsToolStripMenuItem.Size = New Size(202, 38)
+        ClientsToolStripMenuItem.Size = New Size(246, 38)
         ClientsToolStripMenuItem.Text = "Clients"' 
         ' TapesToolStripMenuItem
         ' 
         TapesToolStripMenuItem.Name = "TapesToolStripMenuItem"
-        TapesToolStripMenuItem.Size = New Size(202, 38)
+        TapesToolStripMenuItem.Size = New Size(246, 38)
         TapesToolStripMenuItem.Text = "Tapes"' 
+        ' CategoriesToolStripMenuItem
+        ' 
+        CategoriesToolStripMenuItem.Name = "CategoriesToolStripMenuItem"
+        CategoriesToolStripMenuItem.Size = New Size(246, 38)
+        CategoriesToolStripMenuItem.Text = "Categories"' 
         ' XatToolStripMenuItem
         ' 
         XatToolStripMenuItem.Name = "XatToolStripMenuItem"
@@ -97,6 +106,11 @@ Partial Class Escriptori_Administradors
         GenerarArxiuDeTextToolStripMenuItem.Name = "GenerarArxiuDeTextToolStripMenuItem"
         GenerarArxiuDeTextToolStripMenuItem.Size = New Size(273, 33)
         GenerarArxiuDeTextToolStripMenuItem.Text = "Generar Arxiu"' 
+        ' TancaSessióToolStripMenuItem
+        ' 
+        TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
+        TancaSessióToolStripMenuItem.Size = New Size(273, 33)
+        TancaSessióToolStripMenuItem.Text = "Tanca Sessió"' 
         ' Label1
         ' 
         Label1.AutoSize = True
@@ -118,11 +132,14 @@ Partial Class Escriptori_Administradors
         ' Panel2
         ' 
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel2.Controls.Add(ButtonConfirmarCategories)
+        Panel2.Controls.Add(ButtonConfirmarTapes)
+        Panel2.Controls.Add(ComboBoxCategoria)
         Panel2.Controls.Add(RadioButtonEliminar)
         Panel2.Controls.Add(RadioButtonActualitzar)
         Panel2.Controls.Add(RadioButtonAfegir)
         Panel2.Controls.Add(TextBoxPack)
-        Panel2.Controls.Add(ButtonConfirmar)
+        Panel2.Controls.Add(ButtonConfirmarClients)
         Panel2.Controls.Add(TextBoxNif)
         Panel2.Controls.Add(TextBoxTelefon)
         Panel2.Controls.Add(LabelNif)
@@ -132,6 +149,36 @@ Partial Class Escriptori_Administradors
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1285, 444)
         Panel2.TabIndex = 15
+        ' 
+        ' ButtonConfirmarCategories
+        ' 
+        ButtonConfirmarCategories.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonConfirmarCategories.Location = New Point(800, 235)
+        ButtonConfirmarCategories.Name = "ButtonConfirmarCategories"
+        ButtonConfirmarCategories.Size = New Size(275, 76)
+        ButtonConfirmarCategories.TabIndex = 19
+        ButtonConfirmarCategories.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarCategories.UseVisualStyleBackColor = False
+        ' 
+        ' ButtonConfirmarTapes
+        ' 
+        ButtonConfirmarTapes.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonConfirmarTapes.Location = New Point(800, 237)
+        ButtonConfirmarTapes.Name = "ButtonConfirmarTapes"
+        ButtonConfirmarTapes.Size = New Size(275, 76)
+        ButtonConfirmarTapes.TabIndex = 16
+        ButtonConfirmarTapes.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarTapes.UseVisualStyleBackColor = False
+        ' 
+        ' ComboBoxCategoria
+        ' 
+        ComboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBoxCategoria.FormattingEnabled = True
+        ComboBoxCategoria.Items.AddRange(New Object() {"Patatas", "Frios", "Calents", "fritos", "Ensaladas", "Productes Lactics"})
+        ComboBoxCategoria.Location = New Point(56, 258)
+        ComboBoxCategoria.Name = "ComboBoxCategoria"
+        ComboBoxCategoria.Size = New Size(182, 33)
+        ComboBoxCategoria.TabIndex = 18
         ' 
         ' RadioButtonEliminar
         ' 
@@ -176,15 +223,15 @@ Partial Class Escriptori_Administradors
         TextBoxPack.Size = New Size(180, 31)
         TextBoxPack.TabIndex = 15
         ' 
-        ' ButtonConfirmar
+        ' ButtonConfirmarClients
         ' 
-        ButtonConfirmar.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ButtonConfirmar.Location = New Point(800, 237)
-        ButtonConfirmar.Name = "ButtonConfirmar"
-        ButtonConfirmar.Size = New Size(275, 76)
-        ButtonConfirmar.TabIndex = 14
-        ButtonConfirmar.Text = "CONFIRMAR CANVIS"
-        ButtonConfirmar.UseVisualStyleBackColor = False
+        ButtonConfirmarClients.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonConfirmarClients.Location = New Point(800, 237)
+        ButtonConfirmarClients.Name = "ButtonConfirmarClients"
+        ButtonConfirmarClients.Size = New Size(275, 76)
+        ButtonConfirmarClients.TabIndex = 14
+        ButtonConfirmarClients.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarClients.UseVisualStyleBackColor = False
         ' 
         ' TextBoxNif
         ' 
@@ -230,11 +277,6 @@ Partial Class Escriptori_Administradors
         LabelPack.Size = New Size(95, 45)
         LabelPack.TabIndex = 5
         LabelPack.Text = "PACK"' 
-        ' TancaSessióToolStripMenuItem
-        ' 
-        TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
-        TancaSessióToolStripMenuItem.Size = New Size(273, 33)
-        TancaSessióToolStripMenuItem.Text = "Tanca Sessió"' 
         ' Escriptori_Administradors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -271,7 +313,7 @@ Partial Class Escriptori_Administradors
     Friend WithEvents RadioButtonActualitzar As RadioButton
     Friend WithEvents RadioButtonAfegir As RadioButton
     Friend WithEvents TextBoxPack As TextBox
-    Friend WithEvents ButtonConfirmar As Button
+    Friend WithEvents ButtonConfirmarClients As Button
     Friend WithEvents TextBoxNif As TextBox
     Friend WithEvents TextBoxTelefon As TextBox
     Friend WithEvents LabelNif As Label
@@ -279,4 +321,8 @@ Partial Class Escriptori_Administradors
     Friend WithEvents LabelPack As Label
     Friend WithEvents GenerarArxiuDeTextToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TancaSessióToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComboBoxCategoria As ComboBox
+    Friend WithEvents ButtonConfirmarTapes As Button
+    Friend WithEvents CategoriesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ButtonConfirmarCategories As Button
 End Class

@@ -30,21 +30,23 @@ Partial Class GridViewTapes
         ' 
         DataGridViewTapes.AllowUserToAddRows = False
         DataGridViewTapes.AllowUserToDeleteRows = False
+        DataGridViewTapes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewTapes.BackgroundColor = Color.White
         DataGridViewTapes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewTapes.Location = New Point(23, 12)
+        DataGridViewTapes.Location = New Point(29, 12)
         DataGridViewTapes.Name = "DataGridViewTapes"
         DataGridViewTapes.ReadOnly = True
         DataGridViewTapes.RowHeadersWidth = 62
         DataGridViewTapes.RowTemplate.Height = 33
-        DataGridViewTapes.Size = New Size(767, 635)
+        DataGridViewTapes.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridViewTapes.Size = New Size(923, 635)
         DataGridViewTapes.TabIndex = 4
         ' 
         ' GridViewTapes
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(812, 659)
+        ClientSize = New Size(977, 659)
         Controls.Add(DataGridViewTapes)
         FormBorderStyle = FormBorderStyle.None
         Name = "GridViewTapes"
