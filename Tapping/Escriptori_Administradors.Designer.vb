@@ -26,22 +26,28 @@ Partial Class Escriptori_Administradors
         GestionarToolStripMenuItem = New ToolStripMenuItem()
         ClientsToolStripMenuItem = New ToolStripMenuItem()
         TapesToolStripMenuItem = New ToolStripMenuItem()
+        CategoriesToolStripMenuItem = New ToolStripMenuItem()
         XatToolStripMenuItem = New ToolStripMenuItem()
         NotíciesToolStripMenuItem = New ToolStripMenuItem()
         PreguntesFrequentsToolStripMenuItem = New ToolStripMenuItem()
+        GenerarArxiuDeTextToolStripMenuItem = New ToolStripMenuItem()
+        TancaSessióToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Panel1 = New Panel()
         Panel2 = New Panel()
-        RadioButton3 = New RadioButton()
-        RadioButton2 = New RadioButton()
-        RadioButton1 = New RadioButton()
-        TextBox1 = New TextBox()
-        Button2 = New Button()
-        TextBox5 = New TextBox()
-        TextBox4 = New TextBox()
-        Label2 = New Label()
-        Label3 = New Label()
-        Label4 = New Label()
+        ButtonConfirmarCategories = New Button()
+        ButtonConfirmarTapes = New Button()
+        ComboBoxCategoria = New ComboBox()
+        RadioButtonEliminar = New RadioButton()
+        RadioButtonActualitzar = New RadioButton()
+        RadioButtonAfegir = New RadioButton()
+        TextBoxPack = New TextBox()
+        ButtonConfirmarClients = New Button()
+        TextBoxNif = New TextBox()
+        TextBoxTelefon = New TextBox()
+        LabelNif = New Label()
+        LabelTelefon = New Label()
+        LabelPack = New Label()
         MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -52,7 +58,7 @@ Partial Class Escriptori_Administradors
         MenuStrip1.Dock = DockStyle.Left
         MenuStrip1.Font = New Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point)
         MenuStrip1.ImageScalingSize = New Size(24, 24)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem, GenerarArxiuDeTextToolStripMenuItem, TancaSessióToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(9, 2, 0, 2)
@@ -61,20 +67,25 @@ Partial Class Escriptori_Administradors
         MenuStrip1.Text = "MenuStrip1"' 
         ' GestionarToolStripMenuItem
         ' 
-        GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem})
+        GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem, CategoriesToolStripMenuItem})
         GestionarToolStripMenuItem.Name = "GestionarToolStripMenuItem"
         GestionarToolStripMenuItem.Size = New Size(273, 33)
         GestionarToolStripMenuItem.Text = "Gestionar"' 
         ' ClientsToolStripMenuItem
         ' 
         ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        ClientsToolStripMenuItem.Size = New Size(202, 38)
+        ClientsToolStripMenuItem.Size = New Size(246, 38)
         ClientsToolStripMenuItem.Text = "Clients"' 
         ' TapesToolStripMenuItem
         ' 
         TapesToolStripMenuItem.Name = "TapesToolStripMenuItem"
-        TapesToolStripMenuItem.Size = New Size(202, 38)
+        TapesToolStripMenuItem.Size = New Size(246, 38)
         TapesToolStripMenuItem.Text = "Tapes"' 
+        ' CategoriesToolStripMenuItem
+        ' 
+        CategoriesToolStripMenuItem.Name = "CategoriesToolStripMenuItem"
+        CategoriesToolStripMenuItem.Size = New Size(246, 38)
+        CategoriesToolStripMenuItem.Text = "Categories"' 
         ' XatToolStripMenuItem
         ' 
         XatToolStripMenuItem.Name = "XatToolStripMenuItem"
@@ -90,6 +101,16 @@ Partial Class Escriptori_Administradors
         PreguntesFrequentsToolStripMenuItem.Name = "PreguntesFrequentsToolStripMenuItem"
         PreguntesFrequentsToolStripMenuItem.Size = New Size(273, 33)
         PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"' 
+        ' GenerarArxiuDeTextToolStripMenuItem
+        ' 
+        GenerarArxiuDeTextToolStripMenuItem.Name = "GenerarArxiuDeTextToolStripMenuItem"
+        GenerarArxiuDeTextToolStripMenuItem.Size = New Size(273, 33)
+        GenerarArxiuDeTextToolStripMenuItem.Text = "Generar Arxiu"' 
+        ' TancaSessióToolStripMenuItem
+        ' 
+        TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
+        TancaSessióToolStripMenuItem.Size = New Size(273, 33)
+        TancaSessióToolStripMenuItem.Text = "Tanca Sessió"' 
         ' Label1
         ' 
         Label1.AutoSize = True
@@ -111,118 +132,151 @@ Partial Class Escriptori_Administradors
         ' Panel2
         ' 
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel2.Controls.Add(RadioButton3)
-        Panel2.Controls.Add(RadioButton2)
-        Panel2.Controls.Add(RadioButton1)
-        Panel2.Controls.Add(TextBox1)
-        Panel2.Controls.Add(Button2)
-        Panel2.Controls.Add(TextBox5)
-        Panel2.Controls.Add(TextBox4)
-        Panel2.Controls.Add(Label2)
-        Panel2.Controls.Add(Label3)
-        Panel2.Controls.Add(Label4)
+        Panel2.Controls.Add(ButtonConfirmarCategories)
+        Panel2.Controls.Add(ButtonConfirmarTapes)
+        Panel2.Controls.Add(ComboBoxCategoria)
+        Panel2.Controls.Add(RadioButtonEliminar)
+        Panel2.Controls.Add(RadioButtonActualitzar)
+        Panel2.Controls.Add(RadioButtonAfegir)
+        Panel2.Controls.Add(TextBoxPack)
+        Panel2.Controls.Add(ButtonConfirmarClients)
+        Panel2.Controls.Add(TextBoxNif)
+        Panel2.Controls.Add(TextBoxTelefon)
+        Panel2.Controls.Add(LabelNif)
+        Panel2.Controls.Add(LabelTelefon)
+        Panel2.Controls.Add(LabelPack)
         Panel2.Location = New Point(455, 830)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1285, 444)
         Panel2.TabIndex = 15
         ' 
-        ' RadioButton3
+        ' ButtonConfirmarCategories
         ' 
-        RadioButton3.AutoSize = True
-        RadioButton3.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(829, 103)
-        RadioButton3.Name = "RadioButton3"
-        RadioButton3.Size = New Size(164, 42)
-        RadioButton3.TabIndex = 17
-        RadioButton3.TabStop = True
-        RadioButton3.Text = "ELIMINAR"
-        RadioButton3.UseVisualStyleBackColor = True
+        ButtonConfirmarCategories.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonConfirmarCategories.Location = New Point(800, 235)
+        ButtonConfirmarCategories.Name = "ButtonConfirmarCategories"
+        ButtonConfirmarCategories.Size = New Size(275, 76)
+        ButtonConfirmarCategories.TabIndex = 19
+        ButtonConfirmarCategories.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarCategories.UseVisualStyleBackColor = False
         ' 
-        ' RadioButton2
+        ' ButtonConfirmarTapes
         ' 
-        RadioButton2.AutoSize = True
-        RadioButton2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(1054, 103)
-        RadioButton2.Name = "RadioButton2"
-        RadioButton2.Size = New Size(213, 42)
-        RadioButton2.TabIndex = 16
-        RadioButton2.TabStop = True
-        RadioButton2.Text = "ACTUALITZAR"
-        RadioButton2.UseVisualStyleBackColor = True
+        ButtonConfirmarTapes.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonConfirmarTapes.Location = New Point(800, 237)
+        ButtonConfirmarTapes.Name = "ButtonConfirmarTapes"
+        ButtonConfirmarTapes.Size = New Size(275, 76)
+        ButtonConfirmarTapes.TabIndex = 16
+        ButtonConfirmarTapes.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarTapes.UseVisualStyleBackColor = False
         ' 
-        ' RadioButton1
+        ' ComboBoxCategoria
         ' 
-        RadioButton1.AutoSize = True
-        RadioButton1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(635, 103)
-        RadioButton1.Name = "RadioButton1"
-        RadioButton1.Size = New Size(131, 42)
-        RadioButton1.TabIndex = 14
-        RadioButton1.TabStop = True
-        RadioButton1.Text = "AFEGIR"
-        RadioButton1.UseVisualStyleBackColor = True
+        ComboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBoxCategoria.FormattingEnabled = True
+        ComboBoxCategoria.Items.AddRange(New Object() {"Patatas", "Frios", "Calents", "fritos", "Ensaladas", "Productes Lactics"})
+        ComboBoxCategoria.Location = New Point(56, 258)
+        ComboBoxCategoria.Name = "ComboBoxCategoria"
+        ComboBoxCategoria.Size = New Size(182, 33)
+        ComboBoxCategoria.TabIndex = 18
         ' 
-        ' TextBox1
+        ' RadioButtonEliminar
         ' 
-        TextBox1.Location = New Point(56, 409)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(180, 31)
-        TextBox1.TabIndex = 15
+        RadioButtonEliminar.AutoSize = True
+        RadioButtonEliminar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonEliminar.Location = New Point(829, 103)
+        RadioButtonEliminar.Name = "RadioButtonEliminar"
+        RadioButtonEliminar.Size = New Size(164, 42)
+        RadioButtonEliminar.TabIndex = 17
+        RadioButtonEliminar.TabStop = True
+        RadioButtonEliminar.Text = "ELIMINAR"
+        RadioButtonEliminar.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' RadioButtonActualitzar
         ' 
-        Button2.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        Button2.Location = New Point(800, 237)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(275, 76)
-        Button2.TabIndex = 14
-        Button2.Text = "CONFIRMAR CANVIS"
-        Button2.UseVisualStyleBackColor = False
+        RadioButtonActualitzar.AutoSize = True
+        RadioButtonActualitzar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonActualitzar.Location = New Point(1054, 103)
+        RadioButtonActualitzar.Name = "RadioButtonActualitzar"
+        RadioButtonActualitzar.Size = New Size(213, 42)
+        RadioButtonActualitzar.TabIndex = 16
+        RadioButtonActualitzar.TabStop = True
+        RadioButtonActualitzar.Text = "ACTUALITZAR"
+        RadioButtonActualitzar.UseVisualStyleBackColor = True
         ' 
-        ' TextBox5
+        ' RadioButtonAfegir
         ' 
-        TextBox5.Location = New Point(56, 113)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(289, 31)
-        TextBox5.TabIndex = 13
+        RadioButtonAfegir.AutoSize = True
+        RadioButtonAfegir.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonAfegir.Location = New Point(635, 103)
+        RadioButtonAfegir.Name = "RadioButtonAfegir"
+        RadioButtonAfegir.Size = New Size(131, 42)
+        RadioButtonAfegir.TabIndex = 14
+        RadioButtonAfegir.TabStop = True
+        RadioButtonAfegir.Text = "AFEGIR"
+        RadioButtonAfegir.UseVisualStyleBackColor = True
         ' 
-        ' TextBox4
+        ' TextBoxPack
         ' 
-        TextBox4.Location = New Point(56, 260)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(299, 31)
-        TextBox4.TabIndex = 12
+        TextBoxPack.Location = New Point(56, 409)
+        TextBoxPack.Name = "TextBoxPack"
+        TextBoxPack.Size = New Size(180, 31)
+        TextBoxPack.TabIndex = 15
         ' 
-        ' Label2
+        ' ButtonConfirmarClients
         ' 
-        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(56, 34)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(91, 45)
-        Label2.TabIndex = 3
-        Label2.Text = "Nom"' 
-        ' Label3
+        ButtonConfirmarClients.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
+        ButtonConfirmarClients.Location = New Point(800, 237)
+        ButtonConfirmarClients.Name = "ButtonConfirmarClients"
+        ButtonConfirmarClients.Size = New Size(275, 76)
+        ButtonConfirmarClients.TabIndex = 14
+        ButtonConfirmarClients.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarClients.UseVisualStyleBackColor = False
         ' 
-        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(56, 185)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(231, 45)
-        Label3.TabIndex = 4
-        Label3.Text = "Personalització"' 
-        ' Label4
+        ' TextBoxNif
         ' 
-        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(56, 333)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(84, 45)
-        Label4.TabIndex = 5
-        Label4.Text = "Preu"' 
+        TextBoxNif.Location = New Point(56, 113)
+        TextBoxNif.Name = "TextBoxNif"
+        TextBoxNif.Size = New Size(289, 31)
+        TextBoxNif.TabIndex = 13
+        ' 
+        ' TextBoxTelefon
+        ' 
+        TextBoxTelefon.Location = New Point(56, 260)
+        TextBoxTelefon.Name = "TextBoxTelefon"
+        TextBoxTelefon.Size = New Size(299, 31)
+        TextBoxTelefon.TabIndex = 12
+        ' 
+        ' LabelNif
+        ' 
+        LabelNif.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelNif.AutoSize = True
+        LabelNif.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
+        LabelNif.Location = New Point(56, 34)
+        LabelNif.Name = "LabelNif"
+        LabelNif.Size = New Size(69, 45)
+        LabelNif.TabIndex = 3
+        LabelNif.Text = "NIF"' 
+        ' LabelTelefon
+        ' 
+        LabelTelefon.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelTelefon.AutoSize = True
+        LabelTelefon.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
+        LabelTelefon.Location = New Point(56, 185)
+        LabelTelefon.Name = "LabelTelefon"
+        LabelTelefon.Size = New Size(148, 45)
+        LabelTelefon.TabIndex = 4
+        LabelTelefon.Text = "TELEFON"' 
+        ' LabelPack
+        ' 
+        LabelPack.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        LabelPack.AutoSize = True
+        LabelPack.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
+        LabelPack.Location = New Point(56, 333)
+        LabelPack.Name = "LabelPack"
+        LabelPack.Size = New Size(95, 45)
+        LabelPack.TabIndex = 5
+        LabelPack.Text = "PACK"' 
         ' Escriptori_Administradors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -236,6 +290,7 @@ Partial Class Escriptori_Administradors
         Margin = New Padding(4, 5, 4, 5)
         Name = "Escriptori_Administradors"
         Text = "Escriptori_Administradors"
+        WindowState = FormWindowState.Maximized
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         Panel2.ResumeLayout(False)
@@ -254,14 +309,20 @@ Partial Class Escriptori_Administradors
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents RadioButtonEliminar As RadioButton
+    Friend WithEvents RadioButtonActualitzar As RadioButton
+    Friend WithEvents RadioButtonAfegir As RadioButton
+    Friend WithEvents TextBoxPack As TextBox
+    Friend WithEvents ButtonConfirmarClients As Button
+    Friend WithEvents TextBoxNif As TextBox
+    Friend WithEvents TextBoxTelefon As TextBox
+    Friend WithEvents LabelNif As Label
+    Friend WithEvents LabelTelefon As Label
+    Friend WithEvents LabelPack As Label
+    Friend WithEvents GenerarArxiuDeTextToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TancaSessióToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComboBoxCategoria As ComboBox
+    Friend WithEvents ButtonConfirmarTapes As Button
+    Friend WithEvents CategoriesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ButtonConfirmarCategories As Button
 End Class
