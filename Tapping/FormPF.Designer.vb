@@ -62,7 +62,7 @@ Partial Class FormPF
         DataGridViewPF.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridViewPF.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewPF.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewPF.BackgroundColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
+        DataGridViewPF.BackgroundColor = Color.White
         DataGridViewPF.BorderStyle = BorderStyle.None
         DataGridViewPF.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewPF.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None

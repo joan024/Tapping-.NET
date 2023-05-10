@@ -43,38 +43,38 @@ Partial Class IniciSessio
         ' 
         usuari.AutoSize = True
         usuari.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        usuari.Location = New Point(357, 415)
-        usuari.Margin = New Padding(4, 0, 4, 0)
+        usuari.Location = New Point(286, 332)
         usuari.Name = "usuari"
-        usuari.Size = New Size(318, 30)
+        usuari.Size = New Size(258, 23)
         usuari.TabIndex = 3
-        usuari.Text = "Introdueix el nom d'usuari"' 
+        usuari.Text = "Introdueix el nom d'usuari"
+        ' 
         ' TextBoxUsuari
         ' 
         TextBoxUsuari.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxUsuari.Location = New Point(357, 472)
-        TextBoxUsuari.Margin = New Padding(4, 5, 4, 5)
+        TextBoxUsuari.Location = New Point(286, 378)
+        TextBoxUsuari.Margin = New Padding(3, 4, 3, 4)
         TextBoxUsuari.Name = "TextBoxUsuari"
-        TextBoxUsuari.Size = New Size(397, 37)
+        TextBoxUsuari.Size = New Size(318, 32)
         TextBoxUsuari.TabIndex = 4
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(357, 588)
-        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Location = New Point(286, 470)
         Label2.Name = "Label2"
-        Label2.Size = New Size(314, 30)
+        Label2.Size = New Size(259, 23)
         Label2.TabIndex = 5
-        Label2.Text = "Introdueix la contrasenya"' 
+        Label2.Text = "Introdueix la contrasenya"
+        ' 
         ' TextBoxContrasenya
         ' 
         TextBoxContrasenya.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxContrasenya.Location = New Point(357, 652)
-        TextBoxContrasenya.Margin = New Padding(4, 5, 4, 5)
+        TextBoxContrasenya.Location = New Point(286, 522)
+        TextBoxContrasenya.Margin = New Padding(3, 4, 3, 4)
         TextBoxContrasenya.Name = "TextBoxContrasenya"
-        TextBoxContrasenya.Size = New Size(397, 37)
+        TextBoxContrasenya.Size = New Size(318, 32)
         TextBoxContrasenya.TabIndex = 6
         ' 
         ' ButtonLogin
@@ -82,10 +82,10 @@ Partial Class IniciSessio
         ButtonLogin.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
         ButtonLogin.FlatAppearance.BorderSize = 0
         ButtonLogin.FlatStyle = FlatStyle.Flat
-        ButtonLogin.Location = New Point(463, 807)
-        ButtonLogin.Margin = New Padding(4, 5, 4, 5)
+        ButtonLogin.Location = New Point(370, 646)
+        ButtonLogin.Margin = New Padding(3, 4, 3, 4)
         ButtonLogin.Name = "ButtonLogin"
-        ButtonLogin.Size = New Size(167, 75)
+        ButtonLogin.Size = New Size(134, 60)
         ButtonLogin.TabIndex = 7
         ButtonLogin.Text = "LOGIN"
         ButtonLogin.UseVisualStyleBackColor = False
@@ -93,10 +93,10 @@ Partial Class IniciSessio
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.LogoTappingSenseFondo
-        PictureBox1.Location = New Point(444, 57)
-        PictureBox1.Margin = New Padding(4, 5, 4, 5)
+        PictureBox1.Location = New Point(355, 46)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(210, 195)
+        PictureBox1.Size = New Size(168, 156)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
@@ -105,12 +105,12 @@ Partial Class IniciSessio
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(64, 85)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(51, 68)
         Label1.Name = "Label1"
-        Label1.Size = New Size(308, 36)
+        Label1.Size = New Size(256, 28)
         Label1.TabIndex = 9
-        Label1.Text = "Benvingut a Tapping!"' 
+        Label1.Text = "Benvingut a Tapping!"
+        ' 
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Right
@@ -126,18 +126,19 @@ Partial Class IniciSessio
         Panel1.Controls.Add(usuari)
         Panel1.Controls.Add(TextBoxUsuari)
         Panel1.Controls.Add(Label2)
-        Panel1.Location = New Point(13, 14)
-        Panel1.Margin = New Padding(4, 5, 4, 5)
+        Panel1.Location = New Point(10, 11)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1061, 982)
+        Panel1.Size = New Size(850, 786)
         Panel1.TabIndex = 10
         ' 
         ' CheckBoxMostrarContrasenya
         ' 
         CheckBoxMostrarContrasenya.AutoSize = True
-        CheckBoxMostrarContrasenya.Location = New Point(451, 729)
+        CheckBoxMostrarContrasenya.Location = New Point(361, 583)
+        CheckBoxMostrarContrasenya.Margin = New Padding(2)
         CheckBoxMostrarContrasenya.Name = "CheckBoxMostrarContrasenya"
-        CheckBoxMostrarContrasenya.Size = New Size(203, 29)
+        CheckBoxMostrarContrasenya.Size = New Size(167, 24)
         CheckBoxMostrarContrasenya.TabIndex = 12
         CheckBoxMostrarContrasenya.Text = "Mostrar Contrasenya"
         CheckBoxMostrarContrasenya.UseVisualStyleBackColor = True
@@ -146,33 +147,34 @@ Partial Class IniciSessio
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(357, 300)
-        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Location = New Point(286, 240)
         Label3.Name = "Label3"
-        Label3.Size = New Size(406, 27)
+        Label3.Size = New Size(321, 22)
         Label3.TabIndex = 11
-        Label3.Text = "Inicia sessió per accedir a Tapping"' 
+        Label3.Text = "Inicia sessió per accedir a Tapping"
+        ' 
         ' ButtonSortir
         ' 
         ButtonSortir.Image = CType(resources.GetObject("ButtonSortir.Image"), Image)
-        ButtonSortir.Location = New Point(1001, 33)
-        ButtonSortir.Margin = New Padding(4, 5, 4, 5)
+        ButtonSortir.Location = New Point(801, 26)
+        ButtonSortir.Margin = New Padding(3, 4, 3, 4)
         ButtonSortir.Name = "ButtonSortir"
-        ButtonSortir.Size = New Size(40, 42)
+        ButtonSortir.Size = New Size(32, 34)
         ButtonSortir.TabIndex = 10
         ButtonSortir.TabStop = False
         ' 
         ' IniciSessio
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ClientSize = New Size(1920, 1242)
+        ClientSize = New Size(1536, 882)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "IniciSessio"
         Text = "IniciSessio"
+        WindowState = FormWindowState.Maximized
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

@@ -63,7 +63,7 @@ Partial Class FormNoticies
         DataGridViewNoticies.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridViewNoticies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewNoticies.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewNoticies.BackgroundColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
+        DataGridViewNoticies.BackgroundColor = Color.White
         DataGridViewNoticies.BorderStyle = BorderStyle.None
         DataGridViewNoticies.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewNoticies.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None

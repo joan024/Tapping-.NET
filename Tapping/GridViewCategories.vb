@@ -1,10 +1,7 @@
 ﻿Public Class GridViewCategories
-    Private bbdd As New ClasseBBDD
-    Dim taulaCategoria As String = "categoria"
-    Dim taulaCategoriaTapa As String = "categoria_tapa"
 
     Public Sub selectTaula()
-        bbdd.mostrarAdmin(taulaCategoria, DataGridViewCategories)
+        Constants.bbdd.SelectAdmin(Constants.TAULACATEGORIA, DataGridViewCategories)
     End Sub
 
     Public Function EnviarId() As String
@@ -15,20 +12,18 @@
         Return id
     End Function
 
-    Public Function insertCategoria(ByVal nom As String)
+    Public Sub insertCategoria(ByVal nom As String)
         Dim dades(1) As String
         dades(0) = nom
-        bbdd.afegirAdmin(taulaCategoria, dades, DataGridViewCategories)
-    End Function
-    Public Function updateCategoria(ByVal nom As String)
+        Constants.bbdd.InsertAdmin(Constants.TAULACATEGORIA, dades, DataGridViewCategories)
+    End Sub
+    Public Sub updateCategoria(ByVal nom As String)
         Dim dades(1) As String
         dades(0) = nom
-        bbdd.modificarAdmin(taulaCategoria, dades, EnviarId, DataGridViewCategories)
-    End Function
-    Public Function deleteCategoria()
-        bbdd.eliminar(taulaCategoria, DataGridViewCategories, EnviarId)
-    End Function
-
-
+        Constants.bbdd.UpdateAdmin(Constants.TAULACATEGORIA, dades, EnviarId, DataGridViewCategories)
+    End Sub
+    Public Sub deleteCategoria()
+        Constants.bbdd.Delete(Constants.TAULACATEGORIA, DataGridViewCategories, EnviarId)
+    End Sub
 
 End Class

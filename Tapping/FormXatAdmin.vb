@@ -1,14 +1,15 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FormXatAdmin
-    Private bbdd As New ClasseBBDD
     Private Sub FormXatAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        bbdd.XatsEmpresa(DataGridViewEmpreses)
-        'DataGridViewEmpreses.ClearSelection()
+        Constants.bbdd.SelectAdmin(Constants.TAULAUSUARI, DataGridViewEmpreses)
     End Sub
     Private Sub DataGridViewEmpreses_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewEmpreses.SelectionChanged
         LabelXat.Text = DataGridViewEmpreses.CurrentRow.Cells(0).Value
-        bbdd.MissatgesXatAdmin(DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
+        Constants.bbdd.MissatgesXatAdmin(DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
+        If DataGridViewXat.RowCount <> 0 Then
+            DataGridViewXat.FirstDisplayedScrollingRowIndex = DataGridViewXat.Rows.Count - 1
+        End If
     End Sub
     Private Sub DataGridViewXat_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewXat.SelectionChanged
         DataGridViewXat.ClearSelection()
@@ -21,7 +22,7 @@ Public Class FormXatAdmin
         End If
     End Sub
     Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
-        bbdd.InsertMissatgeAdmin(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
+        Constants.bbdd.InsertMissatgeAdmin(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
         TextBoxXat.Text = ""
     End Sub
 End Class

@@ -1,5 +1,11 @@
 ﻿Public Class Constants
+
+    'CONSTANTS COMPARTITS
     Public Shared IDUSUARI As String = ""
+    Public Shared bbdd As New ClasseBBDD
+    Public Shared IDLOCAL As String = ""
+    Public Shared PACK As String = ""
+
     ' TAULES
     Public Const TAULAUSUARI As String = "usuari"
     Public Const TAULAADMIN As String = "administrador"
@@ -17,10 +23,16 @@
 
 
     ' MYSQL CONNECTION
-    Public Const SERVER As String = "localhost"
-    Public Const USER As String = "root"
-    Public Const DATABASE As String = "tapping"
-    Public Const PORT As String = "3306"
+    Public Const SERVER As String = "server=192.168.1.150"
+    Public Const USER As String = "user id=tapping"
+    Public Const PASSWORD As String = "password=JuMaJoJo!!25231"
+    Public Const DATABASE As String = "database=tappingDB"
+    Public Const PORT As String = "port=25230"
+
+    'RUTA FOTOS I ARXIUS
+    Public Const ARXIUS As String = "C:\TappingFotos\local\"
+    Public Const FOTOS As String = "C:\TappingFotos\"
+    Public Const EXTENSIOARXIU As String = ".txt"
 
     ' QUERY'S INICI SESSIO
     Public Const QUERYADMIN As String = "select usuari.correu,usuari.contrasenya, administrador.dni, administrador.cognom" _
@@ -40,9 +52,4 @@
                                         & " join consumidor on" _
                                         & " usuari.id = consumidor.id_usuari" _
                                         & " where consumidor.id_usuari = "
-
-    'ERRORS
-    Public Const ERRORMOSTRARADMIN As String = "Error "
-    Public Const ERRORCONNECTARBBDD As String = ""
-
 End Class

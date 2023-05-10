@@ -26,6 +26,7 @@ Partial Class FormFotos
         MenuStrip1 = New MenuStrip()
         AfegirToolStripMenuItem = New ToolStripMenuItem()
         EliminarToolStripMenuItem = New ToolStripMenuItem()
+        SortirToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -41,7 +42,7 @@ Partial Class FormFotos
         ' MenuStrip1
         ' 
         MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {AfegirToolStripMenuItem, EliminarToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {AfegirToolStripMenuItem, EliminarToolStripMenuItem, SortirToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(1770, 28)
@@ -59,6 +60,12 @@ Partial Class FormFotos
         EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
         EliminarToolStripMenuItem.Size = New Size(77, 24)
         EliminarToolStripMenuItem.Text = "Eliminar"
+        ' 
+        ' SortirToolStripMenuItem
+        ' 
+        SortirToolStripMenuItem.Name = "SortirToolStripMenuItem"
+        SortirToolStripMenuItem.Size = New Size(59, 24)
+        SortirToolStripMenuItem.Text = "Sortir"
         ' 
         ' FormFotos
         ' 
@@ -80,4 +87,5 @@ Partial Class FormFotos
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents AfegirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SortirToolStripMenuItem As ToolStripMenuItem
 End Class
