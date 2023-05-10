@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2NoticiesAdminvb
+Partial Class FormNoticiesAdmin
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -41,6 +41,7 @@ Partial Class Form2NoticiesAdminvb
         TextBoxDescripcio = New TextBox()
         LabelTitolNoticies = New Label()
         DataGridViewNoticies = New DataGridView()
+        ButtonEnrere = New Button()
         Panel1.SuspendLayout()
         CType(DataGridViewNoticies, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -254,16 +255,32 @@ Partial Class Form2NoticiesAdminvb
         DataGridViewNoticies.Size = New Size(1756, 575)
         DataGridViewNoticies.TabIndex = 2
         ' 
-        ' Form2NoticiesAdminvb
+        ' ButtonEnrere
+        ' 
+        ButtonEnrere.BackColor = Color.LightGray
+        ButtonEnrere.BackgroundImage = My.Resources.Resources.enrere
+        ButtonEnrere.BackgroundImageLayout = ImageLayout.Stretch
+        ButtonEnrere.FlatAppearance.BorderColor = Color.White
+        ButtonEnrere.FlatAppearance.BorderSize = 0
+        ButtonEnrere.FlatStyle = FlatStyle.Flat
+        ButtonEnrere.Location = New Point(12, 9)
+        ButtonEnrere.Name = "ButtonEnrere"
+        ButtonEnrere.Size = New Size(64, 43)
+        ButtonEnrere.TabIndex = 22
+        ButtonEnrere.UseVisualStyleBackColor = False
+        ' 
+        ' FormNoticiesAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightGray
         ClientSize = New Size(1780, 804)
+        ControlBox = False
+        Controls.Add(ButtonEnrere)
         Controls.Add(Panel1)
         Controls.Add(DataGridViewNoticies)
         Controls.Add(LabelTitolNoticies)
-        Name = "Form2NoticiesAdminvb"
+        Name = "FormNoticiesAdmin"
         Text = "Form2NoticiesAdminvb"
         WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
@@ -291,4 +308,5 @@ Partial Class Form2NoticiesAdminvb
     Friend WithEvents ButtonAccio As Button
     Friend WithEvents LabelTitolNoticies As Label
     Friend WithEvents DataGridViewNoticies As DataGridView
+    Friend WithEvents ButtonEnrere As Button
 End Class

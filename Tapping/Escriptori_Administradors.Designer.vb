@@ -30,7 +30,6 @@ Partial Class Escriptori_Administradors
         XatToolStripMenuItem = New ToolStripMenuItem()
         NotíciesToolStripMenuItem = New ToolStripMenuItem()
         PreguntesFrequentsToolStripMenuItem = New ToolStripMenuItem()
-        GenerarArxiuDeTextToolStripMenuItem = New ToolStripMenuItem()
         TancaSessióToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Panel1 = New Panel()
@@ -58,75 +57,80 @@ Partial Class Escriptori_Administradors
         MenuStrip1.Dock = DockStyle.Left
         MenuStrip1.Font = New Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point)
         MenuStrip1.ImageScalingSize = New Size(24, 24)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem, GenerarArxiuDeTextToolStripMenuItem, TancaSessióToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {GestionarToolStripMenuItem, XatToolStripMenuItem, NotíciesToolStripMenuItem, PreguntesFrequentsToolStripMenuItem, TancaSessióToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(9, 2, 0, 2)
-        MenuStrip1.Size = New Size(292, 1353)
+        MenuStrip1.Padding = New Padding(7, 2, 0, 2)
+        MenuStrip1.Size = New Size(239, 844)
         MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"' 
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
         ' GestionarToolStripMenuItem
         ' 
         GestionarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClientsToolStripMenuItem, TapesToolStripMenuItem, CategoriesToolStripMenuItem})
         GestionarToolStripMenuItem.Name = "GestionarToolStripMenuItem"
-        GestionarToolStripMenuItem.Size = New Size(273, 33)
-        GestionarToolStripMenuItem.Text = "Gestionar"' 
+        GestionarToolStripMenuItem.Size = New Size(224, 28)
+        GestionarToolStripMenuItem.Text = "Gestionar"
+        ' 
         ' ClientsToolStripMenuItem
         ' 
         ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        ClientsToolStripMenuItem.Size = New Size(246, 38)
-        ClientsToolStripMenuItem.Text = "Clients"' 
+        ClientsToolStripMenuItem.Size = New Size(202, 28)
+        ClientsToolStripMenuItem.Text = "Clients"
+        ' 
         ' TapesToolStripMenuItem
         ' 
         TapesToolStripMenuItem.Name = "TapesToolStripMenuItem"
-        TapesToolStripMenuItem.Size = New Size(246, 38)
-        TapesToolStripMenuItem.Text = "Tapes"' 
+        TapesToolStripMenuItem.Size = New Size(202, 28)
+        TapesToolStripMenuItem.Text = "Tapes"
+        ' 
         ' CategoriesToolStripMenuItem
         ' 
         CategoriesToolStripMenuItem.Name = "CategoriesToolStripMenuItem"
-        CategoriesToolStripMenuItem.Size = New Size(246, 38)
-        CategoriesToolStripMenuItem.Text = "Categories"' 
+        CategoriesToolStripMenuItem.Size = New Size(202, 28)
+        CategoriesToolStripMenuItem.Text = "Categories"
+        ' 
         ' XatToolStripMenuItem
         ' 
         XatToolStripMenuItem.Name = "XatToolStripMenuItem"
-        XatToolStripMenuItem.Size = New Size(273, 33)
-        XatToolStripMenuItem.Text = "Xat"' 
+        XatToolStripMenuItem.Size = New Size(224, 28)
+        XatToolStripMenuItem.Text = "Xat"
+        ' 
         ' NotíciesToolStripMenuItem
         ' 
         NotíciesToolStripMenuItem.Name = "NotíciesToolStripMenuItem"
-        NotíciesToolStripMenuItem.Size = New Size(273, 33)
-        NotíciesToolStripMenuItem.Text = "Notícies"' 
+        NotíciesToolStripMenuItem.Size = New Size(224, 28)
+        NotíciesToolStripMenuItem.Text = "Notícies"
+        ' 
         ' PreguntesFrequentsToolStripMenuItem
         ' 
         PreguntesFrequentsToolStripMenuItem.Name = "PreguntesFrequentsToolStripMenuItem"
-        PreguntesFrequentsToolStripMenuItem.Size = New Size(273, 33)
-        PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"' 
-        ' GenerarArxiuDeTextToolStripMenuItem
+        PreguntesFrequentsToolStripMenuItem.Size = New Size(224, 28)
+        PreguntesFrequentsToolStripMenuItem.Text = "Preguntes frequents"
         ' 
-        GenerarArxiuDeTextToolStripMenuItem.Name = "GenerarArxiuDeTextToolStripMenuItem"
-        GenerarArxiuDeTextToolStripMenuItem.Size = New Size(273, 33)
-        GenerarArxiuDeTextToolStripMenuItem.Text = "Generar Arxiu"' 
         ' TancaSessióToolStripMenuItem
         ' 
         TancaSessióToolStripMenuItem.Name = "TancaSessióToolStripMenuItem"
-        TancaSessióToolStripMenuItem.Size = New Size(273, 33)
-        TancaSessióToolStripMenuItem.Text = "Tanca Sessió"' 
+        TancaSessióToolStripMenuItem.Size = New Size(224, 28)
+        TancaSessióToolStripMenuItem.Text = "Tanca Sessió"
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(455, 56)
+        Label1.Location = New Point(364, 45)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(135, 38)
+        Label1.Size = New Size(114, 32)
         Label1.TabIndex = 2
-        Label1.Text = "Label1"' 
+        Label1.Text = "Label1"
+        ' 
         ' Panel1
         ' 
-        Panel1.Location = New Point(455, 144)
+        Panel1.Location = New Point(364, 115)
         Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1329, 638)
+        Panel1.Size = New Size(1063, 510)
         Panel1.TabIndex = 3
         ' 
         ' Panel2
@@ -145,17 +149,19 @@ Partial Class Escriptori_Administradors
         Panel2.Controls.Add(LabelNif)
         Panel2.Controls.Add(LabelTelefon)
         Panel2.Controls.Add(LabelPack)
-        Panel2.Location = New Point(455, 830)
+        Panel2.Location = New Point(364, 664)
+        Panel2.Margin = New Padding(2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1285, 444)
+        Panel2.Size = New Size(1028, 117)
         Panel2.TabIndex = 15
         ' 
         ' ButtonConfirmarCategories
         ' 
         ButtonConfirmarCategories.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ButtonConfirmarCategories.Location = New Point(800, 235)
+        ButtonConfirmarCategories.Location = New Point(640, 188)
+        ButtonConfirmarCategories.Margin = New Padding(2)
         ButtonConfirmarCategories.Name = "ButtonConfirmarCategories"
-        ButtonConfirmarCategories.Size = New Size(275, 76)
+        ButtonConfirmarCategories.Size = New Size(220, 61)
         ButtonConfirmarCategories.TabIndex = 19
         ButtonConfirmarCategories.Text = "CONFIRMAR CANVIS"
         ButtonConfirmarCategories.UseVisualStyleBackColor = False
@@ -163,9 +169,10 @@ Partial Class Escriptori_Administradors
         ' ButtonConfirmarTapes
         ' 
         ButtonConfirmarTapes.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ButtonConfirmarTapes.Location = New Point(800, 237)
+        ButtonConfirmarTapes.Location = New Point(640, 190)
+        ButtonConfirmarTapes.Margin = New Padding(2)
         ButtonConfirmarTapes.Name = "ButtonConfirmarTapes"
-        ButtonConfirmarTapes.Size = New Size(275, 76)
+        ButtonConfirmarTapes.Size = New Size(220, 61)
         ButtonConfirmarTapes.TabIndex = 16
         ButtonConfirmarTapes.Text = "CONFIRMAR CANVIS"
         ButtonConfirmarTapes.UseVisualStyleBackColor = False
@@ -175,18 +182,20 @@ Partial Class Escriptori_Administradors
         ComboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBoxCategoria.FormattingEnabled = True
         ComboBoxCategoria.Items.AddRange(New Object() {"Patatas", "Frios", "Calents", "fritos", "Ensaladas", "Productes Lactics"})
-        ComboBoxCategoria.Location = New Point(56, 258)
+        ComboBoxCategoria.Location = New Point(45, 206)
+        ComboBoxCategoria.Margin = New Padding(2)
         ComboBoxCategoria.Name = "ComboBoxCategoria"
-        ComboBoxCategoria.Size = New Size(182, 33)
+        ComboBoxCategoria.Size = New Size(146, 28)
         ComboBoxCategoria.TabIndex = 18
         ' 
         ' RadioButtonEliminar
         ' 
         RadioButtonEliminar.AutoSize = True
         RadioButtonEliminar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButtonEliminar.Location = New Point(829, 103)
+        RadioButtonEliminar.Location = New Point(663, 82)
+        RadioButtonEliminar.Margin = New Padding(2)
         RadioButtonEliminar.Name = "RadioButtonEliminar"
-        RadioButtonEliminar.Size = New Size(164, 42)
+        RadioButtonEliminar.Size = New Size(139, 36)
         RadioButtonEliminar.TabIndex = 17
         RadioButtonEliminar.TabStop = True
         RadioButtonEliminar.Text = "ELIMINAR"
@@ -196,9 +205,10 @@ Partial Class Escriptori_Administradors
         ' 
         RadioButtonActualitzar.AutoSize = True
         RadioButtonActualitzar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButtonActualitzar.Location = New Point(1054, 103)
+        RadioButtonActualitzar.Location = New Point(843, 82)
+        RadioButtonActualitzar.Margin = New Padding(2)
         RadioButtonActualitzar.Name = "RadioButtonActualitzar"
-        RadioButtonActualitzar.Size = New Size(213, 42)
+        RadioButtonActualitzar.Size = New Size(181, 36)
         RadioButtonActualitzar.TabIndex = 16
         RadioButtonActualitzar.TabStop = True
         RadioButtonActualitzar.Text = "ACTUALITZAR"
@@ -208,9 +218,10 @@ Partial Class Escriptori_Administradors
         ' 
         RadioButtonAfegir.AutoSize = True
         RadioButtonAfegir.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButtonAfegir.Location = New Point(635, 103)
+        RadioButtonAfegir.Location = New Point(508, 82)
+        RadioButtonAfegir.Margin = New Padding(2)
         RadioButtonAfegir.Name = "RadioButtonAfegir"
-        RadioButtonAfegir.Size = New Size(131, 42)
+        RadioButtonAfegir.Size = New Size(110, 36)
         RadioButtonAfegir.TabIndex = 14
         RadioButtonAfegir.TabStop = True
         RadioButtonAfegir.Text = "AFEGIR"
@@ -218,33 +229,37 @@ Partial Class Escriptori_Administradors
         ' 
         ' TextBoxPack
         ' 
-        TextBoxPack.Location = New Point(56, 409)
+        TextBoxPack.Location = New Point(45, 327)
+        TextBoxPack.Margin = New Padding(2)
         TextBoxPack.Name = "TextBoxPack"
-        TextBoxPack.Size = New Size(180, 31)
+        TextBoxPack.Size = New Size(145, 27)
         TextBoxPack.TabIndex = 15
         ' 
         ' ButtonConfirmarClients
         ' 
         ButtonConfirmarClients.BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ButtonConfirmarClients.Location = New Point(800, 237)
+        ButtonConfirmarClients.Location = New Point(640, 190)
+        ButtonConfirmarClients.Margin = New Padding(2)
         ButtonConfirmarClients.Name = "ButtonConfirmarClients"
-        ButtonConfirmarClients.Size = New Size(275, 76)
+        ButtonConfirmarClients.Size = New Size(220, 61)
         ButtonConfirmarClients.TabIndex = 14
         ButtonConfirmarClients.Text = "CONFIRMAR CANVIS"
         ButtonConfirmarClients.UseVisualStyleBackColor = False
         ' 
         ' TextBoxNif
         ' 
-        TextBoxNif.Location = New Point(56, 113)
+        TextBoxNif.Location = New Point(45, 90)
+        TextBoxNif.Margin = New Padding(2)
         TextBoxNif.Name = "TextBoxNif"
-        TextBoxNif.Size = New Size(289, 31)
+        TextBoxNif.Size = New Size(232, 27)
         TextBoxNif.TabIndex = 13
         ' 
         ' TextBoxTelefon
         ' 
-        TextBoxTelefon.Location = New Point(56, 260)
+        TextBoxTelefon.Location = New Point(45, 208)
+        TextBoxTelefon.Margin = New Padding(2)
         TextBoxTelefon.Name = "TextBoxTelefon"
-        TextBoxTelefon.Size = New Size(299, 31)
+        TextBoxTelefon.Size = New Size(240, 27)
         TextBoxTelefon.TabIndex = 12
         ' 
         ' LabelNif
@@ -252,42 +267,48 @@ Partial Class Escriptori_Administradors
         LabelNif.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         LabelNif.AutoSize = True
         LabelNif.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        LabelNif.Location = New Point(56, 34)
+        LabelNif.Location = New Point(45, 27)
+        LabelNif.Margin = New Padding(2, 0, 2, 0)
         LabelNif.Name = "LabelNif"
-        LabelNif.Size = New Size(69, 45)
+        LabelNif.Size = New Size(57, 37)
         LabelNif.TabIndex = 3
-        LabelNif.Text = "NIF"' 
+        LabelNif.Text = "NIF"
+        ' 
         ' LabelTelefon
         ' 
         LabelTelefon.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         LabelTelefon.AutoSize = True
         LabelTelefon.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        LabelTelefon.Location = New Point(56, 185)
+        LabelTelefon.Location = New Point(45, 148)
+        LabelTelefon.Margin = New Padding(2, 0, 2, 0)
         LabelTelefon.Name = "LabelTelefon"
-        LabelTelefon.Size = New Size(148, 45)
+        LabelTelefon.Size = New Size(125, 37)
         LabelTelefon.TabIndex = 4
-        LabelTelefon.Text = "TELEFON"' 
+        LabelTelefon.Text = "TELEFON"
+        ' 
         ' LabelPack
         ' 
         LabelPack.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         LabelPack.AutoSize = True
         LabelPack.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        LabelPack.Location = New Point(56, 333)
+        LabelPack.Location = New Point(45, 266)
+        LabelPack.Margin = New Padding(2, 0, 2, 0)
         LabelPack.Name = "LabelPack"
-        LabelPack.Size = New Size(95, 45)
+        LabelPack.Size = New Size(79, 37)
         LabelPack.TabIndex = 5
-        LabelPack.Text = "PACK"' 
+        LabelPack.Text = "PACK"
+        ' 
         ' Escriptori_Administradors
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(2347, 1353)
+        ClientSize = New Size(1539, 844)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Controls.Add(Label1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Escriptori_Administradors"
         Text = "Escriptori_Administradors"
         WindowState = FormWindowState.Maximized
@@ -319,7 +340,6 @@ Partial Class Escriptori_Administradors
     Friend WithEvents LabelNif As Label
     Friend WithEvents LabelTelefon As Label
     Friend WithEvents LabelPack As Label
-    Friend WithEvents GenerarArxiuDeTextToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TancaSessióToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ComboBoxCategoria As ComboBox
     Friend WithEvents ButtonConfirmarTapes As Button

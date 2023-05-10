@@ -33,6 +33,7 @@ Partial Class FormPFAdmin
         TextBoxPregunta = New TextBox()
         LabelResposta = New Label()
         LabelPregunta = New Label()
+        ButtonEnrere = New Button()
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -159,11 +160,28 @@ Partial Class FormPFAdmin
         LabelPregunta.TabIndex = 10
         LabelPregunta.Text = "Pregunta"
         ' 
+        ' ButtonEnrere
+        ' 
+        ButtonEnrere.BackColor = Color.LightGray
+        ButtonEnrere.BackgroundImage = My.Resources.Resources.enrere
+        ButtonEnrere.BackgroundImageLayout = ImageLayout.Stretch
+        ButtonEnrere.FlatAppearance.BorderColor = Color.White
+        ButtonEnrere.FlatAppearance.BorderSize = 0
+        ButtonEnrere.FlatStyle = FlatStyle.Flat
+        ButtonEnrere.Location = New Point(12, 9)
+        ButtonEnrere.Name = "ButtonEnrere"
+        ButtonEnrere.Size = New Size(64, 43)
+        ButtonEnrere.TabIndex = 25
+        ButtonEnrere.UseVisualStyleBackColor = False
+        ' 
         ' FormPFAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.LightGray
         ClientSize = New Size(1780, 804)
+        ControlBox = False
+        Controls.Add(ButtonEnrere)
         Controls.Add(Panel1)
         Controls.Add(DataGridViewPF)
         Controls.Add(LabelTitolPF)
@@ -187,4 +205,5 @@ Partial Class FormPFAdmin
     Friend WithEvents RadioButtonEliminar As RadioButton
     Friend WithEvents RadioButtonModificar As RadioButton
     Friend WithEvents RadioButtonAfegir As RadioButton
+    Friend WithEvents ButtonEnrere As Button
 End Class

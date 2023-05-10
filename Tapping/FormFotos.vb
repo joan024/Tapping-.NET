@@ -1,13 +1,9 @@
 ﻿Imports System.IO
-Imports System.Security.Cryptography
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class FormFotos
-    Dim bbdd As New ClasseBBDD
-    Dim arxiu As String = "C:\TappingFotos\local\" & 11 & ".txt"
-    Dim fotos As String = "C:\TappingFotos\"
+    Dim arxiu As String = Constants.ARXIUS & Constants.IDLOCAL & Constants.EXTENSIOARXIU
     Dim foto As PictureBox
-    Dim extensio As String = ""
+    Dim extensio As String
     Private Sub FormFotos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarFotos()
     End Sub
@@ -33,20 +29,20 @@ Public Class FormFotos
             'afegim l'imatge al flowLayoutPanel
             FlowLayoutPanelFotos.Controls.Add(foto)
             'afegim la foto a la base de dades
-            bbdd.PujarFoto(PujarDades())
+            Constants.bbdd.PujarFoto(PujarDades())
             'agafem ultim id de la taula
-            Dim id As String = bbdd.SelectFoto()
+            Dim id As String = Constants.bbdd.SelectFoto()
             'MsgBox(id)
             'afegim la foto a l'arxiu del local
-            bbdd.ArxiuLocal()
+            Constants.bbdd.ArxiuLocal()
             'guardem la imatge del picturebox amb ultim id de bbdd i la extensio guardada
-            foto.Image.Save(fotos & id & extensio)
+            foto.Image.Save(Constants.FOTOS & id & extensio)
         End If
     End Sub
     'creem array amb idlocal i la extensio per ficarlo a la bbdd
     Private Function PujarDades() As String()
         Dim dades(2) As String
-        dades(0) = 11
+        dades(0) = Constants.IDLOCAL
         dades(1) = extensio
         Return dades
     End Function
@@ -77,11 +73,11 @@ Public Class FormFotos
                 Next
             End Using
             'eliminem la foto de la base de dades
-            bbdd.DeleteFoto(pb.Name.Split(".").First)
+            Constants.bbdd.DeleteFoto(pb.Name.Split(".").First)
             'eliminem el picturebox de la foto i la foto del disc
             pb.Parent.Controls.Remove(pb)
             pb.Image.Dispose()
-            File.Delete(fotos & pb.Name)
+            File.Delete(Constants.FOTOS & pb.Name)
         End If
     End Sub
     'mostrem una informacio per comunicar com eliminar una foto
@@ -96,7 +92,7 @@ Public Class FormFotos
                 While Not lector.EndOfStream
                     Dim linea As String = lector.ReadLine()
                     If linea.Contains(".jpg") Or linea.Contains(".png") Or linea.Contains(".jpeg") Then
-                        Dim rutaFoto As String = Path.Combine(fotos, linea)
+                        Dim rutaFoto As String = Path.Combine(Constants.FOTOS, linea)
                         foto = New PictureBox
                         With foto
                             .Image = Image.FromFile(rutaFoto)
@@ -119,4 +115,8 @@ Public Class FormFotos
         Next
     End Sub
 
+    Private Sub SortirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SortirToolStripMenuItem.Click
+        Form1.Show()
+        Me.Close()
+    End Sub
 End Class

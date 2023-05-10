@@ -1,5 +1,4 @@
-﻿Imports System.Buffers
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 
 Public Class GridViewNovaContrasenya
     Dim textContrasenya1 As String

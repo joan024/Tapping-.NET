@@ -1,7 +1,9 @@
 ﻿Public Class FormPantallaXat
-    Dim bbdd As New ClasseBBDD
     Private Sub FormPantallaXat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        bbdd.MissatgesXatEmpresa(6, DataGridViewXat)
+        Constants.bbdd.SelectEmpresa(Constants.TAULALINEAXAT, Constants.IDUSUARI, DataGridViewXat)
+        If DataGridViewXat.RowCount <> 0 Then
+            DataGridViewXat.FirstDisplayedScrollingRowIndex = DataGridViewXat.Rows.Count - 1
+        End If
     End Sub
     Private Sub DataGridViewXat_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewXat.SelectionChanged
         DataGridViewXat.ClearSelection()
@@ -14,7 +16,7 @@
         End If
     End Sub
     Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
-        bbdd.InsertMissatgeEmpresa(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, 6, DataGridViewXat)
+        Constants.bbdd.InsertMissatgeEmpresa(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, Constants.IDUSUARI, DataGridViewXat)
         TextBoxXat.Text = ""
     End Sub
 End Class

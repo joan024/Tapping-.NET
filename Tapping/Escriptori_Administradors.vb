@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.CompilerServices
+﻿Imports System.ComponentModel
+Imports System.Runtime.CompilerServices
 
 Public Class Escriptori_Administradors
     Dim gvClients As New GridViewClients
@@ -10,7 +11,6 @@ Public Class Escriptori_Administradors
         Panel2.Visible = False
     End Sub
 
-    ' menu:
     Private Sub ClientsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientsToolStripMenuItem.Click
         opcioClient()
         gvClients.selectTaula()
@@ -34,13 +34,15 @@ Public Class Escriptori_Administradors
     End Sub
 
     Private Sub NotíciesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotíciesToolStripMenuItem.Click
-        Form2NoticiesAdminvb.Show()
+        FormNoticiesAdmin.Show()
         Panel2.Visible = False
+        Me.Hide()
     End Sub
 
     Private Sub PreguntesFrequentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreguntesFrequentsToolStripMenuItem.Click
         FormPFAdmin.Show()
         Panel2.Visible = False
+        Me.Hide()
     End Sub
 
     ' Quan l'administrador clica el boto dels clients:
@@ -188,4 +190,12 @@ Public Class Escriptori_Administradors
         TextBoxNif.Text = gvCategories.DataGridViewCategories.CurrentRow.Cells(1).Value
     End Sub
 
+    Private Sub Escriptori_Administradors_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+        Application.Exit()
+    End Sub
+
+    Private Sub TancaSessióToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TancaSessióToolStripMenuItem.Click
+        IniciSessio.Show()
+        Me.Hide()
+    End Sub
 End Class
