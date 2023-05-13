@@ -310,7 +310,7 @@ Partial Class Escriptori_Administradors
         MainMenuStrip = MenuStrip1
         Margin = New Padding(3, 4, 3, 4)
         Name = "Escriptori_Administradors"
-        Text = "Escriptori_Administradors"
+        Text = "Inici"
         WindowState = FormWindowState.Maximized
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()

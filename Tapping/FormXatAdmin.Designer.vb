@@ -22,7 +22,7 @@ Partial Class FormXatAdmin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         PictureBoxEmpresa = New PictureBox()
         PanelXat = New Panel()
         LabelXat = New Label()
@@ -110,14 +110,14 @@ Partial Class FormXatAdmin
         DataGridViewEmpreses.Location = New Point(12, 108)
         DataGridViewEmpreses.Name = "DataGridViewEmpreses"
         DataGridViewEmpreses.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Control
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
-        DataGridViewEmpreses.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridViewEmpreses.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridViewEmpreses.RowHeadersVisible = False
         DataGridViewEmpreses.RowHeadersWidth = 51
         DataGridViewEmpreses.RowTemplate.Height = 29
@@ -158,7 +158,7 @@ Partial Class FormXatAdmin
         Controls.Add(ButtonEnviar)
         MinimumSize = New Size(932, 647)
         Name = "FormXatAdmin"
-        Text = "FormXatAdmin"
+        Text = "Xats"
         CType(PictureBoxEmpresa, ComponentModel.ISupportInitialize).EndInit()
         PanelXat.ResumeLayout(False)
         PanelXat.PerformLayout()

@@ -1,11 +1,11 @@
 ﻿Public Class FormPFAdmin
     Private Sub FormPFAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'mostrem els registres al datagridview
+        'mostrem els registres
         Constants.bbdd.SelectAdmin(Constants.TAULAPREGUNTAFREQUENT, DataGridViewPF)
         buid()
     End Sub
-    'fiquem les dades de la fila seleccionada
     Private Sub DataGridViewPF_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewPF.SelectionChanged
+        'fiquem les dades de la fila seleccionada
         TextBoxPregunta.Text = DataGridViewPF.CurrentRow.Cells(1).Value
         TextBoxResposta.Text = DataGridViewPF.CurrentRow.Cells(2).Value
         DataGridViewPF.Columns(0).Visible = False
@@ -17,8 +17,8 @@
             TextBoxResposta.Text = ""
         End If
     End Sub
-    'depenen de quin radio button esta seleccionat farem l'accio
     Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
+        'depenen de quin radio button esta seleccionat farem una accio diferent
         If RadioButtonAfegir.Checked Then
             Constants.bbdd.InsertAdmin(Constants.TAULAPREGUNTAFREQUENT, EnviarDades(), DataGridViewPF)
             buid()
@@ -26,6 +26,7 @@
             Constants.bbdd.UpdateAdmin(Constants.TAULAPREGUNTAFREQUENT, EnviarDades(), EnviarId(), DataGridViewPF)
             buid()
         ElseIf RadioButtonEliminar.Checked Then
+            'missatge de confirmacio
             Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
             If r = vbYes Then
                 Constants.bbdd.Delete(Constants.TAULAPREGUNTAFREQUENT, DataGridViewPF, EnviarId())
@@ -33,15 +34,15 @@
             End If
         End If
     End Sub
-    'fiquem les dades en un array per enviar
     Private Function EnviarDades() As String()
+        'fiquem les dades en un array per enviar
         Dim dades(2) As String
         dades(0) = TextBoxPregunta.Text
         dades(1) = TextBoxResposta.Text
         Return dades
     End Function
-    'enviem id de la fila seleccionada
     Private Function EnviarId() As String
+        'enviem id de la fila seleccionada
         Dim id As String = ""
         If DataGridViewPF.SelectedRows.Count > 0 Then
             id = DataGridViewPF.CurrentRow.Cells(0).Value
@@ -49,6 +50,7 @@
         Return id
     End Function
     Private Sub buid()
+        'fiquem tot buid i sense seleccio
         DataGridViewPF.ClearSelection()
         TextBoxPregunta.Text = ""
         TextBoxResposta.Text = ""

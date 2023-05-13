@@ -34,46 +34,55 @@ Partial Class GridViewNovaContrasenya
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(192, 63)
+        Label1.Location = New Point(154, 50)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(593, 25)
+        Label1.Size = New Size(490, 20)
         Label1.TabIndex = 0
-        Label1.Text = "PER PODER ACCEDIR A TAPPING TENS QUE CANVIAR LA CONTRASENYA"' 
+        Label1.Text = "PER PODER ACCEDIR A TAPPING TENS QUE CANVIAR LA CONTRASENYA"
+        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(192, 171)
+        Label2.Location = New Point(154, 137)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(214, 25)
+        Label2.Size = New Size(178, 20)
         Label2.TabIndex = 1
-        Label2.Text = "Introdueix la contrasenya:"' 
+        Label2.Text = "Introdueix la contrasenya:"
+        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(192, 273)
+        Label3.Location = New Point(154, 218)
+        Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(200, 25)
+        Label3.Size = New Size(169, 20)
         Label3.TabIndex = 2
-        Label3.Text = "Repeteix la contrasenya:"' 
+        Label3.Text = "Repeteix la contrasenya:"
+        ' 
         ' TextBoxContra1
         ' 
-        TextBoxContra1.Location = New Point(479, 168)
+        TextBoxContra1.Location = New Point(383, 134)
+        TextBoxContra1.Margin = New Padding(2, 2, 2, 2)
         TextBoxContra1.Name = "TextBoxContra1"
-        TextBoxContra1.Size = New Size(150, 31)
+        TextBoxContra1.Size = New Size(121, 27)
         TextBoxContra1.TabIndex = 3
         ' 
         ' TextBoxContra2
         ' 
-        TextBoxContra2.Location = New Point(479, 270)
+        TextBoxContra2.Location = New Point(383, 216)
+        TextBoxContra2.Margin = New Padding(2, 2, 2, 2)
         TextBoxContra2.Name = "TextBoxContra2"
-        TextBoxContra2.Size = New Size(150, 31)
+        TextBoxContra2.Size = New Size(121, 27)
         TextBoxContra2.TabIndex = 4
         ' 
         ' ButtonConfirmarContrasenya
         ' 
-        ButtonConfirmarContrasenya.Location = New Point(407, 452)
+        ButtonConfirmarContrasenya.Location = New Point(326, 362)
+        ButtonConfirmarContrasenya.Margin = New Padding(2, 2, 2, 2)
         ButtonConfirmarContrasenya.Name = "ButtonConfirmarContrasenya"
-        ButtonConfirmarContrasenya.Size = New Size(150, 44)
+        ButtonConfirmarContrasenya.Size = New Size(120, 35)
         ButtonConfirmarContrasenya.TabIndex = 5
         ButtonConfirmarContrasenya.Text = "CONFIRMAR"
         ButtonConfirmarContrasenya.UseVisualStyleBackColor = True
@@ -81,18 +90,19 @@ Partial Class GridViewNovaContrasenya
         ' CheckBoxMostrarContrasenya
         ' 
         CheckBoxMostrarContrasenya.AutoSize = True
-        CheckBoxMostrarContrasenya.Location = New Point(387, 367)
+        CheckBoxMostrarContrasenya.Location = New Point(310, 294)
+        CheckBoxMostrarContrasenya.Margin = New Padding(2, 2, 2, 2)
         CheckBoxMostrarContrasenya.Name = "CheckBoxMostrarContrasenya"
-        CheckBoxMostrarContrasenya.Size = New Size(198, 29)
+        CheckBoxMostrarContrasenya.Size = New Size(163, 24)
         CheckBoxMostrarContrasenya.TabIndex = 6
         CheckBoxMostrarContrasenya.Text = "MostrarContrasenya"
         CheckBoxMostrarContrasenya.UseVisualStyleBackColor = True
         ' 
         ' GridViewNovaContrasenya
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(959, 570)
+        ClientSize = New Size(767, 456)
         ControlBox = False
         Controls.Add(CheckBoxMostrarContrasenya)
         Controls.Add(ButtonConfirmarContrasenya)
@@ -101,8 +111,9 @@ Partial Class GridViewNovaContrasenya
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Margin = New Padding(2, 2, 2, 2)
         Name = "GridViewNovaContrasenya"
-        Text = "GridViewNovaContrasenya"
+        Text = "Nova Contrasenya"
         ResumeLayout(False)
         PerformLayout()
     End Sub

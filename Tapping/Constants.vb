@@ -20,6 +20,7 @@
     Public Const TAULAFOTO As String = "foto"
     Public Const TAULATAPA As String = "tapa"
     Public Const TAULACATEGORIATAPA As String = "categoria_tapa"
+    Public Const TAULADESCOMPTE As String = "descompte"
 
 
     ' MYSQL CONNECTION

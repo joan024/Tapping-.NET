@@ -7,7 +7,7 @@ Public Class FormNoticies
         Constants.bbdd.SelectEmpresa(Constants.TAULANOTICIA, 0, DataGridViewNoticies)
         'amagem columna foto
         DataGridViewNoticies.Columns(2).Visible = False
-        'creem la nova columna
+        'creem nova columna
         ColumnaImatge()
         'fiquem que la columna de descripcio sigui multilinea
         DataGridViewNoticies.Columns(1).DefaultCellStyle.WrapMode = DataGridViewTriState.True
@@ -16,7 +16,6 @@ Public Class FormNoticies
     Private Sub DataGridViewNoticies_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewNoticies.SelectionChanged
         DataGridViewNoticies.ClearSelection()
     End Sub
-    'es canvia el format de la cel·la 
     Private Sub DataGridViewNoticies_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridViewNoticies.CellFormatting
         If e.ColumnIndex = 3 Then
             'obtenim la url de la columna "foto" de la base de dades
@@ -29,22 +28,22 @@ Public Class FormNoticies
             'creem un objecte Image apartir dels bytes
             Dim imagen As Image = Image.FromStream(New MemoryStream(imagenBytes))
 
+            'fem la imatge més petita
             Dim imagenRedimensionada As Image = New Bitmap(imagen, 100, 100)
 
             'fiquem imatge a la nova columna
             e.Value = imagenRedimensionada
         End If
     End Sub
-    'mostrem form principal i tanquem actual
     Private Sub ButtonEnrere_Click(sender As Object, e As EventArgs) Handles ButtonEnrere.Click
         Form1.Show()
         Me.Close()
     End Sub
-    'funcio per crear nova columna de tipus imatge
     Private Sub ColumnaImatge()
+        'funcio per crear nova columna de tipus imatge
         Dim columnaImagen As New DataGridViewImageColumn()
-        columnaImagen.Name = "imagen"
-        columnaImagen.HeaderText = "imagen"
+        columnaImagen.Name = "imatge"
+        columnaImagen.HeaderText = "imatge"
         columnaImagen.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         DataGridViewNoticies.Columns.Add(columnaImagen)
     End Sub

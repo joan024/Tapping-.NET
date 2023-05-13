@@ -22,22 +22,13 @@ Partial Class FormFotos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        FlowLayoutPanelFotos = New FlowLayoutPanel()
         MenuStrip1 = New MenuStrip()
         AfegirToolStripMenuItem = New ToolStripMenuItem()
         EliminarToolStripMenuItem = New ToolStripMenuItem()
         SortirToolStripMenuItem = New ToolStripMenuItem()
+        FlowLayoutPanelFotos = New FlowLayoutPanel()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' FlowLayoutPanelFotos
-        ' 
-        FlowLayoutPanelFotos.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        FlowLayoutPanelFotos.BackColor = SystemColors.Control
-        FlowLayoutPanelFotos.Location = New Point(12, 31)
-        FlowLayoutPanelFotos.Name = "FlowLayoutPanelFotos"
-        FlowLayoutPanelFotos.Size = New Size(1746, 672)
-        FlowLayoutPanelFotos.TabIndex = 0
         ' 
         ' MenuStrip1
         ' 
@@ -45,47 +36,60 @@ Partial Class FormFotos
         MenuStrip1.Items.AddRange(New ToolStripItem() {AfegirToolStripMenuItem, EliminarToolStripMenuItem, SortirToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1770, 28)
+        MenuStrip1.Size = New Size(1770, 36)
         MenuStrip1.TabIndex = 1
         MenuStrip1.Text = "MenuStrip1"
         ' 
         ' AfegirToolStripMenuItem
         ' 
+        AfegirToolStripMenuItem.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         AfegirToolStripMenuItem.Name = "AfegirToolStripMenuItem"
-        AfegirToolStripMenuItem.Size = New Size(64, 24)
+        AfegirToolStripMenuItem.Size = New Size(79, 32)
         AfegirToolStripMenuItem.Text = "Afegir"
         ' 
         ' EliminarToolStripMenuItem
         ' 
+        EliminarToolStripMenuItem.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        EliminarToolStripMenuItem.Size = New Size(77, 24)
+        EliminarToolStripMenuItem.Size = New Size(96, 32)
         EliminarToolStripMenuItem.Text = "Eliminar"
         ' 
         ' SortirToolStripMenuItem
         ' 
+        SortirToolStripMenuItem.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         SortirToolStripMenuItem.Name = "SortirToolStripMenuItem"
-        SortirToolStripMenuItem.Size = New Size(59, 24)
+        SortirToolStripMenuItem.Size = New Size(75, 32)
         SortirToolStripMenuItem.Text = "Sortir"
+        ' 
+        ' FlowLayoutPanelFotos
+        ' 
+        FlowLayoutPanelFotos.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        FlowLayoutPanelFotos.BackColor = SystemColors.Control
+        FlowLayoutPanelFotos.Location = New Point(12, 39)
+        FlowLayoutPanelFotos.Name = "FlowLayoutPanelFotos"
+        FlowLayoutPanelFotos.Size = New Size(1746, 664)
+        FlowLayoutPanelFotos.TabIndex = 0
         ' 
         ' FormFotos
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.Control
         ClientSize = New Size(1770, 715)
+        ControlBox = False
         Controls.Add(FlowLayoutPanelFotos)
         Controls.Add(MenuStrip1)
         Name = "FormFotos"
-        Text = "FormFotos"
+        Text = "Galeria"
         WindowState = FormWindowState.Maximized
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents FlowLayoutPanelFotos As FlowLayoutPanel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents AfegirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SortirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FlowLayoutPanelFotos As FlowLayoutPanel
 End Class

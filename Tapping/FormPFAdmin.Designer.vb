@@ -186,7 +186,7 @@ Partial Class FormPFAdmin
         Controls.Add(DataGridViewPF)
         Controls.Add(LabelTitolPF)
         Name = "FormPFAdmin"
-        Text = "FormPFAdmin"
+        Text = "Preguntes Freqüents"
         WindowState = FormWindowState.Maximized
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)

@@ -103,11 +103,12 @@ Partial Class FormNoticies
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
         ClientSize = New Size(1780, 805)
+        ControlBox = False
         Controls.Add(DataGridViewNoticies)
         Controls.Add(ButtonEnrere)
         Controls.Add(LabelTitolNoticies)
         Name = "FormNoticies"
-        Text = "FormNoticies"
+        Text = "Notícies"
         WindowState = FormWindowState.Maximized
         CType(DataGridViewNoticies, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

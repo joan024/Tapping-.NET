@@ -45,7 +45,7 @@ Partial Class FormComentaris
         DataGridViewComentaris.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridViewComentaris.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewComentaris.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewComentaris.BackgroundColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
+        DataGridViewComentaris.BackgroundColor = Color.White
         DataGridViewComentaris.BorderStyle = BorderStyle.None
         DataGridViewComentaris.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewComentaris.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -69,7 +69,7 @@ Partial Class FormComentaris
         Controls.Add(Label1)
         MinimumSize = New Size(932, 647)
         Name = "FormComentaris"
-        Text = "FormComentaris"
+        Text = "Comentaris"
         CType(DataGridViewComentaris, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

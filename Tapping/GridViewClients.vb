@@ -32,7 +32,7 @@ Public Class GridViewClients
             dades(4) = "0"
         End If
         Constants.bbdd.InsertAdmin(Constants.TAULAUSUARI, dades, DataGridViewClients)
-        Dim retornar = Constants.bbdd.SelectId(Constants.TAULAUSUARI, dades, DataGridViewClients)
+        Dim retornar = Constants.bbdd.SelectId(Constants.TAULAUSUARI, dades)
         Return retornar
     End Function
     Public Function EnviarId() As String

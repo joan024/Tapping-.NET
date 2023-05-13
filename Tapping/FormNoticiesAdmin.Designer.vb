@@ -281,7 +281,7 @@ Partial Class FormNoticiesAdmin
         Controls.Add(DataGridViewNoticies)
         Controls.Add(LabelTitolNoticies)
         Name = "FormNoticiesAdmin"
-        Text = "Form2NoticiesAdminvb"
+        Text = "Notícies"
         WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

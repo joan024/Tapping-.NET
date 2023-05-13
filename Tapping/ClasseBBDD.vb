@@ -15,13 +15,13 @@ Public Class ClasseBBDD
             connexio = New MySqlConnection
             With connexio
                 'Local
-                .ConnectionString = "server=192.168.1.150; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
+                '.ConnectionString = "server=192.168.1.150; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
                 'Remot
-                '.ConnectionString = "server=webapps.insjoanbrudieu.cat; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
+                .ConnectionString = "server=webapps.insjoanbrudieu.cat; user id=tapping; password=JuMaJoJo!!25231; database=tappingDB; port=25230;Convert Zero Datetime=True;"
             End With
             connexio.Open()
         Catch ex As Exception
-            MessageBox.Show("Error en 'connectar' ClasseBBDD: " & ex.Message)
+            MsgBox("Error en connectar amb el servei", vbExclamation)
         End Try
     End Sub
     Private Sub desconnectar()
@@ -52,7 +52,7 @@ Public Class ClasseBBDD
                 reader = Nothing
             End If
         Catch ex As Exception
-            MessageBox.Show("ERROR LOGIN")
+            MsgBox("ERROR LOGIN", vbExclamation)
         End Try
         Return reader
     End Function
@@ -64,7 +64,7 @@ Public Class ClasseBBDD
             comanda = New MySqlCommand(sentencia, connexio)
             comanda.ExecuteNonQuery()
         Catch ex As Exception
-            MessageBox.Show("Error 'UpdateAdmin' ClasseBBDD: " & ex.Message)
+            MsgBox("Error canviar contrasenya", vbExclamation)
         End Try
     End Sub
 
@@ -81,10 +81,8 @@ Public Class ClasseBBDD
                 sentencia = "SELECT tapa.id AS id_tapa,tapa.nom AS Tapa, categoria.nom AS Categoria FROM tapa JOIN categoria_tapa ON tapa.id = categoria_tapa.id_tapa JOIN categoria ON categoria_tapa.id_categoria = categoria.id"
             Case Constants.TAULACATEGORIA
                 sentencia = "SELECT * FROM categoria"
-            Case Constants.TAULAUSUARI
-                sentencia = "SELECT nom FROM usuari INNER JOIN xat ON usuari.id = xat.id_empresa"
-            Case Constants.TAULALINEAXAT
-
+            Case Constants.TAULAXAT
+                sentencia = "SELECT usuari.nom,xat.id_empresa FROM xat INNER JOIN usuari ON xat.id_empresa = usuari.id"
         End Select
         Try
             table = New DataTable
@@ -148,12 +146,16 @@ Public Class ClasseBBDD
                 sentencia = "INSERT INTO tapa(nom) VALUES ('" & dades(0) & "')"
             Case Constants.TAULACATEGORIATAPA
                 sentencia = "INSERT INTO categoria_tapa(id_categoria, id_tapa) VALUES ('" & dades(0) & "','" & dades(1) & "')"
+            Case Constants.TAULAXAT
+                sentencia = "INSERT INTO xat(id_administrador,id_empresa) VALUES ('" & dades(0) & "','" & dades(1) & "')"
+            Case Constants.TAULADESCOMPTE
+                sentencia = "INSERT INTO descompte(id_local,text,inici,final,codi) VALUES ('" & dades(0) & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','" & dades(4) & "')"
         End Select
 
         Try
             connectar()
             comanda = New MySqlCommand(sentencia, connexio)
-            If comanda.ExecuteNonQuery() > 0 And Not taula.Equals("empresa") Then
+            If comanda.ExecuteNonQuery() > 0 And Not taula.Equals(Constants.TAULAUSUARI) Then
                 SelectAdmin(taula, dgv)
             End If
         Catch ex As Exception
@@ -169,7 +171,7 @@ Public Class ClasseBBDD
             Case Constants.TAULAPREGUNTAFREQUENT
                 sentencia = "DELETE FROM preguntafrequent WHERE id = " & id
             Case Constants.TAULAUSUARI
-                ' en aquest cas actualitzo l'actiu a 0 en comptes d'eliminar
+                'en aquest cas actualitzo l'actiu a 0 en comptes d'eliminar
                 sentencia = "UPDATE usuari SET actiu = 0 where id = " & id
             Case Constants.TAULACATEGORIATAPA
                 sentencia = "DELETE FROM categoria_tapa where id_tapa = " & id
@@ -191,7 +193,7 @@ Public Class ClasseBBDD
         End Try
     End Sub
 
-    Public Function SelectId(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView) As String
+    Public Function SelectId(ByVal taula As String, ByVal dades() As String) As String
         Dim retornar As String = ""
         Select Case taula
             Case Constants.TAULAUSUARI
@@ -202,6 +204,8 @@ Public Class ClasseBBDD
                 sentencia = "SELECT MAX(id) FROM tapa"
             Case Constants.TAULACATEGORIA
                 sentencia = "SELECT id FROM categoria WHERE nom='" & dades(0) & "'"
+            Case Constants.TAULAXAT
+                sentencia = "SELECT id FROM xat WHERE id_empresa = " & dades(0)
         End Select
 
         Try
@@ -213,7 +217,7 @@ Public Class ClasseBBDD
                 retornar = reader.GetString(0)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en 'mostrarAdmin' ClasseBBDD: " & ex.Message)
+            MessageBox.Show("Error en 'SelectId' ClasseBBDD: " & ex.Message)
         Finally
             desconnectar()
         End Try
@@ -286,11 +290,13 @@ Public Class ClasseBBDD
             Case Constants.TAULAPREGUNTAFREQUENT
                 sentencia = "SELECT pregunta,resposta FROM preguntafrequent"
             Case Constants.TAULAVALORACIO
-                sentencia = "SELECT puntuacio,comentari FROM valoracio WHERE id_local = '" & id & "'"
+                sentencia = "SELECT local.nom,valoracio.puntuacio,valoracio.comentari FROM valoracio INNER JOIN local ON valoracio.id_local = local.id WHERE local.id_usuari = '" & id & "'"
             Case Constants.TAULAEMPRESA
                 sentencia = "SELECT nom,direccio,telefon,descripcio,web FROM local WHERE id_usuari = '" & id & "'"
             Case Constants.TAULALINEAXAT
                 sentencia = "SELECT lineaxat.usuari,lineaxat.missatge,lineaxat.id_xat FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id WHERE xat.id_empresa = '" & id & "'"
+            Case Constants.TAULADESCOMPTE
+                sentencia = "SELECT text,inici,final,codi FROM descompte WHERE id_local = " & id
         End Select
         Try
             table = New DataTable
@@ -300,6 +306,25 @@ Public Class ClasseBBDD
             dgv.DataSource = table
         Catch ex As Exception
             MsgBox("Error en carregar dades", vbExclamation)
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+
+    Public Sub InsertEmpresa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
+        Select Case taula
+            Case Constants.TAULADESCOMPTE
+                sentencia = "INSERT INTO descompte(id_local,text,inici,final,codi) VALUES ('" & dades(0) & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','" & dades(4) & "')"
+        End Select
+
+        Try
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            If comanda.ExecuteNonQuery() > 0 And Not taula.Equals("empresa") Then
+                SelectEmpresa(taula, dades(0), dgv)
+            End If
+        Catch ex As Exception
+            MsgBox("Error afegir", vbExclamation)
         Finally
             desconnectar()
         End Try
@@ -338,18 +363,35 @@ Public Class ClasseBBDD
         End Try
     End Sub
     Public Sub ArxiuLocal()
+        'seleccionem ultim id amb id_local,id i extensio
         sentencia = "SELECT id_local,id,extensio FROM foto WHERE id = (SELECT MAX(id) FROM foto)"
         Try
             connectar()
             comanda = New MySqlCommand(sentencia, connexio)
             reader = comanda.ExecuteReader()
+            'llegim el resultat de la sentencia
             While reader.Read()
-                Dim path As String = "C:\TappingFotos\local\" & reader("id_local") & ".txt"
+                Dim path As String = Constants.ARXIUS & reader("id_local") & Constants.EXTENSIOARXIU
+                'si l'arxiu existeix
                 If File.Exists(path) Then
+                    'llegim totes les linies
+                    Dim lines As List(Of String) = File.ReadAllLines(path).ToList()
+                    If lines.Count > 0 Then
+                        'modifiquem la primera linea (data i hora)
+                        lines(0) = Now & "#" & reader("id_local")
+                        'tornem a escriure l'arxiu
+                        Using writer As New StreamWriter(path, False)
+                            For Each line As String In lines
+                                writer.WriteLine(line)
+                            Next
+                        End Using
+                    End If
+                    'escrivim la nova linea (foto)
                     Using writer As New StreamWriter(path, True)
                         writer.WriteLine(reader("id") & "" & reader("extensio"))
                     End Using
                 Else
+                    'si l'arxiu no existeix creem un nou arxiu
                     Using writer As New StreamWriter(path)
                         writer.WriteLine(Now & "#" & reader("id_local"))
                         writer.WriteLine(reader("id") & "" & reader("extensio"))
@@ -357,7 +399,7 @@ Public Class ClasseBBDD
                 End If
             End While
         Catch ex As Exception
-            MessageBox.Show("Error 'ArxiuLocal' ClasseBBDD: " & ex.Message)
+            MessageBox.Show("Error afegir foto arxiu")
         Finally
             desconnectar()
         End Try
@@ -370,7 +412,7 @@ Public Class ClasseBBDD
             comanda = New MySqlCommand(sentencia, connexio)
             comanda.ExecuteNonQuery()
         Catch ex As Exception
-            MessageBox.Show("Error 'PujarFoto' ClasseBBDD: " & ex.Message)
+            MsgBox("Error afegir foto bbdd", vbExclamation)
         Finally
             desconnectar()
         End Try
@@ -387,7 +429,7 @@ Public Class ClasseBBDD
                 Return maxId.ToString()
             End If
         Catch ex As Exception
-            MessageBox.Show("Error 'SelectFoto' ClasseBBDD: " & ex.Message)
+            MsgBox("Error seleccionar max foto", vbExclamation)
         Finally
             desconnectar()
         End Try
@@ -404,7 +446,7 @@ Public Class ClasseBBDD
                 Dim maxId As Integer = reader.GetInt32(0)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error 'DeleteFoto' ClasseBBDD: " & ex.Message)
+            MsgBox("Error eliminar foto bbdd", vbExclamation)
         Finally
             desconnectar()
         End Try

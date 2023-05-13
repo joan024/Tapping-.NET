@@ -15,15 +15,15 @@
         Dim dades(1) As String
         dades(0) = nom
         Constants.bbdd.InsertAdmin(Constants.TAULATAPA, dades, DataGridViewTapes)
-        Dim retornar = Constants.bbdd.SelectId(Constants.TAULATAPA, dades, DataGridViewTapes)
+        Dim retornar = Constants.bbdd.SelectId(Constants.TAULATAPA, dades)
         Return retornar
     End Function
     Public Sub insertCategoriaTapa(ByVal idTapa As String, ByVal categoria As String)
         Dim dades(1) As String
         dades(0) = categoria
-        Dim retornar = Constants.bbdd.SelectId(Constants.TAULACATEGORIA, dades, DataGridViewTapes)
+        Dim idCategoria = Constants.bbdd.SelectId(Constants.TAULACATEGORIA, dades)
         Dim dadesCategoria(2) As String
-        dadesCategoria(0) = retornar
+        dadesCategoria(0) = idCategoria
         dadesCategoria(1) = idTapa
         Constants.bbdd.InsertAdmin(Constants.TAULACATEGORIATAPA, dadesCategoria, DataGridViewTapes)
     End Sub
