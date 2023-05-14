@@ -49,21 +49,21 @@ Partial Class LesMevesTapes
         DataGridViewTapes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewTapes.BackgroundColor = Color.White
         DataGridViewTapes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewTapes.Location = New Point(62, 133)
+        DataGridViewTapes.Location = New Point(11, 69)
         DataGridViewTapes.Margin = New Padding(2)
         DataGridViewTapes.Name = "DataGridViewTapes"
         DataGridViewTapes.ReadOnly = True
         DataGridViewTapes.RowHeadersVisible = False
         DataGridViewTapes.RowHeadersWidth = 62
         DataGridViewTapes.RowTemplate.Height = 33
-        DataGridViewTapes.Size = New Size(316, 83)
+        DataGridViewTapes.Size = New Size(612, 697)
         DataGridViewTapes.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(62, 30)
+        Label1.Location = New Point(11, 9)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(268, 41)
@@ -121,10 +121,10 @@ Partial Class LesMevesTapes
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label4)
-        Panel1.Location = New Point(1024, 133)
+        Panel1.Location = New Point(627, 52)
         Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(598, 633)
+        Panel1.Size = New Size(995, 714)
         Panel1.TabIndex = 13
         ' 
         ' ComboBoxLocal
@@ -214,7 +214,7 @@ Partial Class LesMevesTapes
         ButtonConfirmarTapes.Name = "ButtonConfirmarTapes"
         ButtonConfirmarTapes.Size = New Size(220, 61)
         ButtonConfirmarTapes.TabIndex = 14
-        ButtonConfirmarTapes.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarTapes.Text = "OK"
         ButtonConfirmarTapes.UseVisualStyleBackColor = False
         ' 
         ' TextBoxPersonalitzacio

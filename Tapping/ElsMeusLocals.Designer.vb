@@ -172,12 +172,12 @@ Partial Class ElsMeusLocals
         ' Button2
         ' 
         Button2.BackColor = Color.White
-        Button2.Location = New Point(1343, 85)
+        Button2.Location = New Point(1296, 85)
         Button2.Margin = New Padding(2)
         Button2.Name = "Button2"
         Button2.Size = New Size(220, 61)
         Button2.TabIndex = 14
-        Button2.Text = "CONFIRMAR CANVIS"
+        Button2.Text = "OK"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' TextBox5
