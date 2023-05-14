@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LesMevesTapes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,64 +20,44 @@ Partial Class LesMevesTapes
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        DataGridView1 = New DataGridView()
-        nom = New DataGridViewTextBoxColumn()
-        personalitzacio = New DataGridViewTextBoxColumn()
-        preu = New DataGridViewTextBoxColumn()
+        DataGridViewTapes = New DataGridView()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
         Panel1 = New Panel()
-        RadioButton3 = New RadioButton()
-        RadioButton2 = New RadioButton()
-        RadioButton1 = New RadioButton()
-        TextBox1 = New TextBox()
-        Button2 = New Button()
-        TextBox5 = New TextBox()
-        TextBox4 = New TextBox()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        ComboBoxLocal = New ComboBox()
+        Label5 = New Label()
+        ComboBoxNom = New ComboBox()
+        RadioButtonEliminar = New RadioButton()
+        RadioButtonActualitzar = New RadioButton()
+        RadioButtonAfegir = New RadioButton()
+        TextBoxPreu = New TextBox()
+        ButtonConfirmarTapes = New Button()
+        TextBoxPersonalitzacio = New TextBox()
+        CType(DataGridViewTapes, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' DataGridView1
+        ' DataGridViewTapes
         ' 
-        DataGridView1.AllowUserToOrderColumns = True
-        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        DataGridView1.BackgroundColor = Color.White
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {nom, personalitzacio, preu})
-        DataGridView1.Location = New Point(62, 133)
-        DataGridView1.Margin = New Padding(2, 2, 2, 2)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersVisible = False
-        DataGridView1.RowHeadersWidth = 62
-        DataGridView1.RowTemplate.Height = 33
-        DataGridView1.Size = New Size(898, 458)
-        DataGridView1.TabIndex = 1
-        ' 
-        ' nom
-        ' 
-        nom.HeaderText = "NOM"
-        nom.MinimumWidth = 20
-        nom.Name = "nom"
-        nom.Width = 370
-        ' 
-        ' personalitzacio
-        ' 
-        personalitzacio.HeaderText = "PERSONALITZACIÓ"
-        personalitzacio.MinimumWidth = 20
-        personalitzacio.Name = "personalitzacio"
-        personalitzacio.Width = 500
-        ' 
-        ' preu
-        ' 
-        preu.HeaderText = "PREU"
-        preu.MinimumWidth = 20
-        preu.Name = "preu"
-        preu.Width = 250
+        DataGridViewTapes.AllowUserToAddRows = False
+        DataGridViewTapes.AllowUserToDeleteRows = False
+        DataGridViewTapes.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewTapes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewTapes.BackgroundColor = Color.White
+        DataGridViewTapes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewTapes.Location = New Point(62, 133)
+        DataGridViewTapes.Margin = New Padding(2)
+        DataGridViewTapes.Name = "DataGridViewTapes"
+        DataGridViewTapes.ReadOnly = True
+        DataGridViewTapes.RowHeadersVisible = False
+        DataGridViewTapes.RowHeadersWidth = 62
+        DataGridViewTapes.RowTemplate.Height = 33
+        DataGridViewTapes.Size = New Size(316, 83)
+        DataGridViewTapes.TabIndex = 1
         ' 
         ' Label1
         ' 
@@ -86,16 +66,16 @@ Partial Class LesMevesTapes
         Label1.Location = New Point(62, 30)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(162, 41)
+        Label1.Size = New Size(268, 41)
         Label1.TabIndex = 2
-        Label1.Text = "LES TAPES"
+        Label1.Text = "LES MEVES TAPES"
         ' 
         ' Label2
         ' 
         Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(45, 65)
+        Label2.Location = New Point(48, 125)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(76, 37)
@@ -107,7 +87,7 @@ Partial Class LesMevesTapes
         Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(45, 157)
+        Label3.Location = New Point(48, 232)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(194, 37)
@@ -119,7 +99,7 @@ Partial Class LesMevesTapes
         Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(45, 255)
+        Label4.Location = New Point(48, 330)
         Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(70, 37)
@@ -129,129 +109,155 @@ Partial Class LesMevesTapes
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.Controls.Add(RadioButton3)
-        Panel1.Controls.Add(RadioButton2)
-        Panel1.Controls.Add(RadioButton1)
-        Panel1.Controls.Add(TextBox1)
-        Panel1.Controls.Add(Button2)
-        Panel1.Controls.Add(TextBox5)
-        Panel1.Controls.Add(TextBox4)
+        Panel1.Controls.Add(ComboBoxLocal)
+        Panel1.Controls.Add(Label5)
+        Panel1.Controls.Add(ComboBoxNom)
+        Panel1.Controls.Add(RadioButtonEliminar)
+        Panel1.Controls.Add(RadioButtonActualitzar)
+        Panel1.Controls.Add(RadioButtonAfegir)
+        Panel1.Controls.Add(TextBoxPreu)
+        Panel1.Controls.Add(ButtonConfirmarTapes)
+        Panel1.Controls.Add(TextBoxPersonalitzacio)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label4)
-        Panel1.Location = New Point(1390, 133)
-        Panel1.Margin = New Padding(2, 2, 2, 2)
+        Panel1.Location = New Point(1024, 133)
+        Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(93, 687)
+        Panel1.Size = New Size(598, 633)
         Panel1.TabIndex = 13
         ' 
-        ' RadioButton3
+        ' ComboBoxLocal
         ' 
-        RadioButton3.AutoSize = True
-        RadioButton3.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(398, 390)
-        RadioButton3.Margin = New Padding(2, 2, 2, 2)
-        RadioButton3.Name = "RadioButton3"
-        RadioButton3.Size = New Size(139, 36)
-        RadioButton3.TabIndex = 17
-        RadioButton3.TabStop = True
-        RadioButton3.Text = "ELIMINAR"
-        RadioButton3.UseVisualStyleBackColor = True
+        ComboBoxLocal.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBoxLocal.FormattingEnabled = True
+        ComboBoxLocal.Location = New Point(48, 79)
+        ComboBoxLocal.Margin = New Padding(2)
+        ComboBoxLocal.Name = "ComboBoxLocal"
+        ComboBoxLocal.Size = New Size(170, 28)
+        ComboBoxLocal.TabIndex = 19
         ' 
-        ' RadioButton2
+        ' Label5
         ' 
-        RadioButton2.AutoSize = True
-        RadioButton2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(191, 390)
-        RadioButton2.Margin = New Padding(2, 2, 2, 2)
-        RadioButton2.Name = "RadioButton2"
-        RadioButton2.Size = New Size(181, 36)
-        RadioButton2.TabIndex = 16
-        RadioButton2.TabStop = True
-        RadioButton2.Text = "ACTUALITZAR"
-        RadioButton2.UseVisualStyleBackColor = True
+        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(48, 17)
+        Label5.Margin = New Padding(2, 0, 2, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(79, 37)
+        Label5.TabIndex = 18
+        Label5.Text = "Local"
         ' 
-        ' RadioButton1
+        ' ComboBoxNom
         ' 
-        RadioButton1.AutoSize = True
-        RadioButton1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(45, 390)
-        RadioButton1.Margin = New Padding(2, 2, 2, 2)
-        RadioButton1.Name = "RadioButton1"
-        RadioButton1.Size = New Size(110, 36)
-        RadioButton1.TabIndex = 14
-        RadioButton1.TabStop = True
-        RadioButton1.Text = "AFEGIR"
-        RadioButton1.UseVisualStyleBackColor = True
+        ComboBoxNom.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBoxNom.FormattingEnabled = True
+        ComboBoxNom.Location = New Point(48, 182)
+        ComboBoxNom.Margin = New Padding(2)
+        ComboBoxNom.Name = "ComboBoxNom"
+        ComboBoxNom.Size = New Size(170, 28)
+        ComboBoxNom.TabIndex = 14
         ' 
-        ' TextBox1
+        ' RadioButtonEliminar
         ' 
-        TextBox1.Location = New Point(45, 303)
-        TextBox1.Margin = New Padding(2, 2, 2, 2)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(145, 27)
-        TextBox1.TabIndex = 15
+        RadioButtonEliminar.AutoSize = True
+        RadioButtonEliminar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonEliminar.Location = New Point(402, 462)
+        RadioButtonEliminar.Margin = New Padding(2)
+        RadioButtonEliminar.Name = "RadioButtonEliminar"
+        RadioButtonEliminar.Size = New Size(139, 36)
+        RadioButtonEliminar.TabIndex = 17
+        RadioButtonEliminar.TabStop = True
+        RadioButtonEliminar.Text = "ELIMINAR"
+        RadioButtonEliminar.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' RadioButtonActualitzar
         ' 
-        Button2.BackColor = Color.White
-        Button2.Location = New Point(178, 489)
-        Button2.Margin = New Padding(2, 2, 2, 2)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(220, 61)
-        Button2.TabIndex = 14
-        Button2.Text = "CONFIRMAR CANVIS"
-        Button2.UseVisualStyleBackColor = False
+        RadioButtonActualitzar.AutoSize = True
+        RadioButtonActualitzar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonActualitzar.Location = New Point(194, 462)
+        RadioButtonActualitzar.Margin = New Padding(2)
+        RadioButtonActualitzar.Name = "RadioButtonActualitzar"
+        RadioButtonActualitzar.Size = New Size(181, 36)
+        RadioButtonActualitzar.TabIndex = 16
+        RadioButtonActualitzar.TabStop = True
+        RadioButtonActualitzar.Text = "ACTUALITZAR"
+        RadioButtonActualitzar.UseVisualStyleBackColor = True
         ' 
-        ' TextBox5
+        ' RadioButtonAfegir
         ' 
-        TextBox5.Location = New Point(45, 117)
-        TextBox5.Margin = New Padding(2, 2, 2, 2)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(232, 27)
-        TextBox5.TabIndex = 13
+        RadioButtonAfegir.AutoSize = True
+        RadioButtonAfegir.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonAfegir.Location = New Point(48, 462)
+        RadioButtonAfegir.Margin = New Padding(2)
+        RadioButtonAfegir.Name = "RadioButtonAfegir"
+        RadioButtonAfegir.Size = New Size(110, 36)
+        RadioButtonAfegir.TabIndex = 14
+        RadioButtonAfegir.TabStop = True
+        RadioButtonAfegir.Text = "AFEGIR"
+        RadioButtonAfegir.UseVisualStyleBackColor = True
         ' 
-        ' TextBox4
+        ' TextBoxPreu
         ' 
-        TextBox4.Location = New Point(45, 206)
-        TextBox4.Margin = New Padding(2, 2, 2, 2)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(240, 27)
-        TextBox4.TabIndex = 12
+        TextBoxPreu.Location = New Point(48, 378)
+        TextBoxPreu.Margin = New Padding(2)
+        TextBoxPreu.Name = "TextBoxPreu"
+        TextBoxPreu.Size = New Size(145, 27)
+        TextBoxPreu.TabIndex = 15
+        ' 
+        ' ButtonConfirmarTapes
+        ' 
+        ButtonConfirmarTapes.BackColor = Color.White
+        ButtonConfirmarTapes.Location = New Point(181, 561)
+        ButtonConfirmarTapes.Margin = New Padding(2)
+        ButtonConfirmarTapes.Name = "ButtonConfirmarTapes"
+        ButtonConfirmarTapes.Size = New Size(220, 61)
+        ButtonConfirmarTapes.TabIndex = 14
+        ButtonConfirmarTapes.Text = "CONFIRMAR CANVIS"
+        ButtonConfirmarTapes.UseVisualStyleBackColor = False
+        ' 
+        ' TextBoxPersonalitzacio
+        ' 
+        TextBoxPersonalitzacio.Location = New Point(48, 281)
+        TextBoxPersonalitzacio.Margin = New Padding(2)
+        TextBoxPersonalitzacio.Name = "TextBoxPersonalitzacio"
+        TextBoxPersonalitzacio.Size = New Size(240, 27)
+        TextBoxPersonalitzacio.TabIndex = 12
         ' 
         ' LesMevesTapes
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ClientSize = New Size(1539, 844)
+        ClientSize = New Size(1633, 777)
         Controls.Add(Panel1)
         Controls.Add(Label1)
-        Controls.Add(DataGridView1)
-        Margin = New Padding(2, 2, 2, 2)
+        Controls.Add(DataGridViewTapes)
+        Margin = New Padding(2)
         Name = "LesMevesTapes"
-        Text = "Les Meves Tapes"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        Text = "LesMevesTapes"
+        WindowState = FormWindowState.Maximized
+        CType(DataGridViewTapes, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTapes As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents nom As DataGridViewTextBoxColumn
-    Friend WithEvents personalitzacio As DataGridViewTextBoxColumn
-    Friend WithEvents preu As DataGridViewTextBoxColumn
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents ButtonConfirmarTapes As Button
+    Friend WithEvents TextBoxPersonalitzacio As TextBox
+    Friend WithEvents TextBoxPreu As TextBox
+    Friend WithEvents RadioButtonEliminar As RadioButton
+    Friend WithEvents RadioButtonActualitzar As RadioButton
+    Friend WithEvents RadioButtonAfegir As RadioButton
+    Friend WithEvents ComboBoxNom As ComboBox
+    Friend WithEvents ComboBoxLocal As ComboBox
+    Friend WithEvents Label5 As Label
 End Class

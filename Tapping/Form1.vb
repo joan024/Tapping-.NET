@@ -9,7 +9,9 @@ Public Class Form1
         'guardem el pack
         Constants.PACK = Constants.bbdd.Pack()
         'guardem idLocal de la empresa
-        Constants.bbdd.SelectIdLocal()
+        Dim dades(1) As String
+        dades(0) = Constants.IDUSUARI
+        Constants.IDLOCAL = Constants.bbdd.SelectId(Constants.TAULALOCAL, dades)
 
         'guardem les dades obtingudes de la empresa en variables i les mostrem
         Dim reader = Constants.bbdd.PantallaEmpresa(Constants.IDUSUARI)
@@ -36,7 +38,12 @@ Public Class Form1
     End Sub
     'LES TAPES
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        LesMevesTapes.Show()
+        If Constants.IDLOCAL <> "" Then
+            LesMevesTapes.Show()
+        Else
+            MsgBox("Has de tenir un local", vbExclamation)
+
+        End If
     End Sub
     'COMENTARIS
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click

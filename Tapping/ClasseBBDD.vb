@@ -206,6 +206,8 @@ Public Class ClasseBBDD
                 sentencia = "SELECT id FROM categoria WHERE nom='" & dades(0) & "'"
             Case Constants.TAULAXAT
                 sentencia = "SELECT id FROM xat WHERE id_empresa = " & dades(0)
+            Case Constants.TAULALOCAL
+                sentencia = "SELECT id FROM local WHERE id_usuari = " & dades(0)
         End Select
 
         Try
@@ -347,21 +349,21 @@ Public Class ClasseBBDD
     End Sub
 
     'FUNCIONS ARXIU
-    Public Sub SelectIdLocal()
-        sentencia = "SELECT id FROM local WHERE id_usuari = " & Constants.IDUSUARI
-        Try
-            connectar()
-            Dim comando As New MySqlCommand(sentencia, connexio)
-            reader = comando.ExecuteReader()
-            While reader.Read()
-                Constants.IDLOCAL = reader.GetString(0)
-            End While
-        Catch ex As Exception
-            MsgBox("ERROR en carregar la informació", vbExclamation)
-        Finally
-            desconnectar()
-        End Try
-    End Sub
+    'Public Sub SelectIdLocal()
+    '    sentencia = "SELECT id FROM local WHERE id_usuari = " & Constants.IDUSUARI
+    '    Try
+    '        connectar()
+    '        Dim comando As New MySqlCommand(sentencia, connexio)
+    '        reader = comando.ExecuteReader()
+    '        While reader.Read()
+    '            Constants.IDLOCAL = reader.GetString(0)
+    '        End While
+    '    Catch ex As Exception
+    '        MsgBox("ERROR en carregar la informació", vbExclamation)
+    '    Finally
+    '        desconnectar()
+    '    End Try
+    'End Sub
     Public Sub ArxiuLocal()
         'seleccionem ultim id amb id_local,id i extensio
         sentencia = "SELECT id_local,id,extensio FROM foto WHERE id = (SELECT MAX(id) FROM foto)"
@@ -447,6 +449,141 @@ Public Class ClasseBBDD
             End If
         Catch ex As Exception
             MsgBox("Error eliminar foto bbdd", vbExclamation)
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+
+    'TAPA I LOCAL
+    Public Sub obtenirId(ByVal taula As String)
+        Select Case taula
+            Case Constants.TAULALOCAL
+                sentencia = "SELECT id FROM local WHERE id_usuari =" & Constants.IDUSUARI
+            Case Constants.TAULATAPA
+                sentencia = "SELECT id FROM tapa WHERE nom =""" & Constants.NOMTAPA & """"
+            Case Constants.TAULALOCALTAPA
+                'sentencia = "SELECT id FROM local_tapa WHERE id_local =""" & Constants.IDLOCAL & """"
+                sentencia = "SELECT id FROM local_tapa WHERE id_local =" & Constants.IDLOCAL & " AND id_tapa = '" & Constants.IDTAPA & "'"
+            Case "local2"
+                sentencia = "SELECT id FROM local WHERE id_usuari =" & Constants.IDUSUARI & " AND nom = '" & Constants.NOMLOCAL & "'"
+        End Select
+        Try
+            table = New DataTable
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            reader = comanda.ExecuteReader()
+            If reader.Read() Then
+                Select Case taula
+                    Case Constants.TAULALOCAL
+                        Constants.IDLOCAL = reader.GetString(0)
+                    Case Constants.TAULATAPA
+                        Constants.IDTAPA = reader.GetString(0)
+                    Case Constants.TAULALOCALTAPA
+                        Constants.IDLOCALTAPA = reader.GetString(0)
+                    Case "local2"
+                        Constants.IDLOCAL = reader.GetString(0)
+                End Select
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error en obtenir id")
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Function obtenirNoms(ByVal taula As String) As ArrayList
+        Dim llistaNoms As New ArrayList
+        Select Case taula
+            Case Constants.TAULATAPA
+                sentencia = "SELECT nom FROM tapa"
+            Case Constants.TAULALOCAL
+                sentencia = "SELECT nom FROM local WHERE id_usuari =" & Constants.IDUSUARI
+        End Select
+
+        Try
+            table = New DataTable
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            reader = comanda.ExecuteReader()
+            While reader.Read()
+                llistaNoms.Add(reader.GetString(0))
+            End While
+
+        Catch ex As Exception
+            MessageBox.Show("Error en obtenir noms")
+        Finally
+            desconnectar()
+        End Try
+        Return llistaNoms
+    End Function
+
+    Public Sub mostrarTapa(ByVal taula As String, ByVal dgv As DataGridView)
+        sentencia = Constants.QUERYTAPA & Constants.IDLOCAL
+        Try
+            table = New DataTable
+            connectar()
+            adapter = New MySqlDataAdapter(sentencia, connexio)
+            adapter.Fill(table)
+            dgv.DataSource = table
+        Catch ex As Exception
+            MessageBox.Show("Error en mostrar")
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Sub afegirTapa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
+        Select Case taula
+            Case Constants.TAULALOCALTAPA
+                sentencia = "INSERT INTO local_tapa (id_local,id_tapa,personalitzacio,preu) VALUES ('" & Constants.IDLOCAL & "','" & Constants.IDTAPA & "','" & dades(0) & "','" & dades(1) & "')"
+        End Select
+
+        Try
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            comanda.ExecuteNonQuery()
+            mostrarTapa(Constants.TAULALOCALTAPA, dgv)
+        Catch ex As Exception
+            MessageBox.Show("Error en afegir tapa")
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Sub eliminarTapa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
+        sentencia = "DELETE FROM " & Constants.TAULALOCALTAPA & " WHERE id = " & Constants.IDLOCALTAPA
+        Try
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            comanda.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error en eliminar tapa")
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+    Public Sub actualitzarTapa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
+        sentencia = "UPDATE " & Constants.TAULALOCALTAPA & " SET personalitzacio = '" & dades(0) & "', preu = '" & dades(1) & "' WHERE id = " & Constants.IDLOCALTAPA
+        Try
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            comanda.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error en actualitzar tapa")
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+
+    Public Sub mostrarLocal(ByVal taula As String, ByVal dgv As DataGridView)
+        sentencia = Constants.QUERYLOCAL + Constants.IDUSUARI
+        Try
+            table = New DataTable
+            connectar()
+            adapter = New MySqlDataAdapter(sentencia, connexio)
+            adapter.Fill(table)
+            dgv.DataSource = table
+        Catch ex As Exception
+            MessageBox.Show("Error en mostrar local")
         Finally
             desconnectar()
         End Try
