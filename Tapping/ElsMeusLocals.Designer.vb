@@ -22,13 +22,7 @@ Partial Class ElsMeusLocals
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        DataGridView1 = New DataGridView()
-        nom = New DataGridViewTextBoxColumn()
-        direccio = New DataGridViewTextBoxColumn()
-        telefon = New DataGridViewTextBoxColumn()
-        id_horari = New DataGridViewTextBoxColumn()
-        descripcio = New DataGridViewTextBoxColumn()
-        web = New DataGridViewTextBoxColumn()
+        GridViewLocals = New DataGridView()
         Panel1 = New Panel()
         RadioButton3 = New RadioButton()
         RadioButton2 = New RadioButton()
@@ -41,71 +35,24 @@ Partial Class ElsMeusLocals
         Label3 = New Label()
         Label4 = New Label()
         Label1 = New Label()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
+        CType(GridViewLocals, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' DataGridView1
+        ' GridViewLocals
         ' 
-        DataGridView1.AllowUserToResizeColumns = False
-        DataGridView1.AllowUserToResizeRows = False
-        DataGridView1.BackgroundColor = Color.White
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {nom, direccio, telefon, id_horari, descripcio, web})
-        DataGridView1.Location = New Point(109, 149)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 62
-        DataGridView1.RowTemplate.Height = 33
-        DataGridView1.Size = New Size(2144, 617)
-        DataGridView1.TabIndex = 0
-        ' 
-        ' nom
-        ' 
-        nom.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        nom.HeaderText = "LOCAL"
-        nom.MinimumWidth = 20
-        nom.Name = "nom"
-        nom.Width = 220
-        ' 
-        ' direccio
-        ' 
-        direccio.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        direccio.HeaderText = "DIRECCIÓ"
-        direccio.MinimumWidth = 8
-        direccio.Name = "direccio"
-        direccio.Width = 200
-        ' 
-        ' telefon
-        ' 
-        telefon.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        telefon.HeaderText = "TELÈFON"
-        telefon.MinimumWidth = 20
-        telefon.Name = "telefon"
-        telefon.Width = 170
-        ' 
-        ' id_horari
-        ' 
-        id_horari.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        id_horari.HeaderText = "HORARI"
-        id_horari.MinimumWidth = 20
-        id_horari.Name = "id_horari"
-        id_horari.Width = 220
-        ' 
-        ' descripcio
-        ' 
-        descripcio.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        descripcio.HeaderText = "DESCRIPCIÓ"
-        descripcio.MinimumWidth = 20
-        descripcio.Name = "descripcio"
-        descripcio.Width = 400
-        ' 
-        ' web
-        ' 
-        web.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        web.HeaderText = "WEB"
-        web.MinimumWidth = 20
-        web.Name = "web"
-        web.Width = 220
+        GridViewLocals.AllowUserToResizeColumns = False
+        GridViewLocals.AllowUserToResizeRows = False
+        GridViewLocals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        GridViewLocals.BackgroundColor = Color.White
+        GridViewLocals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        GridViewLocals.Location = New Point(109, 149)
+        GridViewLocals.Name = "GridViewLocals"
+        GridViewLocals.RowHeadersWidth = 62
+        GridViewLocals.RowTemplate.Height = 33
+        GridViewLocals.Size = New Size(2144, 617)
+        GridViewLocals.TabIndex = 0
         ' 
         ' Panel1
         ' 
@@ -239,17 +186,17 @@ Partial Class ElsMeusLocals
         ClientSize = New Size(2498, 1331)
         Controls.Add(Label1)
         Controls.Add(Panel1)
-        Controls.Add(DataGridView1)
+        Controls.Add(GridViewLocals)
         Name = "ElsMeusLocals"
         Text = "ElsMeusLocals"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(GridViewLocals, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents GridViewLocals As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
@@ -262,10 +209,5 @@ Partial Class ElsMeusLocals
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents nom As DataGridViewTextBoxColumn
-    Friend WithEvents direccio As DataGridViewTextBoxColumn
-    Friend WithEvents telefon As DataGridViewTextBoxColumn
-    Friend WithEvents id_horari As DataGridViewTextBoxColumn
-    Friend WithEvents descripcio As DataGridViewTextBoxColumn
-    Friend WithEvents web As DataGridViewTextBoxColumn
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

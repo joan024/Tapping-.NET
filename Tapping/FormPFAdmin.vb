@@ -14,18 +14,18 @@
         DataGridViewPF.ClearSelection()
         buid()
     End Sub
-    Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
-        If RadioButtonAfegir.Checked Then
-            bbdd.afegirAdmin(taula, EnviarDades(), DataGridViewPF)
-        ElseIf RadioButtonModificar.Checked Then
-            bbdd.modificarAdmin(taula, EnviarDades(), EnviarId(), DataGridViewPF)
-        ElseIf RadioButtonEliminar.Checked Then
-        Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
-            If r = vbYes Then
-                bbdd.eliminar(taula, DataGridViewPF, EnviarId())
-            End If
-        End If
-    End Sub
+    'Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
+    '    If RadioButtonAfegir.Checked Then
+    '        bbdd.afegirAdmin(taula, EnviarDades(), DataGridViewPF)
+    '    ElseIf RadioButtonModificar.Checked Then
+    '        bbdd.modificarAdmin(taula, EnviarDades(), EnviarId(), DataGridViewPF)
+    '    ElseIf RadioButtonEliminar.Checked Then
+    '    Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
+    '        If r = vbYes Then
+    '            bbdd.eliminar(taula, DataGridViewPF, EnviarId())
+    '        End If
+    '    End If
+    'End Sub
     Private Function EnviarDades() As String()
         Dim dades(2) As String
         dades(0) = TextBoxPregunta.Text

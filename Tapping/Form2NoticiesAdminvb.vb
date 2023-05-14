@@ -28,18 +28,18 @@ Public Class Form2NoticiesAdminvb
         DataGridViewNoticies.ClearSelection()
         buid()
     End Sub
-    Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
-        If RadioButtonAfegir.Checked Then
-            bbdd.afegirAdmin(taula, EnviarDades(), DataGridViewNoticies)
-        ElseIf RadioButtonModificar.Checked Then
-            bbdd.modificarAdmin(taula, EnviarDades(), EnviarId(), DataGridViewNoticies)
-        ElseIf RadioButtonEliminar.Checked Then
-            Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
-            If r = vbYes Then
-                bbdd.eliminar(taula, DataGridViewNoticies, EnviarId())
-            End If
-        End If
-    End Sub
+    'Private Sub ButtonAccio_Click(sender As Object, e As EventArgs) Handles ButtonAccio.Click
+    '    If RadioButtonAfegir.Checked Then
+    '        bbdd.afegirAdmin(taula, EnviarDades(), DataGridViewNoticies)
+    '    ElseIf RadioButtonModificar.Checked Then
+    '        bbdd.modificarAdmin(taula, EnviarDades(), EnviarId(), DataGridViewNoticies)
+    '    ElseIf RadioButtonEliminar.Checked Then
+    '        Dim r = MsgBox("Segur que vols eliminar aquest registre?", vbYesNo)
+    '        If r = vbYes Then
+    '            bbdd.eliminar(taula, DataGridViewNoticies, EnviarId())
+    '        End If
+    '    End If
+    'End Sub
     Private Function EnviarDades() As String()
         Dim dades(5) As String
         dades(0) = TextBoxTitol.Text

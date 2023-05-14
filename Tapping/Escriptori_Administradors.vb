@@ -57,9 +57,9 @@ Public Class Escriptori_Administradors
             Dim result As DialogResult = formUsuari.ShowDialog(Me)
             If result = DialogResult.OK Then
                 ' en la seguent funcio afegeixo un nou usuari i retorno la id d'aquest usuari per desprès poder afegir l'empresa
-                Dim idUsuari As String = gvClients.insertUsuari(formUsuari.TextBoxNom.Text, formUsuari.TextBoxCorreu.Text, formUsuari.TextBoxContrasenya.Text, formUsuari.DateTimePickerDataRegistre.Text, formUsuari.ComboBoxActiu.Text)
+                ' Dim idUsuari As String = gvClients.insertUsuari(formUsuari.TextBoxNom.Text, formUsuari.TextBoxCorreu.Text, formUsuari.TextBoxContrasenya.Text, formUsuari.DateTimePickerDataRegistre.Text, formUsuari.ComboBoxActiu.Text)
                 'afegir l'empresa:rr
-                gvClients.insertClient(idUsuari, TextBoxNif.Text, TextBoxTelefon.Text, TextBoxPack.Text)
+                '  gvClients.insertClient(idUsuari, TextBoxNif.Text, TextBoxTelefon.Text, TextBoxPack.Text)
             End If
         ElseIf RadioButtonActualitzar.Checked Then
             gvClients.updateClient(TextBoxNif.Text, TextBoxTelefon.Text, TextBoxPack.Text, gvClients.EnviarId)
@@ -72,34 +72,34 @@ Public Class Escriptori_Administradors
     End Sub
 
     ' Quan l'administrador clica el boto de les tapes:
-    Private Sub ButtonConfirmarTapes_Click(sender As Object, e As EventArgs) Handles ButtonConfirmarTapes.Click
-        Dim dades(1) As String
-        dades(0) = TextBoxNif.Text
-        If RadioButtonAfegir.Checked Then
-            Dim idTapa As String = gvTapes.insertTapa(TextBoxNif.Text)
-            gvTapes.insertCategoriaTapa(idTapa, ComboBoxCategoria.Text)
-            gvTapes.selectTaula()
-        ElseIf RadioButtonActualitzar.Checked Then
-            gvTapes.updateTapa(TextBoxNif.Text, gvTapes.EnviarId)
-        ElseIf RadioButtonEliminar.Checked Then
-            gvTapes.deleteTapa()
-        Else
-            MsgBox("Teniu que seleccionar una categoria")
-        End If
-    End Sub
+    'Private Sub ButtonConfirmarTapes_Click(sender As Object, e As EventArgs) Handles ButtonConfirmarTapes.Click
+    '    Dim dades(1) As String
+    '    dades(0) = TextBoxNif.Text
+    '    If RadioButtonAfegir.Checked Then
+    '        Dim idTapa As String = gvTapes.insertTapa(TextBoxNif.Text)
+    '        gvTapes.insertCategoriaTapa(idTapa, ComboBoxCategoria.Text)
+    '        gvTapes.selectTaula()
+    '    ElseIf RadioButtonActualitzar.Checked Then
+    '        gvTapes.updateTapa(TextBoxNif.Text, gvTapes.EnviarId)
+    '    ElseIf RadioButtonEliminar.Checked Then
+    '        gvTapes.deleteTapa()
+    '    Else
+    '        MsgBox("Teniu que seleccionar una categoria")
+    '    End If
+    'End Sub
 
-    Private Sub ButtonConfirmarCategories_Click(sender As Object, e As EventArgs) Handles ButtonConfirmarCategories.Click
-        If RadioButtonAfegir.Checked Then
-            gvCategories.insertCategoria(TextBoxNif.Text)
-            gvCategories.selectTaula()
-        ElseIf RadioButtonActualitzar.Checked Then
-            gvCategories.updateCategoria(TextBoxNif.Text)
-        ElseIf RadioButtonEliminar.Checked Then
-            gvCategories.deleteCategoria()
-        Else
-            MsgBox("Teniu que seleccionar una categoria")
-        End If
-    End Sub
+    'Private Sub ButtonConfirmarCategories_Click(sender As Object, e As EventArgs) Handles ButtonConfirmarCategories.Click
+    '    If RadioButtonAfegir.Checked Then
+    '        gvCategories.insertCategoria(TextBoxNif.Text)
+    '        gvCategories.selectTaula()
+    '    ElseIf RadioButtonActualitzar.Checked Then
+    '        gvCategories.updateCategoria(TextBoxNif.Text)
+    '    ElseIf RadioButtonEliminar.Checked Then
+    '        gvCategories.deleteCategoria()
+    '    Else
+    '        MsgBox("Teniu que seleccionar una categoria")
+    '    End If
+    'End Sub
 
     Protected Sub opcioClient()
         ' aixo ho faig per quan s'inicia

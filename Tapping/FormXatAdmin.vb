@@ -2,14 +2,14 @@
 
 Public Class FormXatAdmin
     Private bbdd As New ClasseBBDD
-    Private Sub FormXatAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        bbdd.XatEmpresa(DataGridViewEmpreses)
-        'DataGridViewEmpreses.ClearSelection()
-    End Sub
-    Private Sub DataGridViewEmpreses_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewEmpreses.SelectionChanged
-        LabelXat.Text = DataGridViewEmpreses.CurrentRow.Cells(0).Value
-        bbdd.MissatgesXat(DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
-    End Sub
+    'Private Sub FormXatAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    bbdd.XatEmpresa(DataGridViewEmpreses)
+    '    'DataGridViewEmpreses.ClearSelection()
+    'End Sub
+    'Private Sub DataGridViewEmpreses_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewEmpreses.SelectionChanged
+    '    LabelXat.Text = DataGridViewEmpreses.CurrentRow.Cells(0).Value
+    '    bbdd.MissatgesXat(DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
+    'End Sub
     Private Sub DataGridViewXat_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewXat.SelectionChanged
         DataGridViewXat.ClearSelection()
         DataGridViewXat.Columns(0).Visible = False
@@ -20,8 +20,8 @@ Public Class FormXatAdmin
             e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         End If
     End Sub
-    Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
-        bbdd.InsertMissatge(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
-        TextBoxXat.Text = ""
-    End Sub
+    'Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
+    '    bbdd.InsertMissatge(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, DataGridViewEmpreses.CurrentRow.Cells(0).Value, DataGridViewXat)
+    '    TextBoxXat.Text = ""
+    'End Sub
 End Class

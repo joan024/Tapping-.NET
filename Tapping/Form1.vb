@@ -1,5 +1,12 @@
-﻿Public Class Form1
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
+
+Public Class Form1
+
+    Dim gvElsMeusLocals As New ElsMeusLocals
+    Private bbdd As New ClasseBBDD
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' bbdd.obtenirId(Constants.TAULALOCAL)
+
         Me.WindowState = FormWindowState.Maximized
 
         Label1.Font = New Font("Arial", 20, FontStyle.Bold)
@@ -26,6 +33,7 @@
     ' ELS MEUS LOCALS:
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         ElsMeusLocals.Show()
+        gvElsMeusLocals.selectTaula()
     End Sub
 
     ' LES TAPES
@@ -63,7 +71,10 @@
         Me.Hide()
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+
+    Protected Sub opcioLocals()
 
     End Sub
+
+
 End Class

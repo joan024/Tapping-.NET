@@ -1,7 +1,7 @@
 ﻿Public Class FormPantallaXat
     Dim bbdd As New ClasseBBDD
     Private Sub FormPantallaXat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        bbdd.MissatgesXatEmpresa(6, DataGridViewXat)
+        '  bbdd.MissatgesXatEmpresa(6, DataGridViewXat)
     End Sub
     Private Sub DataGridViewXat_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewXat.SelectionChanged
         DataGridViewXat.ClearSelection()
@@ -13,8 +13,8 @@
             e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         End If
     End Sub
-    Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
-        bbdd.InsertMissatgeEmpresa(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, 6, DataGridViewXat)
-        TextBoxXat.Text = ""
-    End Sub
+    'Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
+    '    bbdd.InsertMissatgeEmpresa(DataGridViewXat.CurrentRow.Cells(2).Value, TextBoxXat.Text, 6, DataGridViewXat)
+    '    TextBoxXat.Text = ""
+    'End Sub
 End Class

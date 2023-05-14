@@ -39,7 +39,7 @@ Partial Class GridViewTapes
         DataGridViewTapes.RowHeadersWidth = 62
         DataGridViewTapes.RowTemplate.Height = 33
         DataGridViewTapes.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridViewTapes.Size = New Size(923, 635)
+        DataGridViewTapes.Size = New Size(912, 620)
         DataGridViewTapes.TabIndex = 4
         ' 
         ' GridViewTapes
