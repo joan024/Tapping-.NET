@@ -67,7 +67,7 @@
                                         & " tapa.id = local_tapa.id_tapa" _
                                         & " where local_tapa.id_local = "
 
-    Public Const QUERYLOCAL As String = "select local.nom,local.direccio, local.telefon, local.descripcio, local.web" _
+    Public Const QUERYLOCAL As String = "select id,local.nom,local.direccio, local.telefon, local.descripcio, local.web" _
                                         & " from local" _
                                         & " where id_usuari = "
 End Class

@@ -13,10 +13,19 @@ Public Class LesMevesTapes
         'LLISTAR LOCALS AL COMBOBOX DE LOCALS
         llistaLocals = bbdd.obtenirNoms(Constants.TAULALOCAL)
         emplenarSelect(llistaLocals, Constants.TAULALOCAL)
+        'fiquem el local que té per defecte
+        ComboBoxLocal.SelectedIndex = 0
+        buid()
     End Sub
-
+    Private Sub DataGridViewTapes_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewTapes.SelectionChanged
+        'fiquem les dades de la fila seleccionada als textboxs
+        ComboBoxNom.Text = DataGridViewTapes.CurrentRow.Cells(0).Value
+        TextBoxPersonalitzacio.Text = DataGridViewTapes.CurrentRow.Cells(1).Value
+        TextBoxPreu.Text = DataGridViewTapes.CurrentRow.Cells(2).Value
+        RadioButtonActualitzar.Checked = True
+    End Sub
     ' la seguent funcio serveix per emplenar el select de forma dinamica dels noms que hi ha a la base de dades
-    Private Function emplenarSelect(ByVal llistaNoms As ArrayList, ByVal taula As String)
+    Private Sub emplenarSelect(ByVal llistaNoms As ArrayList, ByVal taula As String)
         Select Case taula
             Case Constants.TAULATAPA
                 For Each nom As String In llistaNoms
@@ -27,9 +36,14 @@ Public Class LesMevesTapes
                     ComboBoxLocal.Items.Add(nom)
                 Next
         End Select
-
-    End Function
-
+    End Sub
+    Private Sub RadioButtonAfegir_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonAfegir.CheckedChanged
+        If RadioButtonAfegir.Checked Then
+            ComboBoxNom.Text = ""
+            TextBoxPersonalitzacio.Text = ""
+            TextBoxPreu.Text = ""
+        End If
+    End Sub
     Private Sub ButtonConfirmarTapes_Click(sender As Object, e As EventArgs) Handles ButtonConfirmarTapes.Click
         'l'array dades guarda personalitzacio i preu:
         Dim dades(2) As String
@@ -49,15 +63,26 @@ Public Class LesMevesTapes
         'obtenir el id de local_tapa:
         bbdd.obtenirId(Constants.TAULALOCALTAPA)
 
+        'depenen del radiobutton fem una accio
         If RadioButtonAfegir.Checked Then
             bbdd.afegirTapa(Constants.TAULALOCALTAPA, dades, DataGridViewTapes)
+            buid()
         ElseIf RadioButtonActualitzar.Checked Then
             bbdd.actualitzarTapa(Constants.TAULALOCALTAPA, dades, DataGridViewTapes)
+            buid()
         ElseIf RadioButtonEliminar.Checked Then
             bbdd.eliminarTapa(Constants.TAULALOCALTAPA, dades, DataGridViewTapes)
+            buid()
         Else
             MsgBox("Teniu que sel·leccionar una opcio")
         End If
         bbdd.mostrarTapa(Constants.TAULATAPA, DataGridViewTapes)
+    End Sub
+    Private Sub buid()
+        DataGridViewTapes.ClearSelection()
+        ComboBoxNom.Text = ""
+        TextBoxPersonalitzacio.Text = ""
+        TextBoxPreu.Text = ""
+        RadioButtonAfegir.Checked = True
     End Sub
 End Class

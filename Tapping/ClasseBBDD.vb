@@ -113,6 +113,8 @@ Public Class ClasseBBDD
                 sentencia = "UPDATE tapa SET nom = '" & dades(0) & "' WHERE id = " & id
             Case Constants.TAULACATEGORIA
                 sentencia = "UPDATE categoria SET nom = '" & dades(0) & "' WHERE id = " & id
+            Case Constants.TAULALOCAL
+                sentencia = "UPDATE local SET nom = '" & dades(0) & "', direccio = '" & dades(1) & "', telefon = '" & dades(2) & "', descripcio = '" & dades(3) & "', web = '" & dades(4) & "' WHERE id = " & id
         End Select
         Try
             connectar()
@@ -299,6 +301,8 @@ Public Class ClasseBBDD
                 sentencia = "SELECT lineaxat.usuari,lineaxat.missatge,lineaxat.id_xat FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id WHERE xat.id_empresa = '" & id & "'"
             Case Constants.TAULADESCOMPTE
                 sentencia = "SELECT text,inici,final,codi FROM descompte WHERE id_local = " & id
+            Case Constants.TAULALOCAL
+                sentencia = "SELECT id,nom,direccio,telefon,descripcio,web FROM local WHERE id_usuari = " & id
         End Select
         Try
             table = New DataTable
@@ -317,16 +321,40 @@ Public Class ClasseBBDD
         Select Case taula
             Case Constants.TAULADESCOMPTE
                 sentencia = "INSERT INTO descompte(id_local,text,inici,final,codi) VALUES ('" & dades(0) & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','" & dades(4) & "')"
+            Case Constants.TAULALOCAL
+                sentencia = "INSERT INTO local(nom,id_usuari,direccio,telefon,id_horari,descripcio,web,id_cp) VALUES ('" & dades(0) & "','" & Constants.IDUSUARI & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','1','" & dades(4) & "','8')"
         End Select
 
         Try
             connectar()
             comanda = New MySqlCommand(sentencia, connexio)
-            If comanda.ExecuteNonQuery() > 0 And Not taula.Equals("empresa") Then
-                SelectEmpresa(taula, dades(0), dgv)
+            If comanda.ExecuteNonQuery() > 0 Then
+                If taula.Equals(Constants.TAULADESCOMPTE) Then
+                    SelectEmpresa(taula, dades(0), dgv)
+                ElseIf taula.Equals(Constants.TAULALOCAL) Then
+                    SelectEmpresa(taula, Constants.IDUSUARI, dgv)
+                End If
             End If
         Catch ex As Exception
             MsgBox("Error afegir", vbExclamation)
+        Finally
+            desconnectar()
+        End Try
+    End Sub
+
+    Public Sub UpdateEmpresa(ByVal taula As String, ByVal dades() As String, ByVal id As Integer, ByVal dgv As DataGridView)
+        Select Case taula
+            Case Constants.TAULALOCAL
+                sentencia = "UPDATE local SET nom = '" & dades(0) & "', direccio = '" & dades(1) & "', telefon = '" & dades(2) & "', descripcio = '" & dades(3) & "', web = '" & dades(4) & "' WHERE id = " & id
+        End Select
+        Try
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            If comanda.ExecuteNonQuery() Then
+                SelectEmpresa(taula, Constants.IDUSUARI, dgv)
+            End If
+        Catch ex As Exception
+            MsgBox("Error al actualizar dades", vbExclamation)
         Finally
             desconnectar()
         End Try

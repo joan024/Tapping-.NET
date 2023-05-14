@@ -47,6 +47,7 @@ Partial Class LesMevesTapes
         DataGridViewTapes.AllowUserToDeleteRows = False
         DataGridViewTapes.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridViewTapes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewTapes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewTapes.BackgroundColor = Color.White
         DataGridViewTapes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewTapes.Location = New Point(11, 69)
@@ -56,6 +57,7 @@ Partial Class LesMevesTapes
         DataGridViewTapes.RowHeadersVisible = False
         DataGridViewTapes.RowHeadersWidth = 62
         DataGridViewTapes.RowTemplate.Height = 33
+        DataGridViewTapes.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridViewTapes.Size = New Size(612, 697)
         DataGridViewTapes.TabIndex = 1
         ' 
@@ -134,7 +136,7 @@ Partial Class LesMevesTapes
         ComboBoxLocal.Location = New Point(48, 79)
         ComboBoxLocal.Margin = New Padding(2)
         ComboBoxLocal.Name = "ComboBoxLocal"
-        ComboBoxLocal.Size = New Size(170, 28)
+        ComboBoxLocal.Size = New Size(240, 28)
         ComboBoxLocal.TabIndex = 19
         ' 
         ' Label5
@@ -156,7 +158,7 @@ Partial Class LesMevesTapes
         ComboBoxNom.Location = New Point(48, 182)
         ComboBoxNom.Margin = New Padding(2)
         ComboBoxNom.Name = "ComboBoxNom"
-        ComboBoxNom.Size = New Size(170, 28)
+        ComboBoxNom.Size = New Size(240, 28)
         ComboBoxNom.TabIndex = 14
         ' 
         ' RadioButtonEliminar

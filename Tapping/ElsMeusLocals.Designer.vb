@@ -22,57 +22,61 @@ Partial Class ElsMeusLocals
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        GridViewLocals = New DataGridView()
+        DataGridViewLocals = New DataGridView()
         Panel1 = New Panel()
-        TextBox3 = New TextBox()
+        TextBoxWeb = New TextBox()
         Label6 = New Label()
-        TextBox2 = New TextBox()
+        TextBoxDescripcio = New TextBox()
         Label5 = New Label()
-        RadioButton3 = New RadioButton()
-        RadioButton2 = New RadioButton()
-        RadioButton1 = New RadioButton()
-        TextBox1 = New TextBox()
-        Button2 = New Button()
-        TextBox5 = New TextBox()
-        TextBox4 = New TextBox()
+        RadioButtonActualitzar = New RadioButton()
+        RadioButtonAfegir = New RadioButton()
+        TextBoxDireccio = New TextBox()
+        ButtonOk = New Button()
+        TextBoxNom = New TextBox()
+        TextBoxTelefon = New TextBox()
         Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
         Label1 = New Label()
-        CType(GridViewLocals, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridViewLocals, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' GridViewLocals
+        ' DataGridViewLocals
         ' 
-        GridViewLocals.AllowUserToResizeColumns = False
-        GridViewLocals.AllowUserToResizeRows = False
-        GridViewLocals.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        GridViewLocals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        GridViewLocals.BackgroundColor = Color.White
-        GridViewLocals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        GridViewLocals.Location = New Point(11, 67)
-        GridViewLocals.Margin = New Padding(2)
-        GridViewLocals.Name = "GridViewLocals"
-        GridViewLocals.RowHeadersWidth = 62
-        GridViewLocals.RowTemplate.Height = 33
-        GridViewLocals.Size = New Size(1757, 479)
-        GridViewLocals.TabIndex = 0
+        DataGridViewLocals.AllowUserToAddRows = False
+        DataGridViewLocals.AllowUserToDeleteRows = False
+        DataGridViewLocals.AllowUserToResizeColumns = False
+        DataGridViewLocals.AllowUserToResizeRows = False
+        DataGridViewLocals.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewLocals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewLocals.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewLocals.BackgroundColor = Color.White
+        DataGridViewLocals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewLocals.Location = New Point(11, 67)
+        DataGridViewLocals.Margin = New Padding(2)
+        DataGridViewLocals.Name = "DataGridViewLocals"
+        DataGridViewLocals.ReadOnly = True
+        DataGridViewLocals.RowHeadersVisible = False
+        DataGridViewLocals.RowHeadersWidth = 62
+        DataGridViewLocals.RowTemplate.Height = 33
+        DataGridViewLocals.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridViewLocals.Size = New Size(1757, 479)
+        DataGridViewLocals.TabIndex = 0
         ' 
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.Controls.Add(TextBox3)
+        Panel1.Controls.Add(TextBoxWeb)
         Panel1.Controls.Add(Label6)
-        Panel1.Controls.Add(TextBox2)
+        Panel1.Controls.Add(TextBoxDescripcio)
         Panel1.Controls.Add(Label5)
-        Panel1.Controls.Add(RadioButton3)
-        Panel1.Controls.Add(RadioButton2)
-        Panel1.Controls.Add(RadioButton1)
-        Panel1.Controls.Add(TextBox1)
-        Panel1.Controls.Add(Button2)
-        Panel1.Controls.Add(TextBox5)
-        Panel1.Controls.Add(TextBox4)
+        Panel1.Controls.Add(RadioButtonActualitzar)
+        Panel1.Controls.Add(RadioButtonAfegir)
+        Panel1.Controls.Add(TextBoxDireccio)
+        Panel1.Controls.Add(ButtonOk)
+        Panel1.Controls.Add(TextBoxNom)
+        Panel1.Controls.Add(TextBoxTelefon)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label4)
@@ -82,13 +86,13 @@ Partial Class ElsMeusLocals
         Panel1.Size = New Size(1757, 245)
         Panel1.TabIndex = 14
         ' 
-        ' TextBox3
+        ' TextBoxWeb
         ' 
-        TextBox3.Location = New Point(624, 119)
-        TextBox3.Margin = New Padding(2)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(459, 27)
-        TextBox3.TabIndex = 21
+        TextBoxWeb.Location = New Point(624, 119)
+        TextBoxWeb.Margin = New Padding(2)
+        TextBoxWeb.Name = "TextBoxWeb"
+        TextBoxWeb.Size = New Size(459, 27)
+        TextBoxWeb.TabIndex = 21
         ' 
         ' Label6
         ' 
@@ -102,13 +106,13 @@ Partial Class ElsMeusLocals
         Label6.TabIndex = 20
         Label6.Text = "Web"
         ' 
-        ' TextBox2
+        ' TextBoxDescripcio
         ' 
-        TextBox2.Location = New Point(624, 51)
-        TextBox2.Margin = New Padding(2)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(459, 27)
-        TextBox2.TabIndex = 19
+        TextBoxDescripcio.Location = New Point(624, 51)
+        TextBoxDescripcio.Margin = New Padding(2)
+        TextBoxDescripcio.Name = "TextBoxDescripcio"
+        TextBoxDescripcio.Size = New Size(459, 27)
+        TextBoxDescripcio.TabIndex = 19
         ' 
         ' Label5
         ' 
@@ -122,79 +126,67 @@ Partial Class ElsMeusLocals
         Label5.TabIndex = 18
         Label5.Text = "Descripcio"
         ' 
-        ' RadioButton3
+        ' RadioButtonActualitzar
         ' 
-        RadioButton3.AutoSize = True
-        RadioButton3.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(791, 178)
-        RadioButton3.Margin = New Padding(2)
-        RadioButton3.Name = "RadioButton3"
-        RadioButton3.Size = New Size(139, 36)
-        RadioButton3.TabIndex = 17
-        RadioButton3.TabStop = True
-        RadioButton3.Text = "ELIMINAR"
-        RadioButton3.UseVisualStyleBackColor = True
+        RadioButtonActualitzar.AutoSize = True
+        RadioButtonActualitzar.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonActualitzar.Location = New Point(844, 178)
+        RadioButtonActualitzar.Margin = New Padding(2)
+        RadioButtonActualitzar.Name = "RadioButtonActualitzar"
+        RadioButtonActualitzar.Size = New Size(181, 36)
+        RadioButtonActualitzar.TabIndex = 16
+        RadioButtonActualitzar.TabStop = True
+        RadioButtonActualitzar.Text = "ACTUALITZAR"
+        RadioButtonActualitzar.UseVisualStyleBackColor = True
         ' 
-        ' RadioButton2
+        ' RadioButtonAfegir
         ' 
-        RadioButton2.AutoSize = True
-        RadioButton2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(971, 178)
-        RadioButton2.Margin = New Padding(2)
-        RadioButton2.Name = "RadioButton2"
-        RadioButton2.Size = New Size(181, 36)
-        RadioButton2.TabIndex = 16
-        RadioButton2.TabStop = True
-        RadioButton2.Text = "ACTUALITZAR"
-        RadioButton2.UseVisualStyleBackColor = True
+        RadioButtonAfegir.AutoSize = True
+        RadioButtonAfegir.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButtonAfegir.Location = New Point(695, 178)
+        RadioButtonAfegir.Margin = New Padding(2)
+        RadioButtonAfegir.Name = "RadioButtonAfegir"
+        RadioButtonAfegir.Size = New Size(110, 36)
+        RadioButtonAfegir.TabIndex = 14
+        RadioButtonAfegir.TabStop = True
+        RadioButtonAfegir.Text = "AFEGIR"
+        RadioButtonAfegir.UseVisualStyleBackColor = True
         ' 
-        ' RadioButton1
+        ' TextBoxDireccio
         ' 
-        RadioButton1.AutoSize = True
-        RadioButton1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(636, 178)
-        RadioButton1.Margin = New Padding(2)
-        RadioButton1.Name = "RadioButton1"
-        RadioButton1.Size = New Size(110, 36)
-        RadioButton1.TabIndex = 14
-        RadioButton1.TabStop = True
-        RadioButton1.Text = "AFEGIR"
-        RadioButton1.UseVisualStyleBackColor = True
+        TextBoxDireccio.Location = New Point(14, 119)
+        TextBoxDireccio.Margin = New Padding(2)
+        TextBoxDireccio.Name = "TextBoxDireccio"
+        TextBoxDireccio.Size = New Size(459, 27)
+        TextBoxDireccio.TabIndex = 15
         ' 
-        ' TextBox1
+        ' ButtonOk
         ' 
-        TextBox1.Location = New Point(14, 119)
-        TextBox1.Margin = New Padding(2)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(459, 27)
-        TextBox1.TabIndex = 15
+        ButtonOk.BackColor = Color.White
+        ButtonOk.Location = New Point(1198, 80)
+        ButtonOk.Margin = New Padding(2)
+        ButtonOk.Name = "ButtonOk"
+        ButtonOk.Size = New Size(220, 61)
+        ButtonOk.TabIndex = 14
+        ButtonOk.Text = "OK"
+        ButtonOk.UseVisualStyleBackColor = False
         ' 
-        ' Button2
+        ' TextBoxNom
         ' 
-        Button2.BackColor = Color.White
-        Button2.Location = New Point(1296, 85)
-        Button2.Margin = New Padding(2)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(220, 61)
-        Button2.TabIndex = 14
-        Button2.Text = "OK"
-        Button2.UseVisualStyleBackColor = False
+        TextBoxNom.Location = New Point(14, 51)
+        TextBoxNom.Margin = New Padding(2)
+        TextBoxNom.Name = "TextBoxNom"
+        TextBoxNom.Size = New Size(232, 27)
+        TextBoxNom.TabIndex = 13
         ' 
-        ' TextBox5
+        ' TextBoxTelefon
         ' 
-        TextBox5.Location = New Point(14, 51)
-        TextBox5.Margin = New Padding(2)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(232, 27)
-        TextBox5.TabIndex = 13
-        ' 
-        ' TextBox4
-        ' 
-        TextBox4.Location = New Point(14, 187)
-        TextBox4.Margin = New Padding(2)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(240, 27)
-        TextBox4.TabIndex = 12
+        TextBoxTelefon.Location = New Point(14, 187)
+        TextBoxTelefon.Margin = New Padding(2)
+        TextBoxTelefon.MaxLength = 9
+        TextBoxTelefon.Name = "TextBoxTelefon"
+        TextBoxTelefon.Size = New Size(240, 27)
+        TextBoxTelefon.TabIndex = 12
         ' 
         ' Label2
         ' 
@@ -241,7 +233,7 @@ Partial Class ElsMeusLocals
         Label1.Name = "Label1"
         Label1.Size = New Size(275, 41)
         Label1.TabIndex = 15
-        Label1.Text = "LES MEUS LOCALS"
+        Label1.Text = "ELS MEUS LOCALS"
         ' 
         ' ElsMeusLocals
         ' 
@@ -251,33 +243,32 @@ Partial Class ElsMeusLocals
         ClientSize = New Size(1779, 806)
         Controls.Add(Label1)
         Controls.Add(Panel1)
-        Controls.Add(GridViewLocals)
+        Controls.Add(DataGridViewLocals)
         Margin = New Padding(2)
         Name = "ElsMeusLocals"
-        Text = "ElsMeusLocals"
+        Text = "Els Meus Locals"
         WindowState = FormWindowState.Maximized
-        CType(GridViewLocals, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridViewLocals, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents GridViewLocals As DataGridView
+    Friend WithEvents DataGridViewLocals As DataGridView
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents RadioButtonActualitzar As RadioButton
+    Friend WithEvents RadioButtonAfegir As RadioButton
+    Friend WithEvents TextBoxDireccio As TextBox
+    Friend WithEvents ButtonOk As Button
+    Friend WithEvents TextBoxNom As TextBox
+    Friend WithEvents TextBoxTelefon As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxWeb As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBoxDescripcio As TextBox
     Friend WithEvents Label5 As Label
 End Class
