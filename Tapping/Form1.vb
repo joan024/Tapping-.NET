@@ -8,8 +8,12 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'guardem el pack
         Constants.PACK = Constants.bbdd.Pack()
+        'guardem idLocal de la empresa
+        Dim dades(1) As String
+        dades(0) = Constants.IDUSUARI
+        Constants.IDLOCAL = Constants.bbdd.SelectId(Constants.TAULALOCAL, dades)
 
-        'guardem les dades obtingudes en variables i les mostrem
+        'guardem les dades obtingudes de la empresa en variables i les mostrem
         Dim reader = Constants.bbdd.PantallaEmpresa(Constants.IDUSUARI)
         While reader.Read()
             nif = reader.GetString(0)
@@ -28,13 +32,18 @@ Public Class Form1
                          "Correu: " & correu + Environment.NewLine & Environment.NewLine +
                          "NIF: " & nif + Environment.NewLine
     End Sub
-    'ELS MEUS LOCALS:
+    'ELS MEUS LOCALS
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         ElsMeusLocals.Show()
     End Sub
     'LES TAPES
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        LesMevesTapes.Show()
+        If Constants.IDLOCAL <> "" Then
+            LesMevesTapes.Show()
+        Else
+            MsgBox("Has de tenir un local", vbExclamation)
+
+        End If
     End Sub
     'COMENTARIS
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
@@ -51,12 +60,16 @@ Public Class Form1
         If Constants.PACK = "3" Then
             MsgBox("Has de tenir Pack Brava o Chipis per poder accedir", vbExclamation)
         ElseIf Constants.PACK = "1" Or Constants.PACK = "2" Then
-
+            'si no te cap local mostrem missatge, sino entrem a la pantalla
+            If Constants.IDLOCAL <> "" Then
+                FormDescomptes.Show()
+            Else
+                MsgBox("Has de tenir un local", vbExclamation)
+            End If
         End If
     End Sub
     'GALERIA
     Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
-        Constants.bbdd.SelectIdLocal()
         FormFotos.Show()
         Me.Hide()
     End Sub
@@ -76,7 +89,7 @@ Public Class Form1
     End Sub
     'TANCAR SESSIO
     Private Sub TancaSessióToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TancaSessióToolStripMenuItem.Click
-        'mostrem login i tanquem actual
+        'mostrem login i tanquem actual(inici)
         IniciSessio.Show()
         Me.Hide()
     End Sub

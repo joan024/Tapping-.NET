@@ -7,6 +7,7 @@ Public Class IniciSessio
     Dim contrasenya As String = ""
 
     Private Sub IniciSessio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'fiquem el panell centrat
         If WindowState = FormWindowState.Maximized Then
             Panel1.Location = New Point((Me.Width - Panel1.Width) / 2, (Me.Height - Panel1.Height) / 2)
         End If

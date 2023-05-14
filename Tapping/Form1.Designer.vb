@@ -116,8 +116,8 @@ Partial Class Form1
         ToolStripMenuItem2.Alignment = ToolStripItemAlignment.Right
         ToolStripMenuItem2.Font = New Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(113, 62)
-        ToolStripMenuItem2.Text = "LES TAPES"
+        ToolStripMenuItem2.Size = New Size(177, 62)
+        ToolStripMenuItem2.Text = "LES MEVES TAPES"
         ' 
         ' ToolStripMenuItem1
         ' 
@@ -169,7 +169,7 @@ Partial Class Form1
         MainMenuStrip = MenuStrip1
         Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Inici"
         WindowState = FormWindowState.Maximized
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()

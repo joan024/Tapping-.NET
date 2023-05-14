@@ -71,7 +71,7 @@ Partial Class FormPFAdmin
         ' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel1.Controls.Add(ButtonAccio)
         Panel1.Controls.Add(RadioButtonEliminar)
         Panel1.Controls.Add(RadioButtonModificar)
@@ -186,7 +186,7 @@ Partial Class FormPFAdmin
         Controls.Add(DataGridViewPF)
         Controls.Add(LabelTitolPF)
         Name = "FormPFAdmin"
-        Text = "FormPFAdmin"
+        Text = "Preguntes Freqüents"
         WindowState = FormWindowState.Maximized
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)

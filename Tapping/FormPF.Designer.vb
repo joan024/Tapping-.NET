@@ -64,7 +64,7 @@ Partial Class FormPF
         DataGridViewPF.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewPF.BackgroundColor = Color.White
         DataGridViewPF.BorderStyle = BorderStyle.None
-        DataGridViewPF.CellBorderStyle = DataGridViewCellBorderStyle.None
+        DataGridViewPF.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         DataGridViewPF.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = SystemColors.Control
@@ -101,11 +101,12 @@ Partial Class FormPF
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(194), CByte(102))
         ClientSize = New Size(1780, 806)
+        ControlBox = False
         Controls.Add(DataGridViewPF)
         Controls.Add(ButtonEnrere)
         Controls.Add(LabelTitolPF)
         Name = "FormPF"
-        Text = "FormPF"
+        Text = "Preguntes Freqüents"
         WindowState = FormWindowState.Maximized
         CType(DataGridViewPF, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

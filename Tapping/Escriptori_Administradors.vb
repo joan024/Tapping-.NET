@@ -55,14 +55,21 @@ Public Class Escriptori_Administradors
         If RadioButtonAfegir.Checked Then
             ' el formAfegirUsuari l'utilitzo perquè abans d'afegir una nova empresa tinc que afegir-lo com a usuari i aquet té més dades que necessito.
             ' aquestes dades les demano en un formulari que l'executu amb el DialogResult
+            Dim idUsuari As String = ""
             Dim formUsuari As New FormAfegirUsuari
             Dim result As DialogResult = formUsuari.ShowDialog(Me)
             If result = DialogResult.OK Then
                 ' en la seguent funcio afegeixo un nou usuari i retorno la id d'aquest usuari per desprès poder afegir l'empresa
-                Dim idUsuari As String = gvClients.insertUsuari(formUsuari.TextBoxNom.Text, formUsuari.TextBoxCorreu.Text, formUsuari.TextBoxContrasenya.Text, formUsuari.DateTimePickerDataRegistre.Text, formUsuari.ComboBoxActiu.Text)
+                idUsuari = gvClients.insertUsuari(formUsuari.TextBoxNom.Text, formUsuari.TextBoxCorreu.Text, formUsuari.TextBoxContrasenya.Text, formUsuari.DateTimePickerDataRegistre.Text, formUsuari.ComboBoxActiu.Text)
                 'afegir l'empresa:rr
                 gvClients.insertClient(idUsuari, TextBoxNif.Text, TextBoxTelefon.Text, TextBoxPack.Text)
             End If
+            'creem el xat
+            Dim dgv As New DataGridView
+            Dim dadesXat(2) As String
+            dadesXat(0) = Constants.IDUSUARI
+            dadesXat(1) = idUsuari
+            Constants.bbdd.InsertAdmin(Constants.TAULAXAT, dadesXat, dgv)
         ElseIf RadioButtonActualitzar.Checked Then
             gvClients.updateClient(TextBoxNif.Text, TextBoxTelefon.Text, TextBoxPack.Text, gvClients.EnviarId)
         ElseIf RadioButtonEliminar.Checked Then
@@ -145,6 +152,12 @@ Public Class Escriptori_Administradors
         LabelTelefon.Visible = False
         TextBoxPack.Visible = False
         TextBoxTelefon.Visible = False
+        Dim llistaCategories As New ArrayList
+        'mostrem categories en combobox
+        llistaCategories = Constants.bbdd.obtenirCategories()
+        For Each nom As String In llistaCategories
+            ComboBoxCategoria.Items.Add(nom)
+        Next
     End Sub
     Protected Sub opcioCategories()
         Label1.Text = "CATEGORIES"

@@ -33,24 +33,26 @@ Partial Class GridViewClients
         DataGridViewClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewClients.BackgroundColor = Color.White
         DataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewClients.Location = New Point(23, 12)
+        DataGridViewClients.Location = New Point(18, 10)
+        DataGridViewClients.Margin = New Padding(2, 2, 2, 2)
         DataGridViewClients.Name = "DataGridViewClients"
         DataGridViewClients.ReadOnly = True
         DataGridViewClients.RowHeadersWidth = 62
         DataGridViewClients.RowTemplate.Height = 33
         DataGridViewClients.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridViewClients.Size = New Size(1229, 635)
+        DataGridViewClients.Size = New Size(983, 508)
         DataGridViewClients.TabIndex = 2
         ' 
         ' GridViewClients
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1285, 659)
+        ClientSize = New Size(1028, 527)
         Controls.Add(DataGridViewClients)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(2, 2, 2, 2)
         Name = "GridViewClients"
-        Text = "GridViewClients"
+        Text = "Clients"
         CType(DataGridViewClients, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

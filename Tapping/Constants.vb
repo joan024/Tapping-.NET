@@ -5,7 +5,11 @@
     Public Shared bbdd As New ClasseBBDD
     Public Shared IDLOCAL As String = ""
     Public Shared PACK As String = ""
-
+    Public Shared IDTAPA As String = ""
+    Public Shared IDLOCALTAPA As String = ""
+    'COLUMNES
+    Public Shared NOMTAPA As String = ""
+    Public Shared NOMLOCAL As String = ""
     ' TAULES
     Public Const TAULAUSUARI As String = "usuari"
     Public Const TAULAADMIN As String = "administrador"
@@ -20,6 +24,9 @@
     Public Const TAULAFOTO As String = "foto"
     Public Const TAULATAPA As String = "tapa"
     Public Const TAULACATEGORIATAPA As String = "categoria_tapa"
+    Public Const TAULADESCOMPTE As String = "descompte"
+    Public Const TAULALOCAL As String = "local"
+    Public Const TAULALOCALTAPA As String = "local_tapa"
 
 
     ' MYSQL CONNECTION
@@ -52,4 +59,15 @@
                                         & " join consumidor on" _
                                         & " usuari.id = consumidor.id_usuari" _
                                         & " where consumidor.id_usuari = "
+
+    'QUERY TAPA I LOCAL
+    Public Const QUERYTAPA As String = "select tapa.nom,local_tapa.personalitzacio, local_tapa.preu" _
+                                        & " from tapa" _
+                                        & " join local_tapa on" _
+                                        & " tapa.id = local_tapa.id_tapa" _
+                                        & " where local_tapa.id_local = "
+
+    Public Const QUERYLOCAL As String = "select id,local.nom,local.direccio, local.telefon, local.descripcio, local.web" _
+                                        & " from local" _
+                                        & " where id_usuari = "
 End Class
