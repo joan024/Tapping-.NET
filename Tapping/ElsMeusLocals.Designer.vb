@@ -24,6 +24,10 @@ Partial Class ElsMeusLocals
     Private Sub InitializeComponent()
         GridViewLocals = New DataGridView()
         Panel1 = New Panel()
+        TextBox3 = New TextBox()
+        Label6 = New Label()
+        TextBox2 = New TextBox()
+        Label5 = New Label()
         RadioButton3 = New RadioButton()
         RadioButton2 = New RadioButton()
         RadioButton1 = New RadioButton()
@@ -43,21 +47,25 @@ Partial Class ElsMeusLocals
         ' 
         GridViewLocals.AllowUserToResizeColumns = False
         GridViewLocals.AllowUserToResizeRows = False
-        GridViewLocals.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        GridViewLocals.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         GridViewLocals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         GridViewLocals.BackgroundColor = Color.White
         GridViewLocals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        GridViewLocals.Location = New Point(87, 119)
+        GridViewLocals.Location = New Point(11, 67)
         GridViewLocals.Margin = New Padding(2)
         GridViewLocals.Name = "GridViewLocals"
         GridViewLocals.RowHeadersWidth = 62
         GridViewLocals.RowTemplate.Height = 33
-        GridViewLocals.Size = New Size(1726, 494)
+        GridViewLocals.Size = New Size(1757, 479)
         GridViewLocals.TabIndex = 0
         ' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Controls.Add(TextBox3)
+        Panel1.Controls.Add(Label6)
+        Panel1.Controls.Add(TextBox2)
+        Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(RadioButton3)
         Panel1.Controls.Add(RadioButton2)
         Panel1.Controls.Add(RadioButton1)
@@ -68,17 +76,57 @@ Partial Class ElsMeusLocals
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label4)
-        Panel1.Location = New Point(546, 634)
+        Panel1.Location = New Point(11, 550)
         Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1034, 264)
+        Panel1.Size = New Size(1757, 245)
         Panel1.TabIndex = 14
+        ' 
+        ' TextBox3
+        ' 
+        TextBox3.Location = New Point(624, 119)
+        TextBox3.Margin = New Padding(2)
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(459, 27)
+        TextBox3.TabIndex = 21
+        ' 
+        ' Label6
+        ' 
+        Label6.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
+        Label6.Location = New Point(624, 80)
+        Label6.Margin = New Padding(2, 0, 2, 0)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(71, 37)
+        Label6.TabIndex = 20
+        Label6.Text = "Web"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(624, 51)
+        TextBox2.Margin = New Padding(2)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(459, 27)
+        TextBox2.TabIndex = 19
+        ' 
+        ' Label5
+        ' 
+        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(624, 12)
+        Label5.Margin = New Padding(2, 0, 2, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(140, 37)
+        Label5.TabIndex = 18
+        Label5.Text = "Descripcio"
         ' 
         ' RadioButton3
         ' 
         RadioButton3.AutoSize = True
         RadioButton3.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(663, 82)
+        RadioButton3.Location = New Point(1381, 51)
         RadioButton3.Margin = New Padding(2)
         RadioButton3.Name = "RadioButton3"
         RadioButton3.Size = New Size(139, 36)
@@ -91,7 +139,7 @@ Partial Class ElsMeusLocals
         ' 
         RadioButton2.AutoSize = True
         RadioButton2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(843, 82)
+        RadioButton2.Location = New Point(1561, 51)
         RadioButton2.Margin = New Padding(2)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(181, 36)
@@ -104,7 +152,7 @@ Partial Class ElsMeusLocals
         ' 
         RadioButton1.AutoSize = True
         RadioButton1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(508, 82)
+        RadioButton1.Location = New Point(1226, 51)
         RadioButton1.Margin = New Padding(2)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(110, 36)
@@ -115,16 +163,16 @@ Partial Class ElsMeusLocals
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(45, 327)
+        TextBox1.Location = New Point(14, 119)
         TextBox1.Margin = New Padding(2)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(145, 27)
+        TextBox1.Size = New Size(459, 27)
         TextBox1.TabIndex = 15
         ' 
         ' Button2
         ' 
         Button2.BackColor = Color.White
-        Button2.Location = New Point(640, 190)
+        Button2.Location = New Point(1360, 124)
         Button2.Margin = New Padding(2)
         Button2.Name = "Button2"
         Button2.Size = New Size(220, 61)
@@ -134,7 +182,7 @@ Partial Class ElsMeusLocals
         ' 
         ' TextBox5
         ' 
-        TextBox5.Location = New Point(45, 90)
+        TextBox5.Location = New Point(14, 51)
         TextBox5.Margin = New Padding(2)
         TextBox5.Name = "TextBox5"
         TextBox5.Size = New Size(232, 27)
@@ -142,7 +190,7 @@ Partial Class ElsMeusLocals
         ' 
         ' TextBox4
         ' 
-        TextBox4.Location = New Point(45, 208)
+        TextBox4.Location = New Point(14, 187)
         TextBox4.Margin = New Padding(2)
         TextBox4.Name = "TextBox4"
         TextBox4.Size = New Size(240, 27)
@@ -153,7 +201,7 @@ Partial Class ElsMeusLocals
         Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(45, 27)
+        Label2.Location = New Point(14, 12)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(76, 37)
@@ -165,30 +213,30 @@ Partial Class ElsMeusLocals
         Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(45, 148)
+        Label3.Location = New Point(14, 148)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(194, 37)
+        Label3.Size = New Size(102, 37)
         Label3.TabIndex = 4
-        Label3.Text = "Personalització"
+        Label3.Text = "Telefon"
         ' 
         ' Label4
         ' 
         Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(45, 266)
+        Label4.Location = New Point(14, 80)
         Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(70, 37)
+        Label4.Size = New Size(113, 37)
         Label4.TabIndex = 5
-        Label4.Text = "Preu"
+        Label4.Text = "Direcció"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(87, 29)
+        Label1.Location = New Point(11, 9)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(275, 41)
@@ -200,7 +248,7 @@ Partial Class ElsMeusLocals
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(177), CByte(46))
-        ClientSize = New Size(1824, 923)
+        ClientSize = New Size(1779, 806)
         Controls.Add(Label1)
         Controls.Add(Panel1)
         Controls.Add(GridViewLocals)
@@ -228,4 +276,8 @@ Partial Class ElsMeusLocals
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label5 As Label
 End Class
