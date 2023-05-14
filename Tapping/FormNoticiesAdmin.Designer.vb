@@ -133,7 +133,7 @@ Partial Class FormNoticiesAdmin
         ' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel1.AutoSize = True
         Panel1.Controls.Add(ButtonAccio)
         Panel1.Controls.Add(RadioButtonEliminar)
