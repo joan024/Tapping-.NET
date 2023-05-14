@@ -126,7 +126,7 @@ Partial Class ElsMeusLocals
         ' 
         RadioButton3.AutoSize = True
         RadioButton3.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(1381, 51)
+        RadioButton3.Location = New Point(791, 178)
         RadioButton3.Margin = New Padding(2)
         RadioButton3.Name = "RadioButton3"
         RadioButton3.Size = New Size(139, 36)
@@ -139,7 +139,7 @@ Partial Class ElsMeusLocals
         ' 
         RadioButton2.AutoSize = True
         RadioButton2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(1561, 51)
+        RadioButton2.Location = New Point(971, 178)
         RadioButton2.Margin = New Padding(2)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(181, 36)
@@ -152,7 +152,7 @@ Partial Class ElsMeusLocals
         ' 
         RadioButton1.AutoSize = True
         RadioButton1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(1226, 51)
+        RadioButton1.Location = New Point(636, 178)
         RadioButton1.Margin = New Padding(2)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(110, 36)
@@ -172,7 +172,7 @@ Partial Class ElsMeusLocals
         ' Button2
         ' 
         Button2.BackColor = Color.White
-        Button2.Location = New Point(1360, 124)
+        Button2.Location = New Point(1343, 85)
         Button2.Margin = New Padding(2)
         Button2.Name = "Button2"
         Button2.Size = New Size(220, 61)
