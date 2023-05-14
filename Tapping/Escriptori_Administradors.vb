@@ -64,6 +64,7 @@ Public Class Escriptori_Administradors
                 'afegir l'empresa:rr
                 gvClients.insertClient(idUsuari, TextBoxNif.Text, TextBoxTelefon.Text, TextBoxPack.Text)
             End If
+            'creem el xat
             Dim dgv As New DataGridView
             Dim dadesXat(2) As String
             dadesXat(0) = Constants.IDUSUARI
@@ -151,6 +152,12 @@ Public Class Escriptori_Administradors
         LabelTelefon.Visible = False
         TextBoxPack.Visible = False
         TextBoxTelefon.Visible = False
+        Dim llistaCategories As New ArrayList
+        'mostrem categories en combobox
+        llistaCategories = Constants.bbdd.obtenirCategories()
+        For Each nom As String In llistaCategories
+            ComboBoxCategoria.Items.Add(nom)
+        Next
     End Sub
     Protected Sub opcioCategories()
         Label1.Text = "CATEGORIES"

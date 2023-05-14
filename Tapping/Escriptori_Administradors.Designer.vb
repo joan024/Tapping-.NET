@@ -181,7 +181,6 @@ Partial Class Escriptori_Administradors
         ' 
         ComboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBoxCategoria.FormattingEnabled = True
-        ComboBoxCategoria.Items.AddRange(New Object() {"Patatas", "Frios", "Calents", "fritos", "Ensaladas", "Productes Lactics"})
         ComboBoxCategoria.Location = New Point(45, 206)
         ComboBoxCategoria.Margin = New Padding(2)
         ComboBoxCategoria.Name = "ComboBoxCategoria"

@@ -10,6 +10,7 @@ Public Class ClasseBBDD
     Private table As DataTable
     Private reader As MySqlDataReader
     Private sentencia As String
+    'fem la connexio a la base de dades
     Private Sub connectar()
         Try
             connexio = New MySqlConnection
@@ -24,6 +25,7 @@ Public Class ClasseBBDD
             MsgBox("Error en connectar amb el servei", vbExclamation)
         End Try
     End Sub
+    'desconectem de la base de dades
     Private Sub desconnectar()
         If connexio.State = 1 Then
             connexio.Dispose()
@@ -56,7 +58,7 @@ Public Class ClasseBBDD
         End Try
         Return reader
     End Function
-
+    'modifiquem la contrasenya nova a la bbdd
     Public Sub UpdateContrasenya(ByVal contrasenya As String, ByVal idUsuari As String)
         sentencia = "UPDATE usuari SET contrasenya = '" & contrasenya & "' where id = " & idUsuari
         Try
@@ -69,6 +71,7 @@ Public Class ClasseBBDD
     End Sub
 
     'FUNCIONS ADMIN
+    'mostrem registres al datagridview
     Public Sub SelectAdmin(ByVal taula As String, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULANOTICIA
@@ -96,6 +99,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'fem la modificació i mostrem registres
     Public Sub UpdateAdmin(ByVal taula As String, ByVal dades() As String, ByVal id As Integer, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULANOTICIA
@@ -128,6 +132,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'inserim registre i mostrem registres
     Public Sub InsertAdmin(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULANOTICIA
@@ -166,6 +171,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'eliminem i mostrem registres
     Public Sub Delete(ByVal taula As String, ByVal dgv As DataGridView, ByVal id As String)
         Select Case taula
             Case Constants.TAULANOTICIA
@@ -194,7 +200,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-
+    'cerquem id 
     Public Function SelectId(ByVal taula As String, ByVal dades() As String) As String
         Dim retornar As String = ""
         Select Case taula
@@ -205,7 +211,7 @@ Public Class ClasseBBDD
             Case Constants.TAULATAPA
                 sentencia = "SELECT MAX(id) FROM tapa"
             Case Constants.TAULACATEGORIA
-                sentencia = "SELECT id FROM categoria WHERE nom='" & dades(0) & "'"
+                sentencia = "SELECT id FROM categoria WHERE nom = '" & dades(0) & "'"
             Case Constants.TAULAXAT
                 sentencia = "SELECT id FROM xat WHERE id_empresa = " & dades(0)
             Case Constants.TAULALOCAL
@@ -227,8 +233,29 @@ Public Class ClasseBBDD
         End Try
         Return retornar
     End Function
+    'obtenim el nom de les categories
+    Public Function obtenirCategories() As ArrayList
+        Dim llistaCategories As New ArrayList
+        sentencia = "SELECT nom FROM categoria"
+        Try
+            table = New DataTable
+            connectar()
+            comanda = New MySqlCommand(sentencia, connexio)
+            reader = comanda.ExecuteReader()
+            While reader.Read()
+                llistaCategories.Add(reader.GetString(0))
+            End While
+
+        Catch ex As Exception
+            MessageBox.Show("Error en obtenir categories: " & ex.Message)
+        Finally
+            desconnectar()
+        End Try
+        Return llistaCategories
+    End Function
 
     'FUNCIONS PER XAT ADMIN
+    'mostrem els missatges del xat que toca
     Public Sub MissatgesXatAdmin(ByVal empresa As String, ByVal dgv As DataGridView)
         sentencia = "SELECT lineaxat.usuari,lineaxat.missatge,lineaxat.id_xat FROM lineaxat INNER JOIN xat ON lineaxat.id_xat = xat.id INNER JOIN usuari ON xat.id_empresa = usuari.id WHERE usuari.nom = '" & empresa & "'"
         Try
@@ -243,6 +270,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'inserim linea de xat al xat que pertoca
     Public Sub InsertMissatgeAdmin(ByVal idXat As String, ByVal missatge As String, ByVal empresa As String, ByVal dgv As DataGridView)
         sentencia = "INSERT INTO lineaxat (id_xat,usuari,missatge,temps) VALUES (" & idXat & ",1,'" & missatge & "','" & Format(Date.Today, "yyyy-MM-dd") & "')"
         Try
@@ -261,6 +289,7 @@ Public Class ClasseBBDD
     End Sub
 
     'FUNCIONS PER EMPRESA
+    'obtenim el pack de la empresa
     Public Function Pack() As String
         Dim packEmpresa As String = ""
         sentencia = "SELECT pack FROM empresa WHERE id_usuari = " & Constants.IDUSUARI
@@ -276,6 +305,7 @@ Public Class ClasseBBDD
         End Try
         Return packEmpresa
     End Function
+    'per mostrar les dades d'empresa a pantalla inici
     Public Function PantallaEmpresa(ByVal id As String)
         sentencia = "SELECT empresa.nif, empresa.telefon, usuari.nom, usuari.correu FROM empresa INNER JOIN usuari ON empresa.id_usuari = usuari.id WHERE usuari.id = " & id
         Try
@@ -287,6 +317,7 @@ Public Class ClasseBBDD
         End Try
         Return reader
     End Function
+    'mostrem registres al datagridview
     Public Sub SelectEmpresa(ByVal taula As String, ByVal id As String, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULANOTICIA
@@ -316,7 +347,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-
+    'inserim registre i mostrem registres
     Public Sub InsertEmpresa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULADESCOMPTE
@@ -341,7 +372,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-
+    'modifiquem dades i mostrem reistres
     Public Sub UpdateEmpresa(ByVal taula As String, ByVal dades() As String, ByVal id As Integer, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULALOCAL
@@ -361,6 +392,7 @@ Public Class ClasseBBDD
     End Sub
 
     'FUNCIONS PER XAT EMPRESA
+    'inserim linea de xat al xat que pertoca
     Public Sub InsertMissatgeEmpresa(ByVal idXat As String, ByVal missatge As String, ByVal id As String, ByVal dgv As DataGridView)
         sentencia = "INSERT INTO lineaxat (id_xat,usuari,missatge,temps) VALUES (" & idXat & ",2,'" & missatge & "','" & Format(Date.Today, "yyyy-MM-dd") & "')"
         Try
@@ -377,21 +409,6 @@ Public Class ClasseBBDD
     End Sub
 
     'FUNCIONS ARXIU
-    'Public Sub SelectIdLocal()
-    '    sentencia = "SELECT id FROM local WHERE id_usuari = " & Constants.IDUSUARI
-    '    Try
-    '        connectar()
-    '        Dim comando As New MySqlCommand(sentencia, connexio)
-    '        reader = comando.ExecuteReader()
-    '        While reader.Read()
-    '            Constants.IDLOCAL = reader.GetString(0)
-    '        End While
-    '    Catch ex As Exception
-    '        MsgBox("ERROR en carregar la informació", vbExclamation)
-    '    Finally
-    '        desconnectar()
-    '    End Try
-    'End Sub
     Public Sub ArxiuLocal()
         'seleccionem ultim id amb id_local,id i extensio
         sentencia = "SELECT id_local,id,extensio FROM foto WHERE id = (SELECT MAX(id) FROM foto)"
@@ -434,7 +451,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-
+    'fiquem foto a la base de dades
     Public Sub PujarFoto(ByVal dades() As String)
         sentencia = "INSERT INTO foto (id_local,extensio) VALUES ('" & dades(0) & "','" & dades(1) & "')"
         Try
@@ -447,7 +464,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
-
+    'busquem ultima foto insertada
     Public Function SelectFoto() As String
         sentencia = "SELECT MAX(id) FROM foto"
         Try
@@ -465,7 +482,7 @@ Public Class ClasseBBDD
         End Try
         Return 0
     End Function
-
+    'eliminem la foto
     Public Sub DeleteFoto(ByVal id As String)
         sentencia = "DELETE FROM foto WHERE id = " & id
         Try
@@ -483,6 +500,7 @@ Public Class ClasseBBDD
     End Sub
 
     'TAPA I LOCAL
+    'obtenim ids
     Public Sub obtenirId(ByVal taula As String)
         Select Case taula
             Case Constants.TAULALOCAL
@@ -520,6 +538,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'obtenim noms per mostrar al combobox
     Public Function obtenirNoms(ByVal taula As String) As ArrayList
         Dim llistaNoms As New ArrayList
         Select Case taula
@@ -545,7 +564,7 @@ Public Class ClasseBBDD
         End Try
         Return llistaNoms
     End Function
-
+    'mostrem tapes del local
     Public Sub mostrarTapa(ByVal taula As String, ByVal dgv As DataGridView)
         sentencia = Constants.QUERYTAPA & Constants.IDLOCAL
         Try
@@ -560,6 +579,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'afegim una tapa al local
     Public Sub afegirTapa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
         Select Case taula
             Case Constants.TAULALOCALTAPA
@@ -577,6 +597,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'eliminem la tapa del local
     Public Sub eliminarTapa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
         sentencia = "DELETE FROM " & Constants.TAULALOCALTAPA & " WHERE id = " & Constants.IDLOCALTAPA
         Try
@@ -589,6 +610,7 @@ Public Class ClasseBBDD
             desconnectar()
         End Try
     End Sub
+    'actualitzem la tapa del local
     Public Sub actualitzarTapa(ByVal taula As String, ByVal dades() As String, ByVal dgv As DataGridView)
         sentencia = "UPDATE " & Constants.TAULALOCALTAPA & " SET personalitzacio = '" & dades(0) & "', preu = '" & dades(1) & "' WHERE id = " & Constants.IDLOCALTAPA
         Try
@@ -597,21 +619,6 @@ Public Class ClasseBBDD
             comanda.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show("Error en actualitzar tapa")
-        Finally
-            desconnectar()
-        End Try
-    End Sub
-
-    Public Sub mostrarLocal(ByVal taula As String, ByVal dgv As DataGridView)
-        sentencia = Constants.QUERYLOCAL + Constants.IDUSUARI
-        Try
-            table = New DataTable
-            connectar()
-            adapter = New MySqlDataAdapter(sentencia, connexio)
-            adapter.Fill(table)
-            dgv.DataSource = table
-        Catch ex As Exception
-            MessageBox.Show("Error en mostrar local")
         Finally
             desconnectar()
         End Try
