@@ -353,7 +353,7 @@ Public Class ClasseBBDD
             Case Constants.TAULADESCOMPTE
                 sentencia = "INSERT INTO descompte(id_local,text,inici,final,codi) VALUES ('" & dades(0) & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','" & dades(4) & "')"
             Case Constants.TAULALOCAL
-                sentencia = "INSERT INTO local(nom,id_usuari,direccio,telefon,id_horari,descripcio,web,id_cp) VALUES ('" & dades(0) & "','" & Constants.IDUSUARI & "','" & dades(1) & "','" & dades(2) & "','" & dades(3) & "','1','" & dades(4) & "','8')"
+                sentencia = "INSERT INTO local(id_usuari,nom,direccio,telefon,id_horari,descripcio,web,id_cp) VALUES (" & Constants.IDUSUARI & ",'" & dades(0) & "','" & dades(1) & "','" & dades(2) & "',1,'" & dades(3) & "','" & dades(4) & "',8)"
         End Select
 
         Try
@@ -367,7 +367,7 @@ Public Class ClasseBBDD
                 End If
             End If
         Catch ex As Exception
-            MsgBox("Error afegir", vbExclamation)
+            MsgBox("Error afegir" & ex.Message)
         Finally
             desconnectar()
         End Try

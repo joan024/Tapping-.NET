@@ -81,6 +81,7 @@ Partial Class FormPFAdmin
         Panel1.Controls.Add(LabelResposta)
         Panel1.Controls.Add(LabelPregunta)
         Panel1.Location = New Point(12, 667)
+        Panel1.MaximumSize = New Size(1756, 125)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1756, 125)
         Panel1.TabIndex = 24

@@ -22,289 +22,274 @@ Partial Class FormNoticiesAdmin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.LabelDescripcio = New System.Windows.Forms.Label()
-        Me.LabelTitol = New System.Windows.Forms.Label()
-        Me.TextBoxTitol = New System.Windows.Forms.TextBox()
-        Me.DateTimePickerPublicacio = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePickerInici = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePickerFi = New System.Windows.Forms.DateTimePicker()
-        Me.LabelPublicacio = New System.Windows.Forms.Label()
-        Me.LabelInici = New System.Windows.Forms.Label()
-        Me.LabelFi = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ButtonAccio = New System.Windows.Forms.Button()
-        Me.RadioButtonEliminar = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonModificar = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonAfegir = New System.Windows.Forms.RadioButton()
-        Me.LabelFoto = New System.Windows.Forms.Label()
-        Me.TextBoxFoto = New System.Windows.Forms.TextBox()
-        Me.TextBoxDescripcio = New System.Windows.Forms.TextBox()
-        Me.LabelTitolNoticies = New System.Windows.Forms.Label()
-        Me.DataGridViewNoticies = New System.Windows.Forms.DataGridView()
-        Me.ButtonEnrere = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
-        CType(Me.DataGridViewNoticies, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'LabelDescripcio
-        '
-        Me.LabelDescripcio.AutoSize = True
-        Me.LabelDescripcio.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelDescripcio.Location = New System.Drawing.Point(4, 48)
-        Me.LabelDescripcio.Name = "LabelDescripcio"
-        Me.LabelDescripcio.Size = New System.Drawing.Size(90, 21)
-        Me.LabelDescripcio.TabIndex = 8
-        Me.LabelDescripcio.Text = "Descripció"
-        '
-        'LabelTitol
-        '
-        Me.LabelTitol.AutoSize = True
-        Me.LabelTitol.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelTitol.Location = New System.Drawing.Point(4, 14)
-        Me.LabelTitol.Name = "LabelTitol"
-        Me.LabelTitol.Size = New System.Drawing.Size(45, 21)
-        Me.LabelTitol.TabIndex = 9
-        Me.LabelTitol.Text = "Titol"
-        '
-        'TextBoxTitol
-        '
-        Me.TextBoxTitol.Location = New System.Drawing.Point(58, 14)
-        Me.TextBoxTitol.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBoxTitol.Name = "TextBoxTitol"
-        Me.TextBoxTitol.Size = New System.Drawing.Size(616, 23)
-        Me.TextBoxTitol.TabIndex = 11
-        '
-        'DateTimePickerPublicacio
-        '
-        Me.DateTimePickerPublicacio.CustomFormat = "yyyy-MM-dd"
-        Me.DateTimePickerPublicacio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerPublicacio.Location = New System.Drawing.Point(695, 64)
-        Me.DateTimePickerPublicacio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DateTimePickerPublicacio.Name = "DateTimePickerPublicacio"
-        Me.DateTimePickerPublicacio.Size = New System.Drawing.Size(219, 23)
-        Me.DateTimePickerPublicacio.TabIndex = 12
-        Me.DateTimePickerPublicacio.Value = New Date(2023, 4, 12, 21, 6, 17, 0)
-        '
-        'DateTimePickerInici
-        '
-        Me.DateTimePickerInici.CustomFormat = "yyyy-MM-dd"
-        Me.DateTimePickerInici.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerInici.Location = New System.Drawing.Point(927, 64)
-        Me.DateTimePickerInici.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DateTimePickerInici.Name = "DateTimePickerInici"
-        Me.DateTimePickerInici.Size = New System.Drawing.Size(219, 23)
-        Me.DateTimePickerInici.TabIndex = 13
-        '
-        'DateTimePickerFi
-        '
-        Me.DateTimePickerFi.CustomFormat = "yyyy-MM-dd"
-        Me.DateTimePickerFi.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerFi.Location = New System.Drawing.Point(1159, 64)
-        Me.DateTimePickerFi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DateTimePickerFi.Name = "DateTimePickerFi"
-        Me.DateTimePickerFi.Size = New System.Drawing.Size(219, 23)
-        Me.DateTimePickerFi.TabIndex = 14
-        '
-        'LabelPublicacio
-        '
-        Me.LabelPublicacio.AutoSize = True
-        Me.LabelPublicacio.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelPublicacio.Location = New System.Drawing.Point(737, 37)
-        Me.LabelPublicacio.Name = "LabelPublicacio"
-        Me.LabelPublicacio.Size = New System.Drawing.Size(130, 21)
-        Me.LabelPublicacio.TabIndex = 15
-        Me.LabelPublicacio.Text = "Data Publicació"
-        '
-        'LabelInici
-        '
-        Me.LabelInici.AutoSize = True
-        Me.LabelInici.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelInici.Location = New System.Drawing.Point(989, 37)
-        Me.LabelInici.Name = "LabelInici"
-        Me.LabelInici.Size = New System.Drawing.Size(83, 21)
-        Me.LabelInici.TabIndex = 16
-        Me.LabelInici.Text = "Data Inici"
-        '
-        'LabelFi
-        '
-        Me.LabelFi.AutoSize = True
-        Me.LabelFi.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelFi.Location = New System.Drawing.Point(1236, 37)
-        Me.LabelFi.Name = "LabelFi"
-        Me.LabelFi.Size = New System.Drawing.Size(63, 21)
-        Me.LabelFi.TabIndex = 17
-        Me.LabelFi.Text = "Data Fi"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.AutoSize = True
-        Me.Panel1.Controls.Add(Me.ButtonAccio)
-        Me.Panel1.Controls.Add(Me.RadioButtonEliminar)
-        Me.Panel1.Controls.Add(Me.RadioButtonModificar)
-        Me.Panel1.Controls.Add(Me.RadioButtonAfegir)
-        Me.Panel1.Controls.Add(Me.LabelFoto)
-        Me.Panel1.Controls.Add(Me.TextBoxFoto)
-        Me.Panel1.Controls.Add(Me.TextBoxDescripcio)
-        Me.Panel1.Controls.Add(Me.LabelTitol)
-        Me.Panel1.Controls.Add(Me.LabelDescripcio)
-        Me.Panel1.Controls.Add(Me.TextBoxTitol)
-        Me.Panel1.Controls.Add(Me.LabelPublicacio)
-        Me.Panel1.Controls.Add(Me.DateTimePickerFi)
-        Me.Panel1.Controls.Add(Me.LabelFi)
-        Me.Panel1.Controls.Add(Me.DateTimePickerPublicacio)
-        Me.Panel1.Controls.Add(Me.LabelInici)
-        Me.Panel1.Controls.Add(Me.DateTimePickerInici)
-        Me.Panel1.Location = New System.Drawing.Point(10, 479)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1536, 114)
-        Me.Panel1.TabIndex = 21
-        '
-        'ButtonAccio
-        '
-        Me.ButtonAccio.Location = New System.Drawing.Point(1415, 81)
-        Me.ButtonAccio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ButtonAccio.Name = "ButtonAccio"
-        Me.ButtonAccio.Size = New System.Drawing.Size(82, 22)
-        Me.ButtonAccio.TabIndex = 27
-        Me.ButtonAccio.Text = "Fer l'acció"
-        Me.ButtonAccio.UseVisualStyleBackColor = True
-        '
-        'RadioButtonEliminar
-        '
-        Me.RadioButtonEliminar.AutoSize = True
-        Me.RadioButtonEliminar.Location = New System.Drawing.Point(1415, 58)
-        Me.RadioButtonEliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RadioButtonEliminar.Name = "RadioButtonEliminar"
-        Me.RadioButtonEliminar.Size = New System.Drawing.Size(68, 19)
-        Me.RadioButtonEliminar.TabIndex = 26
-        Me.RadioButtonEliminar.Text = "Eliminar"
-        Me.RadioButtonEliminar.UseVisualStyleBackColor = True
-        '
-        'RadioButtonModificar
-        '
-        Me.RadioButtonModificar.AutoSize = True
-        Me.RadioButtonModificar.Location = New System.Drawing.Point(1415, 36)
-        Me.RadioButtonModificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RadioButtonModificar.Name = "RadioButtonModificar"
-        Me.RadioButtonModificar.Size = New System.Drawing.Size(76, 19)
-        Me.RadioButtonModificar.TabIndex = 25
-        Me.RadioButtonModificar.Text = "Modificar"
-        Me.RadioButtonModificar.UseVisualStyleBackColor = True
-        '
-        'RadioButtonAfegir
-        '
-        Me.RadioButtonAfegir.AutoSize = True
-        Me.RadioButtonAfegir.Checked = True
-        Me.RadioButtonAfegir.Location = New System.Drawing.Point(1415, 14)
-        Me.RadioButtonAfegir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RadioButtonAfegir.Name = "RadioButtonAfegir"
-        Me.RadioButtonAfegir.Size = New System.Drawing.Size(57, 19)
-        Me.RadioButtonAfegir.TabIndex = 24
-        Me.RadioButtonAfegir.TabStop = True
-        Me.RadioButtonAfegir.Text = "Afegir"
-        Me.RadioButtonAfegir.UseVisualStyleBackColor = True
-        '
-        'LabelFoto
-        '
-        Me.LabelFoto.AutoSize = True
-        Me.LabelFoto.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelFoto.Location = New System.Drawing.Point(5, 84)
-        Me.LabelFoto.Name = "LabelFoto"
-        Me.LabelFoto.Size = New System.Drawing.Size(44, 21)
-        Me.LabelFoto.TabIndex = 23
-        Me.LabelFoto.Text = "Foto"
-        '
-        'TextBoxFoto
-        '
-        Me.TextBoxFoto.Location = New System.Drawing.Point(58, 85)
-        Me.TextBoxFoto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBoxFoto.Name = "TextBoxFoto"
-        Me.TextBoxFoto.Size = New System.Drawing.Size(616, 23)
-        Me.TextBoxFoto.TabIndex = 22
-        '
-        'TextBoxDescripcio
-        '
-        Me.TextBoxDescripcio.Location = New System.Drawing.Point(106, 40)
-        Me.TextBoxDescripcio.Multiline = True
-        Me.TextBoxDescripcio.Name = "TextBoxDescripcio"
-        Me.TextBoxDescripcio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBoxDescripcio.Size = New System.Drawing.Size(568, 41)
-        Me.TextBoxDescripcio.TabIndex = 21
-        '
-        'LabelTitolNoticies
-        '
-        Me.LabelTitolNoticies.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.LabelTitolNoticies.AutoSize = True
-        Me.LabelTitolNoticies.BackColor = System.Drawing.Color.Transparent
-        Me.LabelTitolNoticies.Font = New System.Drawing.Font("Segoe UI", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelTitolNoticies.Location = New System.Drawing.Point(726, 7)
-        Me.LabelTitolNoticies.Name = "LabelTitolNoticies"
-        Me.LabelTitolNoticies.Size = New System.Drawing.Size(137, 37)
-        Me.LabelTitolNoticies.TabIndex = 1
-        Me.LabelTitolNoticies.Text = "NOTÍCIES"
-        Me.LabelTitolNoticies.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'DataGridViewNoticies
-        '
-        Me.DataGridViewNoticies.AllowUserToAddRows = False
-        Me.DataGridViewNoticies.AllowUserToDeleteRows = False
-        Me.DataGridViewNoticies.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridViewNoticies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridViewNoticies.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridViewNoticies.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridViewNoticies.ColumnHeadersHeight = 29
-        Me.DataGridViewNoticies.Location = New System.Drawing.Point(10, 44)
-        Me.DataGridViewNoticies.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DataGridViewNoticies.Name = "DataGridViewNoticies"
-        Me.DataGridViewNoticies.ReadOnly = True
-        Me.DataGridViewNoticies.RowHeadersWidth = 51
-        Me.DataGridViewNoticies.RowTemplate.Height = 29
-        Me.DataGridViewNoticies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewNoticies.Size = New System.Drawing.Size(1536, 431)
-        Me.DataGridViewNoticies.TabIndex = 2
-        '
-        'ButtonEnrere
-        '
-        Me.ButtonEnrere.BackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnrere.BackgroundImage = Global.Tapping.My.Resources.Resources.enrere
-        Me.ButtonEnrere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEnrere.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ButtonEnrere.FlatAppearance.BorderSize = 0
-        Me.ButtonEnrere.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEnrere.Location = New System.Drawing.Point(10, 7)
-        Me.ButtonEnrere.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ButtonEnrere.Name = "ButtonEnrere"
-        Me.ButtonEnrere.Size = New System.Drawing.Size(56, 32)
-        Me.ButtonEnrere.TabIndex = 22
-        Me.ButtonEnrere.UseVisualStyleBackColor = False
-        '
-        'FormNoticiesAdmin
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightGray
-        Me.ClientSize = New System.Drawing.Size(1558, 603)
-        Me.ControlBox = False
-        Me.Controls.Add(Me.ButtonEnrere)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.DataGridViewNoticies)
-        Me.Controls.Add(Me.LabelTitolNoticies)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MaximumSize = New System.Drawing.Size(1574, 642)
-        Me.Name = "FormNoticiesAdmin"
-        Me.Text = "Notícies"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.DataGridViewNoticies, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        LabelDescripcio = New Label()
+        LabelTitol = New Label()
+        TextBoxTitol = New TextBox()
+        DateTimePickerPublicacio = New DateTimePicker()
+        DateTimePickerInici = New DateTimePicker()
+        DateTimePickerFi = New DateTimePicker()
+        LabelPublicacio = New Label()
+        LabelInici = New Label()
+        LabelFi = New Label()
+        Panel1 = New Panel()
+        ButtonAccio = New Button()
+        RadioButtonEliminar = New RadioButton()
+        RadioButtonModificar = New RadioButton()
+        RadioButtonAfegir = New RadioButton()
+        LabelFoto = New Label()
+        TextBoxFoto = New TextBox()
+        TextBoxDescripcio = New TextBox()
+        LabelTitolNoticies = New Label()
+        DataGridViewNoticies = New DataGridView()
+        ButtonEnrere = New Button()
+        Panel1.SuspendLayout()
+        CType(DataGridViewNoticies, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' LabelDescripcio
+        ' 
+        LabelDescripcio.AutoSize = True
+        LabelDescripcio.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelDescripcio.Location = New Point(5, 64)
+        LabelDescripcio.Name = "LabelDescripcio"
+        LabelDescripcio.Size = New Size(111, 28)
+        LabelDescripcio.TabIndex = 8
+        LabelDescripcio.Text = "Descripció"
+        ' 
+        ' LabelTitol
+        ' 
+        LabelTitol.AutoSize = True
+        LabelTitol.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelTitol.Location = New Point(5, 19)
+        LabelTitol.Name = "LabelTitol"
+        LabelTitol.Size = New Size(56, 28)
+        LabelTitol.TabIndex = 9
+        LabelTitol.Text = "Titol"
+        ' 
+        ' TextBoxTitol
+        ' 
+        TextBoxTitol.Location = New Point(66, 19)
+        TextBoxTitol.Name = "TextBoxTitol"
+        TextBoxTitol.Size = New Size(703, 27)
+        TextBoxTitol.TabIndex = 11
+        ' 
+        ' DateTimePickerPublicacio
+        ' 
+        DateTimePickerPublicacio.CustomFormat = "yyyy-MM-dd"
+        DateTimePickerPublicacio.Format = DateTimePickerFormat.Custom
+        DateTimePickerPublicacio.Location = New Point(794, 85)
+        DateTimePickerPublicacio.Name = "DateTimePickerPublicacio"
+        DateTimePickerPublicacio.Size = New Size(250, 27)
+        DateTimePickerPublicacio.TabIndex = 12
+        DateTimePickerPublicacio.Value = New DateTime(2023, 4, 12, 21, 6, 17, 0)
+        ' 
+        ' DateTimePickerInici
+        ' 
+        DateTimePickerInici.CustomFormat = "yyyy-MM-dd"
+        DateTimePickerInici.Format = DateTimePickerFormat.Custom
+        DateTimePickerInici.Location = New Point(1059, 85)
+        DateTimePickerInici.Name = "DateTimePickerInici"
+        DateTimePickerInici.Size = New Size(250, 27)
+        DateTimePickerInici.TabIndex = 13
+        ' 
+        ' DateTimePickerFi
+        ' 
+        DateTimePickerFi.CustomFormat = "yyyy-MM-dd"
+        DateTimePickerFi.Format = DateTimePickerFormat.Custom
+        DateTimePickerFi.Location = New Point(1325, 85)
+        DateTimePickerFi.Name = "DateTimePickerFi"
+        DateTimePickerFi.Size = New Size(250, 27)
+        DateTimePickerFi.TabIndex = 14
+        ' 
+        ' LabelPublicacio
+        ' 
+        LabelPublicacio.AutoSize = True
+        LabelPublicacio.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelPublicacio.Location = New Point(842, 49)
+        LabelPublicacio.Name = "LabelPublicacio"
+        LabelPublicacio.Size = New Size(160, 28)
+        LabelPublicacio.TabIndex = 15
+        LabelPublicacio.Text = "Data Publicació"
+        ' 
+        ' LabelInici
+        ' 
+        LabelInici.AutoSize = True
+        LabelInici.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelInici.Location = New Point(1130, 49)
+        LabelInici.Name = "LabelInici"
+        LabelInici.Size = New Size(103, 28)
+        LabelInici.TabIndex = 16
+        LabelInici.Text = "Data Inici"
+        ' 
+        ' LabelFi
+        ' 
+        LabelFi.AutoSize = True
+        LabelFi.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelFi.Location = New Point(1413, 49)
+        LabelFi.Name = "LabelFi"
+        LabelFi.Size = New Size(79, 28)
+        LabelFi.TabIndex = 17
+        LabelFi.Text = "Data Fi"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.AutoSize = True
+        Panel1.Controls.Add(ButtonAccio)
+        Panel1.Controls.Add(RadioButtonEliminar)
+        Panel1.Controls.Add(RadioButtonModificar)
+        Panel1.Controls.Add(RadioButtonAfegir)
+        Panel1.Controls.Add(LabelFoto)
+        Panel1.Controls.Add(TextBoxFoto)
+        Panel1.Controls.Add(TextBoxDescripcio)
+        Panel1.Controls.Add(LabelTitol)
+        Panel1.Controls.Add(LabelDescripcio)
+        Panel1.Controls.Add(TextBoxTitol)
+        Panel1.Controls.Add(LabelPublicacio)
+        Panel1.Controls.Add(DateTimePickerFi)
+        Panel1.Controls.Add(LabelFi)
+        Panel1.Controls.Add(DateTimePickerPublicacio)
+        Panel1.Controls.Add(LabelInici)
+        Panel1.Controls.Add(DateTimePickerInici)
+        Panel1.Location = New Point(11, 639)
+        Panel1.MaximumSize = New Size(1755, 152)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1755, 152)
+        Panel1.TabIndex = 21
+        ' 
+        ' ButtonAccio
+        ' 
+        ButtonAccio.Location = New Point(1617, 108)
+        ButtonAccio.Name = "ButtonAccio"
+        ButtonAccio.Size = New Size(94, 29)
+        ButtonAccio.TabIndex = 27
+        ButtonAccio.Text = "Fer l'acció"
+        ButtonAccio.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonEliminar
+        ' 
+        RadioButtonEliminar.AutoSize = True
+        RadioButtonEliminar.Location = New Point(1617, 77)
+        RadioButtonEliminar.Name = "RadioButtonEliminar"
+        RadioButtonEliminar.Size = New Size(84, 24)
+        RadioButtonEliminar.TabIndex = 26
+        RadioButtonEliminar.Text = "Eliminar"
+        RadioButtonEliminar.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonModificar
+        ' 
+        RadioButtonModificar.AutoSize = True
+        RadioButtonModificar.Location = New Point(1617, 48)
+        RadioButtonModificar.Name = "RadioButtonModificar"
+        RadioButtonModificar.Size = New Size(94, 24)
+        RadioButtonModificar.TabIndex = 25
+        RadioButtonModificar.Text = "Modificar"
+        RadioButtonModificar.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonAfegir
+        ' 
+        RadioButtonAfegir.AutoSize = True
+        RadioButtonAfegir.Checked = True
+        RadioButtonAfegir.Location = New Point(1617, 19)
+        RadioButtonAfegir.Name = "RadioButtonAfegir"
+        RadioButtonAfegir.Size = New Size(71, 24)
+        RadioButtonAfegir.TabIndex = 24
+        RadioButtonAfegir.TabStop = True
+        RadioButtonAfegir.Text = "Afegir"
+        RadioButtonAfegir.UseVisualStyleBackColor = True
+        ' 
+        ' LabelFoto
+        ' 
+        LabelFoto.AutoSize = True
+        LabelFoto.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelFoto.Location = New Point(6, 112)
+        LabelFoto.Name = "LabelFoto"
+        LabelFoto.Size = New Size(54, 28)
+        LabelFoto.TabIndex = 23
+        LabelFoto.Text = "Foto"
+        ' 
+        ' TextBoxFoto
+        ' 
+        TextBoxFoto.Location = New Point(66, 113)
+        TextBoxFoto.Name = "TextBoxFoto"
+        TextBoxFoto.Size = New Size(703, 27)
+        TextBoxFoto.TabIndex = 22
+        ' 
+        ' TextBoxDescripcio
+        ' 
+        TextBoxDescripcio.Location = New Point(121, 53)
+        TextBoxDescripcio.Margin = New Padding(3, 4, 3, 4)
+        TextBoxDescripcio.Multiline = True
+        TextBoxDescripcio.Name = "TextBoxDescripcio"
+        TextBoxDescripcio.ScrollBars = ScrollBars.Vertical
+        TextBoxDescripcio.Size = New Size(649, 53)
+        TextBoxDescripcio.TabIndex = 21
+        ' 
+        ' LabelTitolNoticies
+        ' 
+        LabelTitolNoticies.Anchor = AnchorStyles.Top
+        LabelTitolNoticies.AutoSize = True
+        LabelTitolNoticies.BackColor = Color.Transparent
+        LabelTitolNoticies.Font = New Font("Segoe UI", 19.8F, FontStyle.Bold, GraphicsUnit.Point)
+        LabelTitolNoticies.Location = New Point(830, 9)
+        LabelTitolNoticies.Name = "LabelTitolNoticies"
+        LabelTitolNoticies.Size = New Size(167, 45)
+        LabelTitolNoticies.TabIndex = 1
+        LabelTitolNoticies.Text = "NOTÍCIES"
+        LabelTitolNoticies.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' DataGridViewNoticies
+        ' 
+        DataGridViewNoticies.AllowUserToAddRows = False
+        DataGridViewNoticies.AllowUserToDeleteRows = False
+        DataGridViewNoticies.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridViewNoticies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewNoticies.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewNoticies.BackgroundColor = Color.White
+        DataGridViewNoticies.ColumnHeadersHeight = 29
+        DataGridViewNoticies.Location = New Point(11, 59)
+        DataGridViewNoticies.Name = "DataGridViewNoticies"
+        DataGridViewNoticies.ReadOnly = True
+        DataGridViewNoticies.RowHeadersWidth = 51
+        DataGridViewNoticies.RowTemplate.Height = 29
+        DataGridViewNoticies.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridViewNoticies.Size = New Size(1755, 575)
+        DataGridViewNoticies.TabIndex = 2
+        ' 
+        ' ButtonEnrere
+        ' 
+        ButtonEnrere.BackColor = Color.LightGray
+        ButtonEnrere.BackgroundImage = My.Resources.Resources.enrere
+        ButtonEnrere.BackgroundImageLayout = ImageLayout.Stretch
+        ButtonEnrere.FlatAppearance.BorderColor = Color.White
+        ButtonEnrere.FlatAppearance.BorderSize = 0
+        ButtonEnrere.FlatStyle = FlatStyle.Flat
+        ButtonEnrere.Location = New Point(11, 9)
+        ButtonEnrere.Name = "ButtonEnrere"
+        ButtonEnrere.Size = New Size(64, 43)
+        ButtonEnrere.TabIndex = 22
+        ButtonEnrere.UseVisualStyleBackColor = False
+        ' 
+        ' FormNoticiesAdmin
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.LightGray
+        ClientSize = New Size(1778, 793)
+        ControlBox = False
+        Controls.Add(ButtonEnrere)
+        Controls.Add(Panel1)
+        Controls.Add(DataGridViewNoticies)
+        Controls.Add(LabelTitolNoticies)
+        MaximumSize = New Size(1796, 840)
+        Name = "FormNoticiesAdmin"
+        Text = "Notícies"
+        WindowState = FormWindowState.Maximized
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(DataGridViewNoticies, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents LabelDescripcio As Label
     Friend WithEvents LabelTitol As Label
