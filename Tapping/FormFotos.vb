@@ -32,8 +32,6 @@ Public Class FormFotos
                 Dim id As String = Constants.bbdd.SelectFoto()
                 'afegim la foto a l'arxiu del local
                 Constants.bbdd.ArxiuLocal()
-                'guardem la imatge del picturebox amb ultim id de bbdd i la extensio guardada
-                foto.Image.Save(Constants.FOTOS & id & extensio)
                 'carreguem la foto a un picturebox
                 foto = New PictureBox
                 With foto
@@ -44,6 +42,8 @@ Public Class FormFotos
                 End With
                 'funcio per poder eliminar la foto
                 AddHandler foto.Click, AddressOf Eliminar
+                'guardem la imatge del picturebox amb ultim id de bbdd i la extensio guardada
+                foto.Image.Save(Constants.FOTOS & id & extensio)
             End If
         Else
             MsgBox("Has de tenir un local", vbExclamation)
