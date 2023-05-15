@@ -22,39 +22,40 @@ Partial Class GridViewClients
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        DataGridViewClients = New DataGridView()
-        CType(DataGridViewClients, ComponentModel.ISupportInitialize).BeginInit()
-        SuspendLayout()
-        ' 
-        ' DataGridViewClients
-        ' 
-        DataGridViewClients.AllowUserToAddRows = False
-        DataGridViewClients.AllowUserToDeleteRows = False
-        DataGridViewClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewClients.BackgroundColor = Color.White
-        DataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewClients.Location = New Point(18, 10)
-        DataGridViewClients.Margin = New Padding(2, 2, 2, 2)
-        DataGridViewClients.Name = "DataGridViewClients"
-        DataGridViewClients.ReadOnly = True
-        DataGridViewClients.RowHeadersWidth = 62
-        DataGridViewClients.RowTemplate.Height = 33
-        DataGridViewClients.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridViewClients.Size = New Size(983, 508)
-        DataGridViewClients.TabIndex = 2
-        ' 
-        ' GridViewClients
-        ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1028, 527)
-        Controls.Add(DataGridViewClients)
-        FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(2, 2, 2, 2)
-        Name = "GridViewClients"
-        Text = "Clients"
-        CType(DataGridViewClients, ComponentModel.ISupportInitialize).EndInit()
-        ResumeLayout(False)
+        Me.DataGridViewClients = New System.Windows.Forms.DataGridView()
+        CType(Me.DataGridViewClients, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'DataGridViewClients
+        '
+        Me.DataGridViewClients.AllowUserToAddRows = False
+        Me.DataGridViewClients.AllowUserToDeleteRows = False
+        Me.DataGridViewClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridViewClients.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridViewClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewClients.Location = New System.Drawing.Point(16, 8)
+        Me.DataGridViewClients.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridViewClients.Name = "DataGridViewClients"
+        Me.DataGridViewClients.ReadOnly = True
+        Me.DataGridViewClients.RowHeadersWidth = 62
+        Me.DataGridViewClients.RowTemplate.Height = 33
+        Me.DataGridViewClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridViewClients.Size = New System.Drawing.Size(860, 381)
+        Me.DataGridViewClients.TabIndex = 2
+        '
+        'GridViewClients
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(900, 395)
+        Me.Controls.Add(Me.DataGridViewClients)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Name = "GridViewClients"
+        Me.Text = "Clients"
+        CType(Me.DataGridViewClients, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
 
     Friend WithEvents DataGridViewClients As DataGridView

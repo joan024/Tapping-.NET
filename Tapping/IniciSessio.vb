@@ -32,7 +32,7 @@ Public Class IniciSessio
             correu = reader.GetString(1)
             contrasenya = reader.GetString(2)
             'el primer if es per quan un usuari ha d'inserir una nova contrasenya
-            If (correu.Equals(TextBoxUsuari.Text) And contrasenya.Equals(text)) Then
+            If (correu.Equals(TextBoxUsuari.Text.ToLower()) And contrasenya.Equals(text)) Then
                 Dim formulariContrasenya As New GridViewNovaContrasenya
                 Dim mostrarFormulari As DialogResult = formulariContrasenya.ShowDialog(Me)
                 If (mostrarFormulari = DialogResult.OK) Then
@@ -42,7 +42,7 @@ Public Class IniciSessio
                     canviContrasenya = False
                 End If
                 'el segon if es per quan el usuari ja esta registrat
-            ElseIf (correu.Equals(TextBoxUsuari.Text) And contrasenya.Equals(hash)) Then
+            ElseIf (correu.Equals(TextBoxUsuari.Text.ToLower()) And contrasenya.Equals(hash)) Then
                 semafor = True
                 Exit While
             End If

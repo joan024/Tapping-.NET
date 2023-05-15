@@ -131,6 +131,8 @@ Public Class Escriptori_Administradors
         LabelTelefon.Visible = True
         TextBoxPack.Visible = True
         TextBoxTelefon.Visible = True
+
+        Panel1.AutoScroll = True
     End Sub
     Protected Sub opcioTapes()
         ' aixo ho faig per quan s'inicia
@@ -158,6 +160,8 @@ Public Class Escriptori_Administradors
         For Each nom As String In llistaCategories
             ComboBoxCategoria.Items.Add(nom)
         Next
+
+        Panel1.AutoScroll = True
     End Sub
     Protected Sub opcioCategories()
         Label1.Text = "CATEGORIES"
@@ -179,6 +183,8 @@ Public Class Escriptori_Administradors
         LabelTelefon.Visible = False
         TextBoxPack.Visible = False
         TextBoxTelefon.Visible = False
+
+        Panel1.AutoScroll = True
     End Sub
 
     Private Sub RadioButtonAfegir_Click(sender As Object, e As EventArgs) Handles RadioButtonAfegir.Click
@@ -210,5 +216,9 @@ Public Class Escriptori_Administradors
     Private Sub TancaSessióToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TancaSessióToolStripMenuItem.Click
         IniciSessio.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class

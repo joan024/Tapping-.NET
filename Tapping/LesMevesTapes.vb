@@ -20,7 +20,12 @@ Public Class LesMevesTapes
     Private Sub DataGridViewTapes_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridViewTapes.SelectionChanged
         'fiquem les dades de la fila seleccionada als textboxs
         ComboBoxNom.Text = DataGridViewTapes.CurrentRow.Cells(0).Value
-        TextBoxPersonalitzacio.Text = DataGridViewTapes.CurrentRow.Cells(1).Value
+        If IsDBNull(DataGridViewTapes.CurrentRow.Cells(1).Value) Then
+            TextBoxPersonalitzacio.Text = ""
+        Else
+            TextBoxPersonalitzacio.Text = DataGridViewTapes.CurrentRow.Cells(1).Value
+        End If
+        'TextBoxPersonalitzacio.Text = DataGridViewTapes.CurrentRow.Cells(1).Value
         TextBoxPreu.Text = DataGridViewTapes.CurrentRow.Cells(2).Value
         RadioButtonActualitzar.Checked = True
     End Sub
