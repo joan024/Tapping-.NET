@@ -1,4 +1,5 @@
-﻿Imports System.Reflection.Metadata
+﻿Imports System.ComponentModel
+Imports System.Reflection.Metadata
 
 Public Class ElsMeusLocals
     Private bbdd As New ClasseBBDD
@@ -33,6 +34,7 @@ Public Class ElsMeusLocals
         'depenen del radiobutton seleccionar fem una accio
         If RadioButtonAfegir.Checked Then
             Constants.bbdd.InsertEmpresa(Constants.TAULALOCAL, EnviarDades, DataGridViewLocals)
+            RadioButtonAfegir.Visible = False
         ElseIf RadioButtonActualitzar.Checked Then
             Constants.bbdd.UpdateEmpresa(Constants.TAULALOCAL, EnviarDades, DataGridViewLocals.CurrentRow.Cells(0).Value, DataGridViewLocals)
         End If
@@ -54,5 +56,11 @@ Public Class ElsMeusLocals
         TextBoxTelefon.Text = ""
         TextBoxDescripcio.Text = ""
         TextBoxWeb.Text = ""
+    End Sub
+    'obtenim id local afegit
+    Private Sub ElsMeusLocals_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Dim dades(1) As String
+        dades(0) = Constants.IDUSUARI
+        Constants.IDLOCAL = Constants.bbdd.SelectId(Constants.TAULALOCAL, dades)
     End Sub
 End Class

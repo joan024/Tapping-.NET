@@ -71,6 +71,8 @@
             Else
                 dades(5) = ""
             End If
+        Else
+            dades(5) = DateTimePickerFi.Text
         End If
         Return dades
     End Function
