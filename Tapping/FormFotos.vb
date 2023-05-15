@@ -24,8 +24,6 @@ Public Class FormFotos
                 'guardem l'extensio de la foto
                 extensio = "." & ofd.FileName.Split(".").Last
 
-                'afegim l'imatge al flowLayoutPanel
-                FlowLayoutPanelFotos.Controls.Add(foto)
                 'afegim la foto a la base de dades
                 Constants.bbdd.PujarFoto(PujarDades())
                 'agafem ultim id de la taula
@@ -42,6 +40,8 @@ Public Class FormFotos
                 End With
                 'funcio per poder eliminar la foto
                 AddHandler foto.Click, AddressOf Eliminar
+                'afegim l'imatge al flowLayoutPanel
+                FlowLayoutPanelFotos.Controls.Add(foto)
                 'guardem la imatge del picturebox amb ultim id de bbdd i la extensio guardada
                 foto.Image.Save(Constants.FOTOS & id & extensio)
             End If
